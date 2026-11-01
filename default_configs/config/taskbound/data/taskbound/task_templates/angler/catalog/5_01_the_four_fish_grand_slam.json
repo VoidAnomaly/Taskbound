@@ -1,0 +1,101 @@
+{
+  "id": "taskbound:angler/catalog/5_01_the_four_fish_grand_slam",
+  "category_id": "taskbound:angler/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 99,
+  "display_text": "task.taskbound.angler.catalog.5_01_the_four_fish_grand_slam.description",
+  "title": "The Four-Fish Grand Slam",
+  "description": "• Catch 1 cod.\n• Catch 1 salmon.\n• Catch 1 pufferfish.\n• Catch 1 tropical fish.\n\nCatch all four fish in any order in a deep ocean during rain. Use the same rod for every catch, with both Lure II+ and Luck of the Sea II+.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:tracked_fish"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/5_01_the_four_fish_grand_slam/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_biome": "minecraft:deep_ocean",
+            "required_weather": "rain",
+            "tool_enchantment": "minecraft:lure",
+            "minimum_tool_enchantment_level": 2,
+            "rod_enchantment_extra": "minecraft:luck_of_the_sea",
+            "minimum_rod_enchantment_extra_level": 2,
+            "same_rod": true,
+            "required_count": 1,
+            "fish_item": "minecraft:cod"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        },
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_biome": "minecraft:deep_ocean",
+            "required_weather": "rain",
+            "tool_enchantment": "minecraft:lure",
+            "minimum_tool_enchantment_level": 2,
+            "rod_enchantment_extra": "minecraft:luck_of_the_sea",
+            "minimum_rod_enchantment_extra_level": 2,
+            "same_rod": true,
+            "required_count": 1,
+            "fish_item": "minecraft:salmon"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        },
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_biome": "minecraft:deep_ocean",
+            "required_weather": "rain",
+            "tool_enchantment": "minecraft:lure",
+            "minimum_tool_enchantment_level": 2,
+            "rod_enchantment_extra": "minecraft:luck_of_the_sea",
+            "minimum_rod_enchantment_extra_level": 2,
+            "same_rod": true,
+            "required_count": 1,
+            "fish_item": "minecraft:pufferfish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        },
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_biome": "minecraft:deep_ocean",
+            "required_weather": "rain",
+            "tool_enchantment": "minecraft:lure",
+            "minimum_tool_enchantment_level": 2,
+            "rod_enchantment_extra": "minecraft:luck_of_the_sea",
+            "minimum_rod_enchantment_extra_level": 2,
+            "same_rod": true,
+            "required_count": 1,
+            "fish_item": "minecraft:tropical_fish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:fishing/5_01_the_four_fish_grand_slam",
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

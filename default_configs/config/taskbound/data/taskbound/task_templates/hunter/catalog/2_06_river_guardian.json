@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:hunter/catalog/2_06_river_guardian",
+  "category_id": "taskbound:hunter/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.hunter.catalog.2_06_river_guardian.description",
+  "title": "River Guardian",
+  "description": "Defeat 4 drowned in a river.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/2_06_river_guardian/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_biome": "minecraft:river",
+            "required_count": 4,
+            "entity": "minecraft:drowned"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:hunting/2_06_river_guardian"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

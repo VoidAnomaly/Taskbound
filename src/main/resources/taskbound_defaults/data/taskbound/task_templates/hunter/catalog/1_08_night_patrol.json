@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:hunter/catalog/1_08_night_patrol",
+  "category_id": "taskbound:hunter/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 6,
+  "display_text": "task.taskbound.hunter.catalog.1_08_night_patrol.description",
+  "title": "Night Patrol",
+  "description": "Defeat 4 zombies during the night.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/1_08_night_patrol/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_time": "night",
+            "required_count": 4,
+            "entity": "minecraft:zombie"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:hunting/1_08_night_patrol"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

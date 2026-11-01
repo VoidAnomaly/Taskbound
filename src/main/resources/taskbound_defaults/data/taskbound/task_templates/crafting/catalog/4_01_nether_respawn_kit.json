@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:crafting/catalog/4_01_nether_respawn_kit",
+  "category_id": "taskbound:crafting/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 64,
+  "display_text": "task.taskbound.crafting.catalog.4_01_nether_respawn_kit.description",
+  "title": "Nether Respawn Kit",
+  "description": "Craft 2 respawn anchors in the Nether.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/4_01_nether_respawn_kit/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_dimension": "minecraft:the_nether",
+            "required_count": 2,
+            "item": "minecraft:respawn_anchor"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:crafting/4_01_nether_respawn_kit"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

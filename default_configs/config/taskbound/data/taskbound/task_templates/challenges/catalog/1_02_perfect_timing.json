@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:challenges/catalog/1_02_perfect_timing",
+  "category_id": "taskbound:challenges/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 9,
+  "display_text": "task.taskbound.challenges.catalog.1_02_perfect_timing.description",
+  "title": "Perfect Timing",
+  "description": "Land 4 critical melee hits on hostile mobs.",
+  "required_capabilities": [
+    "minecraft:combat_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/1_02_perfect_timing/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "combat_action",
+          "parameters": {
+            "required_count": 4,
+            "action": "critical_hit",
+            "hostile_only": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:combat_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:challenges/1_02_perfect_timing"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

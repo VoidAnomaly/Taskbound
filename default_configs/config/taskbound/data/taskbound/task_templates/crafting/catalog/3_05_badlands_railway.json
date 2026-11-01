@@ -1,0 +1,47 @@
+{
+  "id": "taskbound:crafting/catalog/3_05_badlands_railway",
+  "category_id": "taskbound:crafting/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 34,
+  "display_text": "task.taskbound.crafting.catalog.3_05_badlands_railway.description",
+  "title": "Badlands Railway",
+  "description": "Craft 16 powered rails in badlands, above Y=80, during the day.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/3_05_badlands_railway/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_biome": "minecraft:badlands",
+            "min_y": 81,
+            "required_time": "day",
+            "required_count": 16,
+            "item": "minecraft:powered_rail"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:crafting/3_05_badlands_railway"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

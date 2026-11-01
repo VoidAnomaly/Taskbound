@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:wizard/catalog/1_07_first_enchantment",
+  "category_id": "taskbound:wizard/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 10,
+  "display_text": "task.taskbound.wizard.catalog.1_07_first_enchantment.description",
+  "title": "First Enchantment",
+  "description": "Enchant 1 iron sword with any enchantment at an enchanting table.",
+  "required_capabilities": [
+    "minecraft:enchant_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/1_07_first_enchantment/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "enchant_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:iron_sword",
+            "method": "table"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:enchant_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:wizardry/1_07_first_enchantment"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 12000
+}

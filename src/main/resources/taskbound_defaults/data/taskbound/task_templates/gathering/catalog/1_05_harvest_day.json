@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:gathering/catalog/1_05_harvest_day",
+  "category_id": "taskbound:gathering/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 10,
+  "display_text": "task.taskbound.gathering.catalog.1_05_harvest_day.description",
+  "title": "Harvest Day",
+  "description": "Harvest 8 fully grown wheat crops.",
+  "required_capabilities": [
+    "minecraft:harvest_crop"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/1_05_harvest_day/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "harvest_crop",
+          "parameters": {
+            "required_count": 8,
+            "block": "minecraft:wheat"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:harvest_crop"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:gathering/1_05_harvest_day"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 18000
+}

@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:gathering/catalog/1_06_underwater_greens",
+  "category_id": "taskbound:gathering/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 8,
+  "display_text": "task.taskbound.gathering.catalog.1_06_underwater_greens.description",
+  "title": "Underwater Greens",
+  "description": "Hand in 8 kelp at a Task Board.",
+  "required_capabilities": [
+    "minecraft:hand_in_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/1_06_underwater_greens/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "item": "minecraft:kelp",
+            "required_count": 8
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:gathering/1_06_underwater_greens"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

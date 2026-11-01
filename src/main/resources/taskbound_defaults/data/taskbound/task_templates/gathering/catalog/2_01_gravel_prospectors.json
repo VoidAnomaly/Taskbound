@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:gathering/catalog/2_01_gravel_prospectors",
+  "category_id": "taskbound:gathering/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 16,
+  "display_text": "task.taskbound.gathering.catalog.2_01_gravel_prospectors.description",
+  "title": "Gravel Prospectors",
+  "description": "Hand in 24 gravel at a Task Board.",
+  "required_capabilities": [
+    "minecraft:hand_in_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/2_01_gravel_prospectors/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "item": "minecraft:gravel",
+            "required_count": 24
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:gathering/2_01_gravel_prospectors"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

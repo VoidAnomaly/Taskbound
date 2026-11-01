@@ -1,0 +1,18 @@
+{
+  "id": "taskbound:numismatics/spur",
+  "type": "ITEM",
+  "pool_id": "taskbound:numismatics",
+  "weight": 8.0,
+  "cost": 3,
+  "minimum_difficulty": 0,
+  "maximum_difficulty": null,
+  "minimum_reputation_level": null,
+  "maximum_count": 3,
+  "giver_restrictions": [],
+  "rarity_group": "common",
+  "tangible": true,
+  "payload": {
+    "item": "numismatics:spur",
+    "count": 4
+  }
+}

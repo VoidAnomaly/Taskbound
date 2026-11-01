@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:hunter/catalog/2_05_steel_against_bone",
+  "category_id": "taskbound:hunter/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 14,
+  "display_text": "task.taskbound.hunter.catalog.2_05_steel_against_bone.description",
+  "title": "Steel Against Bone",
+  "description": "Defeat 5 skeletons with an iron sword.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/2_05_steel_against_bone/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_weapon": "minecraft:iron_sword",
+            "required_count": 5,
+            "entity": "minecraft:skeleton"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:hunting/2_05_steel_against_bone"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 24000
+}

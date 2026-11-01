@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:angler/catalog/2_01_tropical_curiosity",
+  "category_id": "taskbound:angler/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 45,
+  "display_text": "task.taskbound.angler.catalog.2_01_tropical_curiosity.description",
+  "title": "Tropical Curiosity",
+  "description": "Catch 1 tropical fish.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/2_01_tropical_curiosity/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_count": 1,
+            "fish_item": "minecraft:tropical_fish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:fishing/2_01_tropical_curiosity"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

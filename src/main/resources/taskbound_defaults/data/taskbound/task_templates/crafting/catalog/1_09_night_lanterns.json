@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:crafting/catalog/1_09_night_lanterns",
+  "category_id": "taskbound:crafting/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 9,
+  "display_text": "task.taskbound.crafting.catalog.1_09_night_lanterns.description",
+  "title": "Night Lanterns",
+  "description": "Craft 2 lanterns at night.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/1_09_night_lanterns/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_time": "night",
+            "required_count": 2,
+            "item": "minecraft:lantern"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:crafting/1_09_night_lanterns"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

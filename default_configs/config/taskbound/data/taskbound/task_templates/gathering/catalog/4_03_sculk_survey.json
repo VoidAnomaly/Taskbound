@@ -1,0 +1,49 @@
+{
+  "id": "taskbound:gathering/catalog/4_03_sculk_survey",
+  "category_id": "taskbound:gathering/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 44,
+  "display_text": "task.taskbound.gathering.catalog.4_03_sculk_survey.description",
+  "title": "Sculk Survey",
+  "description": "Mine 8 sculk catalyst blocks in a deep dark biome with Silk Touch while affected by Night Vision.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/4_03_sculk_survey/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "required_biome": "minecraft:deep_dark",
+            "tool_enchantment": "minecraft:silk_touch",
+            "minimum_tool_enchantment_level": 1,
+            "required_effect": "minecraft:night_vision",
+            "minimum_effect_amplifier": 0,
+            "required_count": 8,
+            "block": "minecraft:sculk_catalyst"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:gathering/4_03_sculk_survey"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

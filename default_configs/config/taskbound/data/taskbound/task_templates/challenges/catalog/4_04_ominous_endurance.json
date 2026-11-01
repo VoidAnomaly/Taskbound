@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:challenges/catalog/4_04_ominous_endurance",
+  "category_id": "taskbound:challenges/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 78,
+  "display_text": "task.taskbound.challenges.catalog.4_04_ominous_endurance.description",
+  "title": "Ominous Endurance",
+  "description": "Complete 2 ominous Trial Spawner encounters using full iron armor, without healing items and without dying. Keep full iron armor throughout both encounters; changing armor or using healing items ends the attempt.",
+  "required_capabilities": [
+    "minecraft:trial_encounter"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/4_04_ominous_endurance/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "trial_encounter",
+          "parameters": {
+            "required_count": 2,
+            "ominous": true,
+            "armor_set": "full_iron",
+            "no_healing": true,
+            "no_death": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:trial_encounter"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:challenges/4_04_ominous_endurance"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

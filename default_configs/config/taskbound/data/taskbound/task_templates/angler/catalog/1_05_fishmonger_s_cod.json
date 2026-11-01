@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:angler/catalog/1_05_fishmonger_s_cod",
+  "category_id": "taskbound:angler/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 17,
+  "display_text": "task.taskbound.angler.catalog.1_05_fishmonger_s_cod.description",
+  "title": "Fishmonger's Cod",
+  "description": "Catch 8 raw cod.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/1_05_fishmonger_s_cod/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_count": 8,
+            "fish_item": "minecraft:cod"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:fishing/1_05_fishmonger_s_cod"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "taskbound:wizard/catalog/level_3",
+  "giver_id": "taskbound:wizard",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:wizard/catalog/3_01_invisible_preparations",
+    "taskbound:wizard/catalog/3_02_wind_charged_drafts",
+    "taskbound:wizard/catalog/3_03_rainy_oozing_study",
+    "taskbound:wizard/catalog/3_04_swamp_restoratives",
+    "taskbound:wizard/catalog/3_05_field_enchantment",
+    "taskbound:wizard/catalog/3_06_rainy_swamp_alchemy"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

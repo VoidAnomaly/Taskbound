@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:crafting/catalog/1_07_wayfinder",
+  "category_id": "taskbound:crafting/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 10,
+  "display_text": "task.taskbound.crafting.catalog.1_07_wayfinder.description",
+  "title": "Wayfinder",
+  "description": "Craft 1 compass.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/1_07_wayfinder/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:compass"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:crafting/1_07_wayfinder"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

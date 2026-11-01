@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:gathering/catalog/1_02_stone_supply",
+  "category_id": "taskbound:gathering/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 6,
+  "display_text": "task.taskbound.gathering.catalog.1_02_stone_supply.description",
+  "title": "Stone Supply",
+  "description": "Mine 16 stone blocks with a pickaxe.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/1_02_stone_supply/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "required_count": 16,
+            "block": "minecraft:stone",
+            "required_tool_tag": "minecraft:pickaxes"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:gathering/1_02_stone_supply"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 12000
+}

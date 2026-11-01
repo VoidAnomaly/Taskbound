@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:angler/catalog/3_03_coastal_pufferfish",
+  "category_id": "taskbound:angler/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 28,
+  "display_text": "task.taskbound.angler.catalog.3_03_coastal_pufferfish.description",
+  "title": "Coastal Pufferfish",
+  "description": "Catch 2 pufferfish in an ocean biome while raining.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/3_03_coastal_pufferfish/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_biome_tag": "taskbound:oceans",
+            "required_weather": "rain",
+            "required_count": 2,
+            "fish_item": "minecraft:pufferfish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:fishing/3_03_coastal_pufferfish"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

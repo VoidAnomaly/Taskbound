@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:angler/catalog/1_06_salmon_supply",
+  "category_id": "taskbound:angler/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 24,
+  "display_text": "task.taskbound.angler.catalog.1_06_salmon_supply.description",
+  "title": "Salmon Supply",
+  "description": "Catch 6 raw salmon.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/1_06_salmon_supply/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_count": 6,
+            "fish_item": "minecraft:salmon"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:fishing/1_06_salmon_supply"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "taskbound:challenges/catalog/3_05_desperate_defense",
+  "category_id": "taskbound:challenges/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 37,
+  "display_text": "task.taskbound.challenges.catalog.3_05_desperate_defense.description",
+  "title": "Desperate Defense",
+  "description": "Defeat 3 zombies with an axe while at 6 health points or less and during rain.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/3_05_desperate_defense/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_weapon_tag": "taskbound:axes",
+            "max_health": 6,
+            "required_weather": "rain",
+            "required_count": 3,
+            "entity": "minecraft:zombie"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:challenges/3_05_desperate_defense"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

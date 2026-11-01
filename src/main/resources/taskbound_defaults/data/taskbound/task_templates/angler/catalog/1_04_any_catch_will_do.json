@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:angler/catalog/1_04_any_catch_will_do",
+  "category_id": "taskbound:angler/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 16,
+  "display_text": "task.taskbound.angler.catalog.1_04_any_catch_will_do.description",
+  "title": "Any Catch Will Do",
+  "description": "Catch any 12 fish items by fishing.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/1_04_any_catch_will_do/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_count": 12,
+            "fish_item_tag": "taskbound:vanilla_fish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:fishing/1_04_any_catch_will_do"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 18000
+}

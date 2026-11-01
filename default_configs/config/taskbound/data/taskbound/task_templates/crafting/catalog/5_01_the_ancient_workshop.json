@@ -1,0 +1,96 @@
+{
+  "id": "taskbound:crafting/catalog/5_01_the_ancient_workshop",
+  "category_id": "taskbound:crafting/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 110,
+  "display_text": "task.taskbound.crafting.catalog.5_01_the_ancient_workshop.description",
+  "title": "The Ancient Workshop",
+  "description": "• Craft 1 lodestone inside an Ancient City while under Night Vision.\n• Craft 1 calibrated sculk sensor inside that Ancient City while under Night Vision.\n• Then place the 1 lodestone you crafted inside that city.\n• Place the 1 calibrated sculk sensor you crafted inside that city.\n\nCraft both blocks in either order before placing them. Place them in either order in the same Ancient City. Do not awaken a Warden during this task.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:place_crafted",
+    "minecraft:tracked_craft"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/5_01_the_ancient_workshop/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_craft",
+          "parameters": {
+            "item": "minecraft:lodestone",
+            "required_count": 1,
+            "required_structure": "minecraft:ancient_city",
+            "same_structure": true,
+            "guard_warden": true,
+            "required_effect": "minecraft:night_vision"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_craft"
+          ]
+        },
+        {
+          "type": "tracked_craft",
+          "parameters": {
+            "item": "minecraft:calibrated_sculk_sensor",
+            "required_count": 1,
+            "required_structure": "minecraft:ancient_city",
+            "same_structure": true,
+            "guard_warden": true,
+            "required_effect": "minecraft:night_vision"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_craft"
+          ]
+        },
+        {
+          "type": "place_crafted",
+          "parameters": {
+            "item": "minecraft:lodestone",
+            "required_count": 1,
+            "provenance_stage": "objective_0",
+            "required_structure": "minecraft:ancient_city",
+            "same_structure": true,
+            "guard_warden": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:place_crafted"
+          ]
+        },
+        {
+          "type": "place_crafted",
+          "parameters": {
+            "item": "minecraft:calibrated_sculk_sensor",
+            "required_count": 1,
+            "provenance_stage": "objective_1",
+            "required_structure": "minecraft:ancient_city",
+            "same_structure": true,
+            "guard_warden": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:place_crafted"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:crafting/5_01_the_ancient_workshop",
+        "objective_stages": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

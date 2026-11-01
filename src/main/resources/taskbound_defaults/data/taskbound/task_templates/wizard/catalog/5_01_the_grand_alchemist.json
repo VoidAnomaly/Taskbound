@@ -1,0 +1,74 @@
+{
+  "id": "taskbound:wizard/catalog/5_01_the_grand_alchemist",
+  "category_id": "taskbound:wizard/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 100,
+  "display_text": "task.taskbound.wizard.catalog.5_01_the_grand_alchemist.description",
+  "title": "The Grand Alchemist",
+  "description": "• Brew 1 Lingering Potion of Regeneration II.\n• Brew 1 Lingering Potion of Weaving.\n• Brew 1 Lingering Potion of Wind Charging.\n\nComplete all three brews in any order in a swamp during rain at night. Place each final ingredient into the brewing stand yourself.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/5_01_the_grand_alchemist/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:lingering_potion",
+            "potion": "minecraft:strong_regeneration",
+            "required_biome": "minecraft:swamp",
+            "required_time": "night",
+            "required_weather": "rain"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        },
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:lingering_potion",
+            "potion": "minecraft:weaving",
+            "required_biome": "minecraft:swamp",
+            "required_time": "night",
+            "required_weather": "rain"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        },
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:lingering_potion",
+            "potion": "minecraft:wind_charged",
+            "required_biome": "minecraft:swamp",
+            "required_time": "night",
+            "required_weather": "rain"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:wizardry/5_01_the_grand_alchemist",
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

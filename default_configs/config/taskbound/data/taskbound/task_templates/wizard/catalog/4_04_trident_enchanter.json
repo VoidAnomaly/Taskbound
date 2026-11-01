@@ -1,0 +1,49 @@
+{
+  "id": "taskbound:wizard/catalog/4_04_trident_enchanter",
+  "category_id": "taskbound:wizard/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 80,
+  "display_text": "task.taskbound.wizard.catalog.4_04_trident_enchanter.description",
+  "title": "Trident Enchanter",
+  "description": "Apply Loyalty III or higher to 1 trident by anvil during rain in an ocean biome.",
+  "required_capabilities": [
+    "minecraft:enchant_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/4_04_trident_enchanter/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "enchant_item",
+          "parameters": {
+            "method": "anvil",
+            "required_weather": "rain",
+            "required_biome_tag": "taskbound:oceans",
+            "required_count": 1,
+            "item": "minecraft:trident",
+            "required_enchantment": "minecraft:loyalty",
+            "minimum_enchantment_level": 3
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:enchant_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:wizardry/4_04_trident_enchanter"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

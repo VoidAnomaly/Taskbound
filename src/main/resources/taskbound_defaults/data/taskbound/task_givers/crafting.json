@@ -1,0 +1,48 @@
+{
+  "id": "taskbound:crafting",
+  "display_name": "task_giver.taskbound.crafting",
+  "enabled": true,
+  "icon_item": "minecraft:crafting_table",
+  "reputation": {
+    "thresholds": {
+      "1": 0,
+      "2": 10,
+      "3": 25,
+      "4": 45,
+      "5": 70,
+      "6": 100,
+      "7": 135,
+      "8": 175,
+      "9": 220,
+      "10": 270,
+      "11": 325,
+      "12": 385,
+      "13": 450,
+      "14": 520,
+      "15": 595,
+      "16": 675,
+      "17": 760,
+      "18": 850,
+      "19": 945,
+      "20": 1045
+    }
+  },
+  "rank_names": {
+    "1": "rank.taskbound.crafting.catalog_1",
+    "5": "rank.taskbound.crafting.catalog_2",
+    "10": "rank.taskbound.crafting.catalog_3",
+    "15": "rank.taskbound.crafting.catalog_4",
+    "20": "rank.taskbound.crafting.catalog_5"
+  },
+  "category_ids": [
+    "taskbound:crafting/catalog/level_1",
+    "taskbound:crafting/catalog/level_2",
+    "taskbound:crafting/catalog/level_3",
+    "taskbound:crafting/catalog/level_4",
+    "taskbound:crafting/catalog/level_5"
+  ],
+  "reward_pool_ids": [
+    "taskbound:catalog"
+  ],
+  "reward_multiplier": 1.0
+}

@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:crafting/catalog/3_01_scholar_s_workstation",
+  "category_id": "taskbound:crafting/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 42,
+  "display_text": "task.taskbound.crafting.catalog.3_01_scholar_s_workstation.description",
+  "title": "Scholar's Workstation",
+  "description": "Craft 1 enchanting table.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/3_01_scholar_s_workstation/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:enchanting_table"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:crafting/3_01_scholar_s_workstation"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 36000
+}

@@ -1,0 +1,18 @@
+{
+  "id": "taskbound:catalog/diamond",
+  "type": "ITEM",
+  "pool_id": "taskbound:catalog",
+  "weight": 4000.0,
+  "cost": 14,
+  "minimum_difficulty": 35,
+  "maximum_difficulty": 109,
+  "minimum_reputation_level": null,
+  "maximum_count": 3,
+  "giver_restrictions": [],
+  "rarity_group": "rare",
+  "tangible": true,
+  "payload": {
+    "item": "minecraft:diamond",
+    "count": 1
+  }
+}

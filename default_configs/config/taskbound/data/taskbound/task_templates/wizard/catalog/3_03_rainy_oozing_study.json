@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:wizard/catalog/3_03_rainy_oozing_study",
+  "category_id": "taskbound:wizard/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 34,
+  "display_text": "task.taskbound.wizard.catalog.3_03_rainy_oozing_study.description",
+  "title": "Rainy Oozing Study",
+  "description": "Brew 2 Potions of Oozing during rain. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/3_03_rainy_oozing_study/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 2,
+            "required_weather": "rain",
+            "item": "minecraft:potion",
+            "potion": "minecraft:oozing"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:wizardry/3_03_rainy_oozing_study"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

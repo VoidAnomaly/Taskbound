@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "taskbound",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "minecraft:feather"
+    },
+    {
+      "item": "minecraft:compass"
+    }
+  ],
+  "result": {
+    "id": "taskbound:task_journal",
+    "count": 1
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "taskbound:angler/catalog/3_06_warm_water_spines",
+  "category_id": "taskbound:angler/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 36,
+  "display_text": "task.taskbound.angler.catalog.3_06_warm_water_spines.description",
+  "title": "Warm-Water Spines",
+  "description": "Catch 2 pufferfish in a warm ocean at night while it's raining.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/3_06_warm_water_spines/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_biome": "minecraft:warm_ocean",
+            "required_time": "night",
+            "required_weather": "rain",
+            "required_count": 2,
+            "fish_item": "minecraft:pufferfish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:fishing/3_06_warm_water_spines"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

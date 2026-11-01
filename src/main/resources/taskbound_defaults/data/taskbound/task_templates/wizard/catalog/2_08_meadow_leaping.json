@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:wizard/catalog/2_08_meadow_leaping",
+  "category_id": "taskbound:wizard/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 32,
+  "display_text": "task.taskbound.wizard.catalog.2_08_meadow_leaping.description",
+  "title": "Meadow Leaping",
+  "description": "Brew 2 Potions of Leaping during the day in a meadow biome. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/2_08_meadow_leaping/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 2,
+            "required_biome": "minecraft:meadow",
+            "required_time": "day",
+            "item": "minecraft:potion",
+            "potion": "minecraft:leaping"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:wizardry/2_08_meadow_leaping"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:wizard/catalog/3_02_wind_charged_drafts",
+  "category_id": "taskbound:wizard/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 43,
+  "display_text": "task.taskbound.wizard.catalog.3_02_wind_charged_drafts.description",
+  "title": "Wind Charged Drafts",
+  "description": "Brew 2 Potions of Wind Charging. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/3_02_wind_charged_drafts/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 2,
+            "item": "minecraft:potion",
+            "potion": "minecraft:wind_charged"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:wizardry/3_02_wind_charged_drafts"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

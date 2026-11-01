@@ -1,0 +1,43 @@
+{
+  "id": "taskbound:gathering/catalog/4_01_ancient_fragments",
+  "category_id": "taskbound:gathering/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 62,
+  "display_text": "task.taskbound.gathering.catalog.4_01_ancient_fragments.description",
+  "title": "Ancient Fragments",
+  "description": "Mine 1 ancient debris with an Efficiency III-or-better pickaxe. Player-placed and rebroken ancient debris does not count.",
+  "required_capabilities": [
+    "minecraft:tracked_gather"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/4_01_ancient_fragments/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_gather",
+          "parameters": {
+            "block": "minecraft:ancient_debris",
+            "required_count": 1,
+            "natural": true,
+            "tool_enchantment": "minecraft:efficiency",
+            "minimum_tool_enchantment_level": 3,
+            "required_tool_tag": "minecraft:pickaxes"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_gather"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:gathering/4_01_ancient_fragments"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "taskbound:hunter/catalog/4_02_flaming_volley",
+  "category_id": "taskbound:hunter/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 52,
+  "display_text": "task.taskbound.hunter.catalog.4_02_flaming_volley.description",
+  "title": "Flaming Volley",
+  "description": "Defeat 6 blazes inside a Nether Fortress using a bow.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/4_02_flaming_volley/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_structure": "minecraft:fortress",
+            "required_weapon": "minecraft:bow",
+            "required_count": 6,
+            "entity": "minecraft:blaze"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:hunting/4_02_flaming_volley"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 48000
+}

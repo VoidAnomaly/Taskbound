@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:crafting/catalog/2_04_the_observer",
+  "category_id": "taskbound:crafting/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 22,
+  "display_text": "task.taskbound.crafting.catalog.2_04_the_observer.description",
+  "title": "The Observer",
+  "description": "Craft 2 observers.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/2_04_the_observer/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_count": 2,
+            "item": "minecraft:observer"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:crafting/2_04_the_observer"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 30000
+}

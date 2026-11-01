@@ -1,0 +1,47 @@
+{
+  "id": "taskbound:wizard/catalog/4_01_diamond_s_gentle_touch",
+  "category_id": "taskbound:wizard/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 52,
+  "display_text": "task.taskbound.wizard.catalog.4_01_diamond_s_gentle_touch.description",
+  "title": "Diamond's Gentle Touch",
+  "description": "Enchant 1 diamond pickaxe with Silk Touch at night, by table or anvil.",
+  "required_capabilities": [
+    "minecraft:enchant_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/4_01_diamond_s_gentle_touch/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "enchant_item",
+          "parameters": {
+            "required_time": "night",
+            "required_count": 1,
+            "item": "minecraft:diamond_pickaxe",
+            "required_enchantment": "minecraft:silk_touch",
+            "minimum_enchantment_level": 1
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:enchant_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:wizardry/4_01_diamond_s_gentle_touch"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

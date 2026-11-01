@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:challenges/catalog/2_06_fleet_courier",
+  "category_id": "taskbound:challenges/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 19,
+  "display_text": "task.taskbound.challenges.catalog.2_06_fleet_courier.description",
+  "title": "Fleet Courier",
+  "description": "Sprint 600 blocks while affected by Speed.",
+  "required_capabilities": [
+    "minecraft:travel_distance"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/2_06_fleet_courier/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "travel_distance",
+          "parameters": {
+            "required_count": 600,
+            "mode": "sprint",
+            "required_effect": "minecraft:speed"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:travel_distance"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:challenges/2_06_fleet_courier"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 18000
+}

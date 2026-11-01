@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:challenges/catalog/2_03_long_range_accuracy",
+  "category_id": "taskbound:challenges/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.challenges.catalog.2_03_long_range_accuracy.description",
+  "title": "Long-Range Accuracy",
+  "description": "Land 4 bow hits on hostile mobs from at least 20 blocks away.",
+  "required_capabilities": [
+    "minecraft:challenge_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/2_03_long_range_accuracy/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "challenge_action",
+          "parameters": {
+            "required_count": 4,
+            "action": "bow_hit_on_hostile",
+            "minimum_distance": 20
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:challenge_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:challenges/2_03_long_range_accuracy"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 24000
+}

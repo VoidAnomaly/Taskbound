@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:challenges/catalog/1_08_three_without_falling",
+  "category_id": "taskbound:challenges/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 7,
+  "display_text": "task.taskbound.challenges.catalog.1_08_three_without_falling.description",
+  "title": "Three Without Falling",
+  "description": "Defeat 3 hostile mobs without dying. Progress resets on death until you claim the task.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/1_08_three_without_falling/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_count": 3,
+            "hostile_only": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "reset_on_death": true,
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:challenges/1_08_three_without_falling"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

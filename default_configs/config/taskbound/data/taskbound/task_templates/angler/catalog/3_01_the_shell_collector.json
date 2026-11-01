@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:angler/catalog/3_01_the_shell_collector",
+  "category_id": "taskbound:angler/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 60,
+  "display_text": "task.taskbound.angler.catalog.3_01_the_shell_collector.description",
+  "title": "The Shell Collector",
+  "description": "Catch 1 nautilus shell while fishing.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/3_01_the_shell_collector/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_count": 1,
+            "fish_item": "minecraft:nautilus_shell"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:fishing/3_01_the_shell_collector"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

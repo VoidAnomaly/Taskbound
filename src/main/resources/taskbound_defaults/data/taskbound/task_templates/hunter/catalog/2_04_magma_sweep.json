@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:hunter/catalog/2_04_magma_sweep",
+  "category_id": "taskbound:hunter/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 21,
+  "display_text": "task.taskbound.hunter.catalog.2_04_magma_sweep.description",
+  "title": "Magma Sweep",
+  "description": "Defeat 4 magma cubes.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/2_04_magma_sweep/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_count": 4,
+            "entity": "minecraft:magma_cube"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:hunting/2_04_magma_sweep"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

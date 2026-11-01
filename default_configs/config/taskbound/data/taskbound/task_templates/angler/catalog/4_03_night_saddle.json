@@ -1,0 +1,44 @@
+{
+  "id": "taskbound:angler/catalog/4_03_night_saddle",
+  "category_id": "taskbound:angler/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 82,
+  "display_text": "task.taskbound.angler.catalog.4_03_night_saddle.description",
+  "title": "Night Saddle",
+  "description": "Fish up 1 saddle in a warm ocean at night using Luck of the Sea III.",
+  "required_capabilities": [
+    "minecraft:tracked_fish"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/4_03_night_saddle/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_count": 1,
+            "required_biome": "minecraft:warm_ocean",
+            "required_time": "night",
+            "tool_enchantment": "minecraft:luck_of_the_sea",
+            "minimum_tool_enchantment_level": 3,
+            "fish_item": "minecraft:saddle",
+            "treasure": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:fishing/4_03_night_saddle"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

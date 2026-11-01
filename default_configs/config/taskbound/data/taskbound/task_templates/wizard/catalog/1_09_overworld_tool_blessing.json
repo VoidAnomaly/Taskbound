@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:wizard/catalog/1_09_overworld_tool_blessing",
+  "category_id": "taskbound:wizard/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 10,
+  "display_text": "task.taskbound.wizard.catalog.1_09_overworld_tool_blessing.description",
+  "title": "Overworld Tool Blessing",
+  "description": "Enchant 1 iron pickaxe with any enchantment in the Overworld.",
+  "required_capabilities": [
+    "minecraft:enchant_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/1_09_overworld_tool_blessing/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "enchant_item",
+          "parameters": {
+            "required_dimension": "minecraft:overworld",
+            "required_count": 1,
+            "item": "minecraft:iron_pickaxe"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:enchant_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:wizardry/1_09_overworld_tool_blessing"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

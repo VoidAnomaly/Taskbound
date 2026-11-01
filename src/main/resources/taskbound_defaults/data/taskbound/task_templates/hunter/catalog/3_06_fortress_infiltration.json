@@ -1,0 +1,48 @@
+{
+  "id": "taskbound:hunter/catalog/3_06_fortress_infiltration",
+  "category_id": "taskbound:hunter/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 38,
+  "display_text": "task.taskbound.hunter.catalog.3_06_fortress_infiltration.description",
+  "title": "Fortress Infiltration",
+  "description": "Defeat 4 wither skeletons in a Nether Fortress while affected by Fire Resistance and using melee attacks.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/3_06_fortress_infiltration/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_structure": "minecraft:fortress",
+            "required_effect": "minecraft:fire_resistance",
+            "minimum_effect_amplifier": 0,
+            "method": "melee",
+            "required_count": 4,
+            "entity": "minecraft:wither_skeleton"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:hunting/3_06_fortress_infiltration"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

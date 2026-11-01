@@ -1,0 +1,44 @@
+{
+  "id": "taskbound:angler/catalog/4_04_stormbound_tome",
+  "category_id": "taskbound:angler/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 85,
+  "display_text": "task.taskbound.angler.catalog.4_04_stormbound_tome.description",
+  "title": "Stormbound Tome",
+  "description": "Fish up 1 enchanted book in a river during rain using a Luck of the Sea II-or-better rod.",
+  "required_capabilities": [
+    "minecraft:tracked_fish"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/4_04_stormbound_tome/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_count": 1,
+            "required_biome": "minecraft:river",
+            "required_weather": "rain",
+            "tool_enchantment": "minecraft:luck_of_the_sea",
+            "minimum_tool_enchantment_level": 2,
+            "fish_item": "minecraft:enchanted_book",
+            "treasure": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:fishing/4_04_stormbound_tome"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

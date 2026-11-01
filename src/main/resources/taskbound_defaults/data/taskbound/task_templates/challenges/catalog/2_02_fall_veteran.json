@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:challenges/catalog/2_02_fall_veteran",
+  "category_id": "taskbound:challenges/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 15,
+  "display_text": "task.taskbound.challenges.catalog.2_02_fall_veteran.description",
+  "title": "Fall Veteran",
+  "description": "Survive 2 separate damaging falls of at least 9 blocks.",
+  "required_capabilities": [
+    "minecraft:survive_fall"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/2_02_fall_veteran/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "survive_fall",
+          "parameters": {
+            "required_count": 2,
+            "minimum_fall_distance": 9
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:survive_fall"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:challenges/2_02_fall_veteran"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

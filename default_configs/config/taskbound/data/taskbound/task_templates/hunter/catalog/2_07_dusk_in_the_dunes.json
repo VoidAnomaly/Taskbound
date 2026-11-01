@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:hunter/catalog/2_07_dusk_in_the_dunes",
+  "category_id": "taskbound:hunter/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 15,
+  "display_text": "task.taskbound.hunter.catalog.2_07_dusk_in_the_dunes.description",
+  "title": "Dusk in the Dunes",
+  "description": "Defeat 4 husks in a desert at night.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/2_07_dusk_in_the_dunes/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_biome": "minecraft:desert",
+            "required_time": "night",
+            "required_count": 4,
+            "entity": "minecraft:husk"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:hunting/2_07_dusk_in_the_dunes"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:wizard/catalog/2_06_night_scholar",
+  "category_id": "taskbound:wizard/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 17,
+  "display_text": "task.taskbound.wizard.catalog.2_06_night_scholar.description",
+  "title": "Night Scholar",
+  "description": "Enchant 2 books at night using an enchanting table.",
+  "required_capabilities": [
+    "minecraft:enchant_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/2_06_night_scholar/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "enchant_item",
+          "parameters": {
+            "required_time": "night",
+            "required_count": 2,
+            "item": "minecraft:enchanted_book",
+            "method": "table"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:enchant_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:wizardry/2_06_night_scholar"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

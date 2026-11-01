@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:angler/catalog/2_04_first_treasure",
+  "category_id": "taskbound:angler/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 32,
+  "display_text": "task.taskbound.angler.catalog.2_04_first_treasure.description",
+  "title": "First Treasure",
+  "description": "Catch any 1 item from the vanilla fishing treasure loot table.",
+  "required_capabilities": [
+    "minecraft:tracked_fish"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/2_04_first_treasure/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_count": 1,
+            "treasure": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:fishing/2_04_first_treasure"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

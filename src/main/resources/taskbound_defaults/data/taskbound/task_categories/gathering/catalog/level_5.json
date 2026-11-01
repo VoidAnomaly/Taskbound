@@ -1,0 +1,17 @@
+{
+  "id": "taskbound:gathering/catalog/level_5",
+  "giver_id": "taskbound:gathering",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:gathering/catalog/5_01_the_geologist_s_traverse",
+    "taskbound:gathering/catalog/5_02_the_silent_sample"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

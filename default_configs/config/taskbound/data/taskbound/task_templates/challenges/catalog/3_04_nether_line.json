@@ -1,0 +1,47 @@
+{
+  "id": "taskbound:challenges/catalog/3_04_nether_line",
+  "category_id": "taskbound:challenges/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 30,
+  "display_text": "task.taskbound.challenges.catalog.3_04_nether_line.description",
+  "title": "Nether Line",
+  "description": "Block 6 piglin melee attacks with a shield in the Nether while under Fire Resistance.",
+  "required_capabilities": [
+    "minecraft:challenge_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/3_04_nether_line/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "challenge_action",
+          "parameters": {
+            "required_dimension": "minecraft:the_nether",
+            "required_effect": "minecraft:fire_resistance",
+            "minimum_effect_amplifier": 0,
+            "required_count": 6,
+            "action": "shield_block_piglin"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:challenge_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:challenges/3_04_nether_line"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

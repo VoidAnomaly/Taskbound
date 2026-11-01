@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:gathering/catalog/3_02_deep_construction",
+  "category_id": "taskbound:gathering/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 18,
+  "display_text": "task.taskbound.gathering.catalog.3_02_deep_construction.description",
+  "title": "Deep Construction",
+  "description": "Mine 16 tuff blocks.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/3_02_deep_construction/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "required_count": 16,
+            "block": "minecraft:tuff"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:gathering/3_02_deep_construction"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 24000
+}

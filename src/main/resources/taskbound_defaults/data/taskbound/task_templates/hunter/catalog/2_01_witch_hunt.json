@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:hunter/catalog/2_01_witch_hunt",
+  "category_id": "taskbound:hunter/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 26,
+  "display_text": "task.taskbound.hunter.catalog.2_01_witch_hunt.description",
+  "title": "Witch Hunt",
+  "description": "Defeat 2 witches.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/2_01_witch_hunt/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_count": 2,
+            "entity": "minecraft:witch"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:hunting/2_01_witch_hunt"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

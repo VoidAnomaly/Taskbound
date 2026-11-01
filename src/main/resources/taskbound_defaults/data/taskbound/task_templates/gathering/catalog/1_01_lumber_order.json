@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:gathering/catalog/1_01_lumber_order",
+  "category_id": "taskbound:gathering/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 12,
+  "display_text": "task.taskbound.gathering.catalog.1_01_lumber_order.description",
+  "title": "Lumber Order",
+  "description": "Hand in 12 oak logs at a Task Board.",
+  "required_capabilities": [
+    "minecraft:hand_in_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/1_01_lumber_order/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "item": "minecraft:oak_log",
+            "required_count": 12
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:gathering/1_01_lumber_order"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 12000
+}

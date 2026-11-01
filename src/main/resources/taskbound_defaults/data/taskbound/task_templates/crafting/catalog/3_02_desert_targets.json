@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:crafting/catalog/3_02_desert_targets",
+  "category_id": "taskbound:crafting/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 22,
+  "display_text": "task.taskbound.crafting.catalog.3_02_desert_targets.description",
+  "title": "Desert Targets",
+  "description": "Craft 2 target blocks in a desert.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/3_02_desert_targets/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_biome": "minecraft:desert",
+            "required_count": 2,
+            "item": "minecraft:target"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:crafting/3_02_desert_targets"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

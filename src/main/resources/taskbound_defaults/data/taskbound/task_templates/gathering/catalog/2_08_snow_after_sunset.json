@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:gathering/catalog/2_08_snow_after_sunset",
+  "category_id": "taskbound:gathering/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.gathering.catalog.2_08_snow_after_sunset.description",
+  "title": "Snow after Sunset",
+  "description": "Mine 6 snow blocks in snowy slopes at night.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/2_08_snow_after_sunset/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "required_biome": "minecraft:snowy_slopes",
+            "required_time": "night",
+            "required_count": 6,
+            "block": "minecraft:snow_block"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:gathering/2_08_snow_after_sunset"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

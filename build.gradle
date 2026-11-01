@@ -1,0 +1,79 @@
+// Build with Java 21: ./gradlew build (Windows: gradlew.bat build).
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.142'
+    id 'idea'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = "${mod_id}-${minecraft_version}"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+}
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+
+    mods {
+        taskbound {
+            sourceSet sourceSets.main
+        }
+    }
+
+    runs {
+        client {
+            client()
+            loadedMods = [mods.taskbound]
+        }
+
+        server {
+            server()
+            loadedMods = [mods.taskbound]
+            programArgument '--nogui'
+        }
+
+        data {
+            data()
+            loadedMods = [mods.taskbound]
+            programArguments.addAll '--mod', project.mod_id,
+                    '--all',
+                    '--output', file('src/generated/resources/').absolutePath,
+                    '--existing', file('src/main/resources/').absolutePath
+        }
+
+        configureEach {
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+tasks.named('jar', Jar) {
+    from('LICENSE') { into 'META-INF' }
+    manifest {
+        attributes 'Implementation-Title': mod_name,
+                'Implementation-Version': mod_version
+    }
+}
+
+// Optional local development setup; the public build does not require this file.
+if (file('gradle/development.gradle').isFile()) {
+    apply from: 'gradle/development.gradle'
+}

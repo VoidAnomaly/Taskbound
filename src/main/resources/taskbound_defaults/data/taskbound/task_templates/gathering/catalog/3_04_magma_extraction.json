@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:gathering/catalog/3_04_magma_extraction",
+  "category_id": "taskbound:gathering/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 28,
+  "display_text": "task.taskbound.gathering.catalog.3_04_magma_extraction.description",
+  "title": "Magma Extraction",
+  "description": "Mine 8 magma blocks in the Nether.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/3_04_magma_extraction/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "required_dimension": "minecraft:the_nether",
+            "required_count": 8,
+            "block": "minecraft:magma_block"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:gathering/3_04_magma_extraction"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

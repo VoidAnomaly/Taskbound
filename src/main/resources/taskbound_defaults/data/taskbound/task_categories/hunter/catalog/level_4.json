@@ -1,0 +1,19 @@
+{
+  "id": "taskbound:hunter/catalog/level_4",
+  "giver_id": "taskbound:hunter",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:hunter/catalog/4_01_ravager_takedown",
+    "taskbound:hunter/catalog/4_02_flaming_volley",
+    "taskbound:hunter/catalog/4_03_stone_and_steel_test",
+    "taskbound:hunter/catalog/4_04_skyward_duel"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

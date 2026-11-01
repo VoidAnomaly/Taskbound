@@ -1,0 +1,43 @@
+{
+  "id": "taskbound:angler/catalog/3_05_swamp_treasure",
+  "category_id": "taskbound:angler/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 42,
+  "display_text": "task.taskbound.angler.catalog.3_05_swamp_treasure.description",
+  "title": "Swamp Treasure",
+  "description": "Catch 1 fishing treasure from open water in a swamp at night using Luck of the Sea I or better.",
+  "required_capabilities": [
+    "minecraft:tracked_fish"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/3_05_swamp_treasure/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_count": 1,
+            "required_biome": "minecraft:swamp",
+            "required_time": "night",
+            "tool_enchantment": "minecraft:luck_of_the_sea",
+            "minimum_tool_enchantment_level": 1,
+            "treasure": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:fishing/3_05_swamp_treasure"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

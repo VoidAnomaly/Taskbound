@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:angler/catalog/1_03_spiny_surprise",
+  "category_id": "taskbound:angler/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 12,
+  "display_text": "task.taskbound.angler.catalog.1_03_spiny_surprise.description",
+  "title": "Spiny Surprise",
+  "description": "Catch 1 pufferfish.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/1_03_spiny_surprise/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_count": 1,
+            "fish_item": "minecraft:pufferfish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:fishing/1_03_spiny_surprise"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

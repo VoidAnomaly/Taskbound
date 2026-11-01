@@ -1,0 +1,62 @@
+{
+  "id": "taskbound:angler/catalog/5_02_river_to_reef_expedition",
+  "category_id": "taskbound:angler/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 89,
+  "display_text": "task.taskbound.angler.catalog.5_02_river_to_reef_expedition.description",
+  "title": "River-to-Reef Expedition",
+  "description": "• Catch 4 salmon in a river during daylight.\n• Then catch 2 pufferfish in a warm ocean at night.\n\nComplete these objectives in order without dying. Stay alive until claiming at a Task Board.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/5_02_river_to_reef_expedition/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "fish_item": "minecraft:salmon",
+            "required_count": 4,
+            "required_biome": "minecraft:river",
+            "required_time": "day"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        },
+        {
+          "type": "catch_item",
+          "parameters": {
+            "fish_item": "minecraft:pufferfish",
+            "required_count": 2,
+            "required_biome": "minecraft:warm_ocean",
+            "required_time": "night"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "objective_order": "strict",
+        "no_death": true,
+        "one_time": true,
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:fishing/5_02_river_to_reef_expedition"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

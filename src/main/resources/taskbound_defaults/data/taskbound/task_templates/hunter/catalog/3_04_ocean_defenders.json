@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:hunter/catalog/3_04_ocean_defenders",
+  "category_id": "taskbound:hunter/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 44,
+  "display_text": "task.taskbound.hunter.catalog.3_04_ocean_defenders.description",
+  "title": "Ocean Defenders",
+  "description": "Defeat 3 guardians using a crossbow.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/3_04_ocean_defenders/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_weapon": "minecraft:crossbow",
+            "required_count": 3,
+            "entity": "minecraft:guardian"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:hunting/3_04_ocean_defenders"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

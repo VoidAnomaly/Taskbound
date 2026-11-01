@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:angler/catalog/2_02_pufferfish_parcel",
+  "category_id": "taskbound:angler/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 24,
+  "display_text": "task.taskbound.angler.catalog.2_02_pufferfish_parcel.description",
+  "title": "Pufferfish Parcel",
+  "description": "Catch 2 pufferfish.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/2_02_pufferfish_parcel/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_count": 2,
+            "fish_item": "minecraft:pufferfish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:fishing/2_02_pufferfish_parcel"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

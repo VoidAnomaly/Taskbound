@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:crafting/catalog/3_03_deep_sensor_workshop",
+  "category_id": "taskbound:crafting/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 46,
+  "display_text": "task.taskbound.crafting.catalog.3_03_deep_sensor_workshop.description",
+  "title": "Deep Sensor Workshop",
+  "description": "Craft 2 calibrated sculk sensors below Y=0 while in the Overworld.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/3_03_deep_sensor_workshop/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "max_y": -1,
+            "required_dimension": "minecraft:overworld",
+            "required_count": 2,
+            "item": "minecraft:calibrated_sculk_sensor"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:crafting/3_03_deep_sensor_workshop"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:challenges/catalog/1_07_water_traveler",
+  "category_id": "taskbound:challenges/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 5,
+  "display_text": "task.taskbound.challenges.catalog.1_07_water_traveler.description",
+  "title": "Water Traveler",
+  "description": "Travel 240 blocks piloting a boat.",
+  "required_capabilities": [
+    "minecraft:travel_distance"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/1_07_water_traveler/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "travel_distance",
+          "parameters": {
+            "required_count": 240,
+            "mode": "boat"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:travel_distance"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:challenges/1_07_water_traveler"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 12000
+}

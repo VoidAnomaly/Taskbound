@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "bottom": "taskbound:block/task_board_wood",
+    "side": "taskbound:block/task_board_wood",
+    "front": "taskbound:block/task_board_front",
+    "top": "taskbound:block/task_board_wood",
+    "particle": "taskbound:block/task_board_wood"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:angler/catalog/3_04_midnight_casting",
+  "category_id": "taskbound:angler/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 46,
+  "display_text": "task.taskbound.angler.catalog.3_04_midnight_casting.description",
+  "title": "Midnight Casting",
+  "description": "Catch any 2 fishing treasures in a river at night.",
+  "required_capabilities": [
+    "minecraft:tracked_fish"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/3_04_midnight_casting/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_count": 2,
+            "required_biome": "minecraft:river",
+            "required_time": "night",
+            "treasure": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:fishing/3_04_midnight_casting"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

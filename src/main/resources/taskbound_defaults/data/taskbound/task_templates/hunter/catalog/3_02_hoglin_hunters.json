@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:hunter/catalog/3_02_hoglin_hunters",
+  "category_id": "taskbound:hunter/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 33,
+  "display_text": "task.taskbound.hunter.catalog.3_02_hoglin_hunters.description",
+  "title": "Hoglin Hunters",
+  "description": "Defeat 4 hoglins.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/3_02_hoglin_hunters/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_count": 4,
+            "entity": "minecraft:hoglin"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:hunting/3_02_hoglin_hunters"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 36000
+}

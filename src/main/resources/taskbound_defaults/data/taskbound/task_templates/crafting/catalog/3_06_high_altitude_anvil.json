@@ -1,0 +1,47 @@
+{
+  "id": "taskbound:crafting/catalog/3_06_high_altitude_anvil",
+  "category_id": "taskbound:crafting/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 49,
+  "display_text": "task.taskbound.crafting.catalog.3_06_high_altitude_anvil.description",
+  "title": "High-Altitude Anvil",
+  "description": "Craft 1 anvil in jagged peaks above Y=120 while snow is falling.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/3_06_high_altitude_anvil/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_biome": "minecraft:jagged_peaks",
+            "min_y": 121,
+            "required_weather": "snow",
+            "required_count": 1,
+            "item": "minecraft:anvil"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:crafting/3_06_high_altitude_anvil"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

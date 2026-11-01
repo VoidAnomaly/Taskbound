@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:challenges/catalog/4_02_trial_survivor",
+  "category_id": "taskbound:challenges/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 62,
+  "display_text": "task.taskbound.challenges.catalog.4_02_trial_survivor.description",
+  "title": "Trial Survivor",
+  "description": "Complete 3 separate Trial Spawner encounters inside Trial Chambers without dying during the challenge.",
+  "required_capabilities": [
+    "minecraft:trial_encounter"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/4_02_trial_survivor/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "trial_encounter",
+          "parameters": {
+            "required_count": 3,
+            "required_structure": "minecraft:trial_chambers",
+            "no_death": true,
+            "guard_from_acceptance": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:trial_encounter"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:challenges/4_02_trial_survivor"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

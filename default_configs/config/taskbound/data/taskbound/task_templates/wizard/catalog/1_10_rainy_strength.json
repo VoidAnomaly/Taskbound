@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:wizard/catalog/1_10_rainy_strength",
+  "category_id": "taskbound:wizard/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 16,
+  "display_text": "task.taskbound.wizard.catalog.1_10_rainy_strength.description",
+  "title": "Rainy Strength",
+  "description": "Brew 1 Potion of Strength while it is raining. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/1_10_rainy_strength/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 1,
+            "required_weather": "rain",
+            "item": "minecraft:potion",
+            "potion": "minecraft:strength"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:wizardry/1_10_rainy_strength"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

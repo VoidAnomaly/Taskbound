@@ -1,0 +1,616 @@
+{
+  "sprites": {
+    "symbols/check": {
+      "texture": "taskbound:textures/gui/sprites/symbols/check.png",
+      "texture_width": 16,
+      "texture_height": 16
+    },
+    "symbols/close": {
+      "texture": "taskbound:textures/gui/sprites/reference/close.png",
+      "texture_width": 16,
+      "texture_height": 16
+    },
+    "symbols/left": {
+      "texture": "taskbound:textures/gui/sprites/symbols/left.png",
+      "texture_width": 16,
+      "texture_height": 16
+    },
+    "symbols/right": {
+      "texture": "taskbound:textures/gui/sprites/symbols/right.png",
+      "texture_width": 16,
+      "texture_height": 16
+    },
+    "symbols/up": {
+      "texture": "taskbound:textures/gui/sprites/symbols/up.png",
+      "texture_width": 16,
+      "texture_height": 16
+    },
+    "symbols/down": {
+      "texture": "taskbound:textures/gui/sprites/symbols/down.png",
+      "texture_width": 16,
+      "texture_height": 16
+    },
+    "difficulty/rating_1": {
+      "texture": "taskbound:textures/gui/sprites/difficulty/rating_1.png",
+      "texture_width": 39,
+      "texture_height": 7
+    },
+    "difficulty/rating_2": {
+      "texture": "taskbound:textures/gui/sprites/difficulty/rating_2.png",
+      "texture_width": 39,
+      "texture_height": 7
+    },
+    "difficulty/rating_3": {
+      "texture": "taskbound:textures/gui/sprites/difficulty/rating_3.png",
+      "texture_width": 39,
+      "texture_height": 7
+    },
+    "difficulty/rating_4": {
+      "texture": "taskbound:textures/gui/sprites/difficulty/rating_4.png",
+      "texture_width": 39,
+      "texture_height": 7
+    },
+    "difficulty/rating_5": {
+      "texture": "taskbound:textures/gui/sprites/difficulty/rating_5.png",
+      "texture_width": 39,
+      "texture_height": 7
+    },
+    "backgrounds/wood_frame": {
+      "texture": "taskbound:textures/gui/sprites/reference/frame.png",
+      "texture_width": 240,
+      "texture_height": 144,
+      "nine_slice": [
+        12,
+        18,
+        12,
+        12
+      ],
+      "stretch": true
+    },
+    "backgrounds/parchment": {
+      "texture": "taskbound:textures/gui/sprites/reference/header_paper.png",
+      "texture_width": 260,
+      "texture_height": 20,
+      "nine_slice": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "stretch": true
+    },
+    "buttons/accept_normal": {
+      "texture": "taskbound:textures/gui/sprites/reference/action_normal.png",
+      "texture_width": 130,
+      "texture_height": 20,
+      "nine_slice": [
+        5,
+        3,
+        5,
+        3
+      ],
+      "stretch": true
+    },
+    "buttons/page_normal": {
+      "texture": "taskbound:textures/gui/sprites/reference/page_normal.png",
+      "texture_width": 22,
+      "texture_height": 22,
+      "nine_slice": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "stretch": true
+    },
+    "buttons/accept_hover": {
+      "texture": "taskbound:textures/gui/sprites/reference/action_hover.png",
+      "texture_width": 130,
+      "texture_height": 20,
+      "nine_slice": [
+        5,
+        3,
+        5,
+        3
+      ],
+      "stretch": true
+    },
+    "buttons/page_hover": {
+      "texture": "taskbound:textures/gui/sprites/reference/page_hover.png",
+      "texture_width": 22,
+      "texture_height": 22,
+      "nine_slice": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "stretch": true
+    },
+    "buttons/accept_disabled": {
+      "texture": "taskbound:textures/gui/sprites/reference/action_disabled.png",
+      "texture_width": 130,
+      "texture_height": 20,
+      "nine_slice": [
+        5,
+        3,
+        5,
+        3
+      ],
+      "stretch": true
+    },
+    "buttons/page_disabled": {
+      "texture": "taskbound:textures/gui/sprites/reference/page_disabled.png",
+      "texture_width": 22,
+      "texture_height": 22,
+      "nine_slice": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "stretch": true
+    },
+    "selection/task_row": {
+      "texture": "taskbound:textures/gui/sprites/selection/task_row.png",
+      "texture_width": 270,
+      "texture_height": 40,
+      "nine_slice": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    "scrollbar/track": {
+      "texture": "taskbound:textures/gui/sprites/scrollbar/track.png",
+      "texture_width": 5,
+      "texture_height": 170,
+      "nine_slice": [
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    "scrollbar/thumb": {
+      "texture": "taskbound:textures/gui/sprites/scrollbar/thumb.png",
+      "texture_width": 5,
+      "texture_height": 40,
+      "nine_slice": [
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    "journal_cover/left": {
+      "texture": "taskbound:textures/gui/sprites/reference/book_left.png",
+      "texture_width": 266,
+      "texture_height": 264,
+      "nine_slice": [
+        16,
+        12,
+        6,
+        15
+      ],
+      "stretch": true
+    },
+    "journal_cover/right": {
+      "texture": "taskbound:textures/gui/sprites/reference/book_right.png",
+      "texture_width": 266,
+      "texture_height": 264,
+      "nine_slice": [
+        6,
+        12,
+        16,
+        15
+      ],
+      "stretch": true
+    },
+    "board/body": {
+      "texture": "taskbound:textures/gui/sprites/reference/wood.png",
+      "texture_width": 274,
+      "texture_height": 25,
+      "nine_slice": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stretch": false
+    },
+    "board/list": {
+      "texture": "taskbound:textures/gui/sprites/reference/list.png",
+      "texture_width": 256,
+      "texture_height": 144,
+      "nine_slice": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stretch": true
+    },
+    "board/search": {
+      "texture": "taskbound:textures/gui/sprites/reference/search.png",
+      "texture_width": 256,
+      "texture_height": 20,
+      "nine_slice": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "stretch": true
+    },
+    "board/row": {
+      "texture": "taskbound:textures/gui/sprites/reference/row.png",
+      "texture_width": 256,
+      "texture_height": 46,
+      "nine_slice": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stretch": true
+    },
+    "board/row_hover": {
+      "texture": "taskbound:textures/gui/sprites/reference/row_hover.png",
+      "texture_width": 256,
+      "texture_height": 46,
+      "nine_slice": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stretch": true
+    },
+    "board/row_selected": {
+      "texture": "taskbound:textures/gui/sprites/reference/row_selected.png",
+      "texture_width": 256,
+      "texture_height": 46,
+      "nine_slice": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stretch": true
+    },
+    "board/selection": {
+      "texture": "taskbound:textures/gui/sprites/board/selection.png",
+      "texture_width": 32,
+      "texture_height": 32,
+      "nine_slice": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    "board/paper": {
+      "texture": "taskbound:textures/gui/sprites/reference/paper.png",
+      "texture_width": 154,
+      "texture_height": 212,
+      "nine_slice": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "stretch": true
+    },
+    "board/brown_normal": {
+      "texture": "taskbound:textures/gui/sprites/reference/guild_normal.png",
+      "texture_width": 78,
+      "texture_height": 32,
+      "nine_slice": [
+        12,
+        4,
+        12,
+        9
+      ],
+      "stretch": true
+    },
+    "board/brown_hover": {
+      "texture": "taskbound:textures/gui/sprites/reference/guild_hover.png",
+      "texture_width": 78,
+      "texture_height": 32,
+      "nine_slice": [
+        12,
+        4,
+        12,
+        9
+      ],
+      "stretch": true
+    },
+    "board/tab_selected": {
+      "texture": "taskbound:textures/gui/sprites/reference/guild_selected.png",
+      "texture_width": 78,
+      "texture_height": 32,
+      "nine_slice": [
+        12,
+        4,
+        12,
+        9
+      ],
+      "stretch": true
+    },
+    "board/track": {
+      "texture": "taskbound:textures/gui/sprites/board/track.png",
+      "texture_width": 32,
+      "texture_height": 32,
+      "nine_slice": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    "board/thumb": {
+      "texture": "taskbound:textures/gui/sprites/board/thumb.png",
+      "texture_width": 32,
+      "texture_height": 32,
+      "nine_slice": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    "board/search_icon": {
+      "texture": "taskbound:textures/gui/sprites/board/search_icon.png",
+      "texture_width": 12,
+      "texture_height": 12
+    },
+    "board/action_normal": {
+      "texture": "taskbound:textures/gui/sprites/reference/action_normal.png",
+      "texture_width": 130,
+      "texture_height": 20,
+      "nine_slice": [
+        5,
+        3,
+        5,
+        3
+      ],
+      "stretch": true
+    },
+    "board/action_hover": {
+      "texture": "taskbound:textures/gui/sprites/reference/action_hover.png",
+      "texture_width": 130,
+      "texture_height": 20,
+      "nine_slice": [
+        5,
+        3,
+        5,
+        3
+      ],
+      "stretch": true
+    },
+    "board/action_disabled": {
+      "texture": "taskbound:textures/gui/sprites/reference/action_disabled.png",
+      "texture_width": 130,
+      "texture_height": 20,
+      "nine_slice": [
+        5,
+        3,
+        5,
+        3
+      ],
+      "stretch": true
+    },
+    "board/utility_normal": {
+      "texture": "taskbound:textures/gui/sprites/reference/utility_normal.png",
+      "texture_width": 82,
+      "texture_height": 20,
+      "nine_slice": [
+        4,
+        3,
+        4,
+        3
+      ],
+      "stretch": true
+    },
+    "board/utility_hover": {
+      "texture": "taskbound:textures/gui/sprites/reference/utility_hover.png",
+      "texture_width": 82,
+      "texture_height": 20,
+      "nine_slice": [
+        4,
+        3,
+        4,
+        3
+      ],
+      "stretch": true
+    },
+    "board/utility_pressed": {
+      "texture": "taskbound:textures/gui/sprites/reference/utility_pressed.png",
+      "texture_width": 82,
+      "texture_height": 20,
+      "nine_slice": [
+        4,
+        3,
+        4,
+        3
+      ],
+      "stretch": true
+    },
+    "board/utility_disabled": {
+      "texture": "taskbound:textures/gui/sprites/reference/utility_disabled.png",
+      "texture_width": 82,
+      "texture_height": 20,
+      "nine_slice": [
+        4,
+        3,
+        4,
+        3
+      ],
+      "stretch": true
+    },
+    "sections/board_normal": {
+      "texture": "taskbound:textures/gui/sprites/reference/navigation_normal.png",
+      "texture_width": 64,
+      "texture_height": 27,
+      "nine_slice": [
+        12,
+        4,
+        12,
+        7
+      ],
+      "stretch": true
+    },
+    "sections/board_hover": {
+      "texture": "taskbound:textures/gui/sprites/reference/navigation_hover.png",
+      "texture_width": 64,
+      "texture_height": 27,
+      "nine_slice": [
+        12,
+        4,
+        12,
+        7
+      ],
+      "stretch": true
+    },
+    "sections/board_selected": {
+      "texture": "taskbound:textures/gui/sprites/reference/navigation_selected.png",
+      "texture_width": 64,
+      "texture_height": 27,
+      "nine_slice": [
+        12,
+        4,
+        12,
+        7
+      ],
+      "stretch": true
+    },
+    "board/journal_header": {
+      "texture": "taskbound:textures/gui/sprites/reference/ribbon_rust.png",
+      "texture_width": 231,
+      "texture_height": 30,
+      "nine_slice": [
+        20,
+        4,
+        20,
+        8
+      ],
+      "stretch": true
+    },
+    "board/progress_fill": {
+      "texture": "taskbound:textures/gui/sprites/board/progress_fill.png",
+      "texture_width": 32,
+      "texture_height": 32,
+      "nine_slice": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "board/active_body": {
+      "texture": "taskbound:textures/gui/sprites/reference/active_wood.png",
+      "texture_width": 274,
+      "texture_height": 25,
+      "nine_slice": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stretch": false
+    },
+    "board/active_row": {
+      "texture": "taskbound:textures/gui/sprites/reference/row.png",
+      "texture_width": 256,
+      "texture_height": 46,
+      "nine_slice": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stretch": true
+    },
+    "board/active_row_hover": {
+      "texture": "taskbound:textures/gui/sprites/reference/row_hover.png",
+      "texture_width": 256,
+      "texture_height": 46,
+      "nine_slice": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stretch": true
+    },
+    "board/active_row_selected": {
+      "texture": "taskbound:textures/gui/sprites/reference/row_selected.png",
+      "texture_width": 256,
+      "texture_height": 46,
+      "nine_slice": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "stretch": true
+    },
+    "board/new_badge": {
+      "texture": "taskbound:textures/gui/sprites/board/new_badge.png",
+      "texture_width": 12,
+      "texture_height": 12
+    },
+    "board/ready_badge": {
+      "texture": "taskbound:textures/gui/sprites/board/ready_badge.png",
+      "texture_width": 16,
+      "texture_height": 16
+    },
+    "board/rail": {
+      "texture": "taskbound:textures/gui/sprites/reference/rail.png",
+      "texture_width": 260,
+      "texture_height": 8,
+      "nine_slice": [
+        5,
+        2,
+        5,
+        2
+      ],
+      "stretch": true
+    },
+    "journal/bookmark": {
+      "texture": "taskbound:textures/gui/sprites/reference/bookmark.png",
+      "texture_width": 17,
+      "texture_height": 19
+    },
+    "board/journal_header_reputation": {
+      "texture": "taskbound:textures/gui/sprites/reference/ribbon_olive.png",
+      "texture_width": 231,
+      "texture_height": 30,
+      "nine_slice": [
+        20,
+        4,
+        20,
+        8
+      ],
+      "stretch": true
+    }
+  },
+  "colors": {
+    "ink": "#342518",
+    "muted": "#795e3e",
+    "success": "#34522c",
+    "error": "#914536",
+    "light": "#f4e8c8",
+    "border": "#9d7d4b",
+    "highlight": "#d5a64b",
+    "board_text": "#f6e7c8",
+    "board_muted": "#cbae7a",
+    "board_selected_text": "#ffe6ad",
+    "board_ink": "#30200f",
+    "board_rule": "#b69967",
+    "board_highlight": "#e3b151",
+    "journal_icon_backing": "#80D6B984"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "taskbound:wizard/catalog/3_05_field_enchantment",
+  "category_id": "taskbound:wizard/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 44,
+  "display_text": "task.taskbound.wizard.catalog.3_05_field_enchantment.description",
+  "title": "Field Enchantment",
+  "description": "Apply Fortune II or higher to 1 iron pickaxe by anvil while in a taiga biome.",
+  "required_capabilities": [
+    "minecraft:enchant_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/3_05_field_enchantment/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "enchant_item",
+          "parameters": {
+            "required_biome": "minecraft:taiga",
+            "method": "anvil",
+            "required_count": 1,
+            "item": "minecraft:iron_pickaxe",
+            "required_enchantment": "minecraft:fortune",
+            "minimum_enchantment_level": 2
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:enchant_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:wizardry/3_05_field_enchantment"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:hunter/catalog/1_01_pest_control",
+  "category_id": "taskbound:hunter/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 6,
+  "display_text": "task.taskbound.hunter.catalog.1_01_pest_control.description",
+  "title": "Pest Control",
+  "description": "Defeat 5 zombies.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/1_01_pest_control/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_count": 5,
+            "entity": "minecraft:zombie"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:hunting/1_01_pest_control"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 24000
+}

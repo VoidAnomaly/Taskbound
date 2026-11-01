@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:challenges/catalog/3_01_return_to_sender",
+  "category_id": "taskbound:challenges/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 34,
+  "display_text": "task.taskbound.challenges.catalog.3_01_return_to_sender.description",
+  "title": "Return to Sender",
+  "description": "Reflect a ghast fireball and kill its 1 original ghast owner with it.",
+  "required_capabilities": [
+    "minecraft:combat_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/3_01_return_to_sender/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "combat_action",
+          "parameters": {
+            "required_count": 1,
+            "action": "returned_ghast_fireball_kill"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:combat_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:challenges/3_01_return_to_sender"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

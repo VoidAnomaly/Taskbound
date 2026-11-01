@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:hunter/catalog/1_10_marsh_cleanup",
+  "category_id": "taskbound:hunter/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 15,
+  "display_text": "task.taskbound.hunter.catalog.1_10_marsh_cleanup.description",
+  "title": "Marsh Cleanup",
+  "description": "Defeat 3 slimes in a swamp.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/1_10_marsh_cleanup/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_biome": "minecraft:swamp",
+            "required_count": 3,
+            "entity": "minecraft:slime"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:hunting/1_10_marsh_cleanup"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

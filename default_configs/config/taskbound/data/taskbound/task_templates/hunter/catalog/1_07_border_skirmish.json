@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:hunter/catalog/1_07_border_skirmish",
+  "category_id": "taskbound:hunter/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 18,
+  "display_text": "task.taskbound.hunter.catalog.1_07_border_skirmish.description",
+  "title": "Border Skirmish",
+  "description": "Defeat 2 pillagers.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/1_07_border_skirmish/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_count": 2,
+            "entity": "minecraft:pillager"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:hunting/1_07_border_skirmish"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

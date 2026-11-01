@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:challenges/catalog/4_01_fireball_fencer",
+  "category_id": "taskbound:challenges/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 32,
+  "display_text": "task.taskbound.challenges.catalog.4_01_fireball_fencer.description",
+  "title": "Fireball Fencer",
+  "description": "Successfully reflect 2 ghast fireballs with a sword.",
+  "required_capabilities": [
+    "minecraft:combat_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/4_01_fireball_fencer/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "combat_action",
+          "parameters": {
+            "required_count": 2,
+            "action": "ghast_fireball_deflection",
+            "required_weapon_tag": "taskbound:swords"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:combat_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:challenges/4_01_fireball_fencer"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

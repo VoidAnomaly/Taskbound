@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:challenges/catalog/1_06_a_hard_landing",
+  "category_id": "taskbound:challenges/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 10,
+  "display_text": "task.taskbound.challenges.catalog.1_06_a_hard_landing.description",
+  "title": "A Hard Landing",
+  "description": "Survive 1 fall of at least 6 blocks that actually causes fall damage.",
+  "required_capabilities": [
+    "minecraft:survive_fall"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/1_06_a_hard_landing/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "survive_fall",
+          "parameters": {
+            "required_count": 1,
+            "minimum_fall_distance": 6
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:survive_fall"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:challenges/1_06_a_hard_landing"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

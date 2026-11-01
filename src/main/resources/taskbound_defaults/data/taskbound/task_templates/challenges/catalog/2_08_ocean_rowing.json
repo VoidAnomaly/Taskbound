@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:challenges/catalog/2_08_ocean_rowing",
+  "category_id": "taskbound:challenges/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 22,
+  "display_text": "task.taskbound.challenges.catalog.2_08_ocean_rowing.description",
+  "title": "Ocean Rowing",
+  "description": "Pilot a boat for 500 blocks through an ocean biome while raining.",
+  "required_capabilities": [
+    "minecraft:travel_distance"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/2_08_ocean_rowing/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "travel_distance",
+          "parameters": {
+            "required_count": 500,
+            "mode": "boat",
+            "required_biome_tag": "taskbound:oceans",
+            "required_weather": "rain"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:travel_distance"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:challenges/2_08_ocean_rowing"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

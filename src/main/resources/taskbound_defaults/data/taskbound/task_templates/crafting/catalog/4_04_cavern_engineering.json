@@ -1,0 +1,47 @@
+{
+  "id": "taskbound:crafting/catalog/4_04_cavern_engineering",
+  "category_id": "taskbound:crafting/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 68,
+  "display_text": "task.taskbound.crafting.catalog.4_04_cavern_engineering.description",
+  "title": "Cavern Engineering",
+  "description": "Craft 4 crafters in a lush caves biome while affected by Haste.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/4_04_cavern_engineering/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_biome": "minecraft:lush_caves",
+            "required_effect": "minecraft:haste",
+            "minimum_effect_amplifier": 0,
+            "required_count": 4,
+            "item": "minecraft:crafter"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:crafting/4_04_cavern_engineering"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:angler/catalog/2_08_jungle_line",
+  "category_id": "taskbound:angler/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 30,
+  "display_text": "task.taskbound.angler.catalog.2_08_jungle_line.description",
+  "title": "Jungle Line",
+  "description": "Catch 4 salmon in a jungle using a rod with Lure I or better.",
+  "required_capabilities": [
+    "minecraft:tracked_fish"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/2_08_jungle_line/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_count": 4,
+            "required_biome": "minecraft:jungle",
+            "tool_enchantment": "minecraft:lure",
+            "minimum_tool_enchantment_level": 1,
+            "fish_item": "minecraft:salmon"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:fishing/2_08_jungle_line"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "taskbound:challenges/catalog/5_02_dragon_s_reckoning",
+  "category_id": "taskbound:challenges/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 125,
+  "display_text": "task.taskbound.challenges.catalog.5_02_dragon_s_reckoning.description",
+  "title": "Dragon's Reckoning",
+  "description": "• Personally destroy 4 end crystals with a bow.\n• Then deliver the killing blow to 1 Ender Dragon with a sword.\n\nComplete both objectives in order during the same Ender Dragon encounter, without dying during that encounter.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:dragon_encounter"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/5_02_dragon_s_reckoning/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "dragon_encounter",
+          "parameters": {
+            "required_count": 4,
+            "action": "bow_crystal"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:dragon_encounter"
+          ]
+        },
+        {
+          "type": "dragon_encounter",
+          "parameters": {
+            "required_count": 1,
+            "action": "sword_finish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:dragon_encounter"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:challenges/5_02_dragon_s_reckoning",
+        "one_time": true,
+        "objective_order": "strict"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

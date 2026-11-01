@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:wizard/catalog/3_01_invisible_preparations",
+  "category_id": "taskbound:wizard/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 21,
+  "display_text": "task.taskbound.wizard.catalog.3_01_invisible_preparations.description",
+  "title": "Invisible Preparations",
+  "description": "Brew 3 Potions of Invisibility. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/3_01_invisible_preparations/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 3,
+            "item": "minecraft:potion",
+            "potion": "minecraft:invisibility"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:wizardry/3_01_invisible_preparations"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

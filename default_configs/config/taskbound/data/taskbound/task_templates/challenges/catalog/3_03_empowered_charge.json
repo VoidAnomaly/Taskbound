@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:challenges/catalog/3_03_empowered_charge",
+  "category_id": "taskbound:challenges/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 39,
+  "display_text": "task.taskbound.challenges.catalog.3_03_empowered_charge.description",
+  "title": "Empowered Charge",
+  "description": "Land 4 critical melee hits on hoglins while Strength is active.",
+  "required_capabilities": [
+    "minecraft:combat_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/3_03_empowered_charge/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "combat_action",
+          "parameters": {
+            "required_count": 4,
+            "action": "critical_hit",
+            "entity": "minecraft:hoglin",
+            "required_effect": "minecraft:strength"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:combat_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:challenges/3_03_empowered_charge"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:angler/catalog/1_08_daytime_line",
+  "category_id": "taskbound:angler/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 15,
+  "display_text": "task.taskbound.angler.catalog.1_08_daytime_line.description",
+  "title": "Daytime Line",
+  "description": "Catch 6 cod during the day.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/1_08_daytime_line/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_time": "day",
+            "required_count": 6,
+            "fish_item": "minecraft:cod"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:fishing/1_08_daytime_line"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "taskbound:catalog/level_5/emerald_64",
+  "type": "ITEM",
+  "pool_id": "taskbound:catalog",
+  "weight": 1.0,
+  "cost": 55,
+  "minimum_difficulty": 110,
+  "maximum_difficulty": 149,
+  "minimum_reputation_level": null,
+  "maximum_count": 3,
+  "giver_restrictions": [],
+  "rarity_group": "common",
+  "tangible": true,
+  "payload": {
+    "item": "minecraft:emerald",
+    "count": 64
+  }
+}

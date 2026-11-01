@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:wizard/catalog/2_04_bow_blessing",
+  "category_id": "taskbound:wizard/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.wizard.catalog.2_04_bow_blessing.description",
+  "title": "Bow Blessing",
+  "description": "Enchant 1 bow with Power I or better, by table or anvil.",
+  "required_capabilities": [
+    "minecraft:enchant_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/2_04_bow_blessing/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "enchant_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:bow",
+            "required_enchantment": "minecraft:power",
+            "minimum_enchantment_level": 1
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:enchant_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:wizardry/2_04_bow_blessing"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 18000
+}

@@ -1,0 +1,18 @@
+{
+  "id": "taskbound:numismatics/bevel",
+  "type": "ITEM",
+  "pool_id": "taskbound:numismatics",
+  "weight": 7.0,
+  "cost": 6,
+  "minimum_difficulty": 0,
+  "maximum_difficulty": null,
+  "minimum_reputation_level": null,
+  "maximum_count": 3,
+  "giver_restrictions": [],
+  "rarity_group": "common",
+  "tangible": true,
+  "payload": {
+    "item": "numismatics:bevel",
+    "count": 1
+  }
+}

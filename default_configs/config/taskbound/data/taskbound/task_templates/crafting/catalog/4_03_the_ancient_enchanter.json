@@ -1,0 +1,48 @@
+{
+  "id": "taskbound:crafting/catalog/4_03_the_ancient_enchanter",
+  "category_id": "taskbound:crafting/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 52,
+  "display_text": "task.taskbound.crafting.catalog.4_03_the_ancient_enchanter.description",
+  "title": "The Ancient Enchanter",
+  "description": "Craft 1 enchanting table in the deep dark, below Y=-20, while affected by Night Vision.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/4_03_the_ancient_enchanter/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_biome": "minecraft:deep_dark",
+            "max_y": -21,
+            "required_effect": "minecraft:night_vision",
+            "minimum_effect_amplifier": 0,
+            "required_count": 1,
+            "item": "minecraft:enchanting_table"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:crafting/4_03_the_ancient_enchanter"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

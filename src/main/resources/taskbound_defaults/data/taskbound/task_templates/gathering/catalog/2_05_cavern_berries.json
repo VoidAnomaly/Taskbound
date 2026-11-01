@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:gathering/catalog/2_05_cavern_berries",
+  "category_id": "taskbound:gathering/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 25,
+  "display_text": "task.taskbound.gathering.catalog.2_05_cavern_berries.description",
+  "title": "Cavern Berries",
+  "description": "Harvest 8 glow berries from cave vines in a lush caves biome. Count actual berry harvesting; breaking or placing vines does not count.",
+  "required_capabilities": [
+    "minecraft:harvest_berries"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/2_05_cavern_berries/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "harvest_berries",
+          "parameters": {
+            "block": "minecraft:cave_vines",
+            "required_count": 8,
+            "required_biome": "minecraft:lush_caves"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:harvest_berries"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:gathering/2_05_cavern_berries"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

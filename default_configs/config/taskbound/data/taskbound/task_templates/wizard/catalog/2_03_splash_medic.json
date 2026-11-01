@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:wizard/catalog/2_03_splash_medic",
+  "category_id": "taskbound:wizard/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 18,
+  "display_text": "task.taskbound.wizard.catalog.2_03_splash_medic.description",
+  "title": "Splash Medic",
+  "description": "Brew 2 Splash Potions of Healing. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/2_03_splash_medic/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 2,
+            "item": "minecraft:splash_potion",
+            "potion": "minecraft:healing"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:wizardry/2_03_splash_medic"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 24000
+}

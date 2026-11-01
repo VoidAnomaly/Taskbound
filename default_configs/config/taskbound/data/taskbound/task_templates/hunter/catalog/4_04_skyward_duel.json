@@ -1,0 +1,48 @@
+{
+  "id": "taskbound:hunter/catalog/4_04_skyward_duel",
+  "category_id": "taskbound:hunter/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 68,
+  "display_text": "task.taskbound.hunter.catalog.4_04_skyward_duel.description",
+  "title": "Skyward Duel",
+  "description": "Defeat 3 shulkers inside an End City with a crossbow while levitating.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/4_04_skyward_duel/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_structure": "minecraft:end_city",
+            "required_weapon": "minecraft:crossbow",
+            "required_effect": "minecraft:levitation",
+            "minimum_effect_amplifier": 0,
+            "required_count": 3,
+            "entity": "minecraft:shulker"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:hunting/4_04_skyward_duel"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

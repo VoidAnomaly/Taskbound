@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:wizard/catalog/2_07_long_sighted_at_dusk",
+  "category_id": "taskbound:wizard/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.wizard.catalog.2_07_long_sighted_at_dusk.description",
+  "title": "Long-Sighted at Dusk",
+  "description": "Brew 2 extended Potions of Night Vision in the Overworld at night. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/2_07_long_sighted_at_dusk/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 2,
+            "required_dimension": "minecraft:overworld",
+            "required_time": "night",
+            "item": "minecraft:potion",
+            "potion": "minecraft:long_night_vision"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:wizardry/2_07_long_sighted_at_dusk"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:hunter/catalog/2_03_bogged_bounty",
+  "category_id": "taskbound:hunter/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 24,
+  "display_text": "task.taskbound.hunter.catalog.2_03_bogged_bounty.description",
+  "title": "Bogged Bounty",
+  "description": "Defeat 4 bogged.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/2_03_bogged_bounty/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_count": 4,
+            "entity": "minecraft:bogged"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:hunting/2_03_bogged_bounty"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

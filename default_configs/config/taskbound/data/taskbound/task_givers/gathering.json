@@ -1,0 +1,48 @@
+{
+  "id": "taskbound:gathering",
+  "display_name": "task_giver.taskbound.gathering",
+  "enabled": true,
+  "icon_item": "minecraft:iron_pickaxe",
+  "reputation": {
+    "thresholds": {
+      "1": 0,
+      "2": 10,
+      "3": 25,
+      "4": 45,
+      "5": 70,
+      "6": 100,
+      "7": 135,
+      "8": 175,
+      "9": 220,
+      "10": 270,
+      "11": 325,
+      "12": 385,
+      "13": 450,
+      "14": 520,
+      "15": 595,
+      "16": 675,
+      "17": 760,
+      "18": 850,
+      "19": 945,
+      "20": 1045
+    }
+  },
+  "rank_names": {
+    "1": "rank.taskbound.gathering.catalog_1",
+    "5": "rank.taskbound.gathering.catalog_2",
+    "10": "rank.taskbound.gathering.catalog_3",
+    "15": "rank.taskbound.gathering.catalog_4",
+    "20": "rank.taskbound.gathering.catalog_5"
+  },
+  "category_ids": [
+    "taskbound:gathering/catalog/level_1",
+    "taskbound:gathering/catalog/level_2",
+    "taskbound:gathering/catalog/level_3",
+    "taskbound:gathering/catalog/level_4",
+    "taskbound:gathering/catalog/level_5"
+  ],
+  "reward_pool_ids": [
+    "taskbound:catalog"
+  ],
+  "reward_multiplier": 1.0
+}

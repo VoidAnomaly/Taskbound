@@ -1,0 +1,44 @@
+{
+  "id": "taskbound:gathering/catalog/4_02_deep_diamonds",
+  "category_id": "taskbound:gathering/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 78,
+  "display_text": "task.taskbound.gathering.catalog.4_02_deep_diamonds.description",
+  "title": "Deep Diamonds",
+  "description": "Mine 8 deepslate diamond ore blocks below Y=-40 with Silk Touch. Player-placed and rebroken ore does not count.",
+  "required_capabilities": [
+    "minecraft:tracked_gather"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/4_02_deep_diamonds/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_gather",
+          "parameters": {
+            "block": "minecraft:deepslate_diamond_ore",
+            "required_count": 8,
+            "natural": true,
+            "max_y": -41,
+            "tool_enchantment": "minecraft:silk_touch",
+            "minimum_tool_enchantment_level": 1,
+            "required_tool_tag": "minecraft:pickaxes"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_gather"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:gathering/4_02_deep_diamonds"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

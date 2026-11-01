@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:hunter/catalog/1_04_creeper_patrol",
+  "category_id": "taskbound:hunter/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 12,
+  "display_text": "task.taskbound.hunter.catalog.1_04_creeper_patrol.description",
+  "title": "Creeper Patrol",
+  "description": "Defeat 3 creepers.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/1_04_creeper_patrol/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_count": 3,
+            "entity": "minecraft:creeper"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:hunting/1_04_creeper_patrol"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 24000
+}

@@ -1,0 +1,18 @@
+{
+  "id": "taskbound:numismatics/sprocket",
+  "type": "ITEM",
+  "pool_id": "taskbound:numismatics",
+  "weight": 5.0,
+  "cost": 10,
+  "minimum_difficulty": 15,
+  "maximum_difficulty": null,
+  "minimum_reputation_level": null,
+  "maximum_count": 2,
+  "giver_restrictions": [],
+  "rarity_group": "common",
+  "tangible": true,
+  "payload": {
+    "item": "numismatics:sprocket",
+    "count": 1
+  }
+}

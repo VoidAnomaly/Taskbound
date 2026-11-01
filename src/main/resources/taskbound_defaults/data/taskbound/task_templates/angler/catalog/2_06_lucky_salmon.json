@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:angler/catalog/2_06_lucky_salmon",
+  "category_id": "taskbound:angler/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 26,
+  "display_text": "task.taskbound.angler.catalog.2_06_lucky_salmon.description",
+  "title": "Lucky Salmon",
+  "description": "Catch 5 salmon using a rod with Luck of the Sea I or better.",
+  "required_capabilities": [
+    "minecraft:tracked_fish"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/2_06_lucky_salmon/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_fish",
+          "parameters": {
+            "required_count": 5,
+            "tool_enchantment": "minecraft:luck_of_the_sea",
+            "minimum_tool_enchantment_level": 1,
+            "fish_item": "minecraft:salmon"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_fish"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:fishing/2_06_lucky_salmon"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

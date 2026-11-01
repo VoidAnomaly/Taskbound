@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:wizard/catalog/1_04_flame_ward",
+  "category_id": "taskbound:wizard/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 9,
+  "display_text": "task.taskbound.wizard.catalog.1_04_flame_ward.description",
+  "title": "Flame Ward",
+  "description": "Brew 1 Potion of Fire Resistance. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/1_04_flame_ward/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:potion",
+            "potion": "minecraft:fire_resistance"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:wizardry/1_04_flame_ward"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 24000
+}

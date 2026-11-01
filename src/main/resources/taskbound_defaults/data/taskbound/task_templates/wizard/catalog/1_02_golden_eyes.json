@@ -1,0 +1,41 @@
+{
+  "id": "taskbound:wizard/catalog/1_02_golden_eyes",
+  "category_id": "taskbound:wizard/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 9,
+  "display_text": "task.taskbound.wizard.catalog.1_02_golden_eyes.description",
+  "title": "Golden Eyes",
+  "description": "Brew 1 Potion of Night Vision. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/1_02_golden_eyes/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:potion",
+            "potion": "minecraft:night_vision"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:wizardry/1_02_golden_eyes"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 18000
+}

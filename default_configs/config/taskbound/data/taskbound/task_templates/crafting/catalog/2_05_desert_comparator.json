@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:crafting/catalog/2_05_desert_comparator",
+  "category_id": "taskbound:crafting/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 23,
+  "display_text": "task.taskbound.crafting.catalog.2_05_desert_comparator.description",
+  "title": "Desert Comparator",
+  "description": "Craft 1 redstone comparator in a desert.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/2_05_desert_comparator/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_biome": "minecraft:desert",
+            "required_count": 1,
+            "item": "minecraft:comparator"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:crafting/2_05_desert_comparator"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

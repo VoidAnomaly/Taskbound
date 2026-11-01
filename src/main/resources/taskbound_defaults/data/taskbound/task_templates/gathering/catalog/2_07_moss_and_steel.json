@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:gathering/catalog/2_07_moss_and_steel",
+  "category_id": "taskbound:gathering/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 18,
+  "display_text": "task.taskbound.gathering.catalog.2_07_moss_and_steel.description",
+  "title": "Moss and Steel",
+  "description": "Mine 8 moss blocks in lush caves using an iron hoe.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/2_07_moss_and_steel/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "required_biome": "minecraft:lush_caves",
+            "required_tool": "minecraft:iron_hoe",
+            "required_count": 8,
+            "block": "minecraft:moss_block"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:gathering/2_07_moss_and_steel"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

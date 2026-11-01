@@ -1,0 +1,3 @@
+[ui]
+	#Use compact board task rows. False keeps the relaxed layout.
+	compact_task_list = false

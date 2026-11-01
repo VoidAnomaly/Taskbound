@@ -1,0 +1,25 @@
+{
+  "id": "taskbound:wizard/catalog/level_1",
+  "giver_id": "taskbound:wizard",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:wizard/catalog/1_01_the_awkward_beginning",
+    "taskbound:wizard/catalog/1_02_golden_eyes",
+    "taskbound:wizard/catalog/1_03_fleet_feet",
+    "taskbound:wizard/catalog/1_04_flame_ward",
+    "taskbound:wizard/catalog/1_05_first_aid",
+    "taskbound:wizard/catalog/1_06_weakening_draft",
+    "taskbound:wizard/catalog/1_07_first_enchantment",
+    "taskbound:wizard/catalog/1_08_midnight_breathing",
+    "taskbound:wizard/catalog/1_09_overworld_tool_blessing",
+    "taskbound:wizard/catalog/1_10_rainy_strength"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

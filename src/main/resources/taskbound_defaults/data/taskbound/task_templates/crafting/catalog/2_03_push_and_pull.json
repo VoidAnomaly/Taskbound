@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:crafting/catalog/2_03_push_and_pull",
+  "category_id": "taskbound:crafting/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 15,
+  "display_text": "task.taskbound.crafting.catalog.2_03_push_and_pull.description",
+  "title": "Push and Pull",
+  "description": "Craft 2 pistons.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/2_03_push_and_pull/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_count": 2,
+            "item": "minecraft:piston"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:crafting/2_03_push_and_pull"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 18000
+}

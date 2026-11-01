@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:challenges/catalog/5_01_knight_of_the_ominous_trial",
+  "category_id": "taskbound:challenges/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 102,
+  "display_text": "task.taskbound.challenges.catalog.5_01_knight_of_the_ominous_trial.description",
+  "title": "Knight of the Ominous Trial",
+  "description": "Complete 2 distinct ominous Trial Spawner encounters with only an iron sword and shield as weapons. Do not use potions, healing consumables, or a Totem of Undying, and do not die between encounters. Use two distinct spawners and keep a shield in your off hand throughout the attempt.",
+  "required_capabilities": [
+    "minecraft:trial_encounter"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/5_01_knight_of_the_ominous_trial/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "trial_encounter",
+          "parameters": {
+            "required_count": 2,
+            "ominous": true,
+            "distinct_spawners": true,
+            "weapons": "iron_sword_and_shield",
+            "no_potions": true,
+            "no_healing": true,
+            "no_totem": true,
+            "no_death": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:trial_encounter"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:challenges/5_01_knight_of_the_ominous_trial",
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

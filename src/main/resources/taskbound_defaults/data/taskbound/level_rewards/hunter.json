@@ -1,0 +1,140 @@
+{
+  "id": "taskbound:hunter",
+  "rewards": [
+    {
+      "level": 2,
+      "items": [
+        {
+          "item": "minecraft:arrow",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "items": [
+        {
+          "item": "minecraft:feather",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "items": [
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "items": [
+        {
+          "item": "minecraft:arrow",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "items": [
+        {
+          "item": "minecraft:feather",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "items": [
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "items": [
+        {
+          "item": "minecraft:arrow",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "level": 11,
+      "items": [
+        {
+          "item": "minecraft:feather",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "level": 12,
+      "items": [
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "level": 13,
+      "items": [
+        {
+          "item": "minecraft:arrow",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "level": 14,
+      "items": [
+        {
+          "item": "minecraft:feather",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "level": 16,
+      "items": [
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "level": 17,
+      "items": [
+        {
+          "item": "minecraft:arrow",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "level": 18,
+      "items": [
+        {
+          "item": "minecraft:feather",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "level": 19,
+      "items": [
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

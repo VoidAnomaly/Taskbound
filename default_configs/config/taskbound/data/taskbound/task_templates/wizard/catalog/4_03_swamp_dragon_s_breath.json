@@ -1,0 +1,43 @@
+{
+  "id": "taskbound:wizard/catalog/4_03_swamp_dragon_s_breath",
+  "category_id": "taskbound:wizard/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 72,
+  "display_text": "task.taskbound.wizard.catalog.4_03_swamp_dragon_s_breath.description",
+  "title": "Swamp Dragon's Breath",
+  "description": "Brew 2 Lingering Potions of Regeneration in a swamp at night during rain. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/4_03_swamp_dragon_s_breath/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 2,
+            "required_biome": "minecraft:swamp",
+            "required_time": "night",
+            "required_weather": "rain",
+            "item": "minecraft:lingering_potion",
+            "potion": "minecraft:regeneration"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:wizardry/4_03_swamp_dragon_s_breath"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

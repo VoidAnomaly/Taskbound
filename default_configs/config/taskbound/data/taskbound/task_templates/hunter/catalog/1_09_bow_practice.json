@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:hunter/catalog/1_09_bow_practice",
+  "category_id": "taskbound:hunter/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 12,
+  "display_text": "task.taskbound.hunter.catalog.1_09_bow_practice.description",
+  "title": "Bow Practice",
+  "description": "Defeat 3 skeletons using a bow.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/1_09_bow_practice/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_weapon": "minecraft:bow",
+            "required_count": 3,
+            "entity": "minecraft:skeleton"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:hunting/1_09_bow_practice"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

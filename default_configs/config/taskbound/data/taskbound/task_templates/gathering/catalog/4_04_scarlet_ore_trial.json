@@ -1,0 +1,50 @@
+{
+  "id": "taskbound:gathering/catalog/4_04_scarlet_ore_trial",
+  "category_id": "taskbound:gathering/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 46,
+  "display_text": "task.taskbound.gathering.catalog.4_04_scarlet_ore_trial.description",
+  "title": "Scarlet Ore Trial",
+  "description": "Mine 12 deepslate redstone ore blocks below Y=-32 while using a pickaxe with Fortune III or higher and affected by Night Vision.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/4_04_scarlet_ore_trial/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "max_y": -33,
+            "tool_enchantment": "minecraft:fortune",
+            "minimum_tool_enchantment_level": 3,
+            "required_effect": "minecraft:night_vision",
+            "minimum_effect_amplifier": 0,
+            "required_count": 12,
+            "block": "minecraft:deepslate_redstone_ore",
+            "required_tool_tag": "minecraft:pickaxes"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:gathering/4_04_scarlet_ore_trial"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

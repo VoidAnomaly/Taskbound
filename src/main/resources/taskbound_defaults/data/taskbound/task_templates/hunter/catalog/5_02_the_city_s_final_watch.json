@@ -1,0 +1,61 @@
+{
+  "id": "taskbound:hunter/catalog/5_02_the_city_s_final_watch",
+  "category_id": "taskbound:hunter/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 110,
+  "display_text": "task.taskbound.hunter.catalog.5_02_the_city_s_final_watch.description",
+  "title": "The City's Final Watch",
+  "description": "• Defeat 3 shulkers in an End City while levitating and using a crossbow.\n• Then defeat 1 enderman in that same End City.\n\nStay within the same End City structure boundary until both objectives are complete. Crossbow and Levitation are required only for the shulkers.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:tracked_kill"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/5_02_the_city_s_final_watch/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_kill",
+          "parameters": {
+            "required_count": 3,
+            "entity": "minecraft:shulker",
+            "required_structure": "minecraft:end_city",
+            "required_weapon": "minecraft:crossbow",
+            "required_effect": "minecraft:levitation",
+            "bind_structure": true,
+            "prevent_departure": true,
+            "method": "projectile"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_kill"
+          ]
+        },
+        {
+          "type": "tracked_kill",
+          "parameters": {
+            "required_count": 1,
+            "entity": "minecraft:enderman",
+            "required_structure": "minecraft:end_city",
+            "bind_structure": true,
+            "prevent_departure": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_kill"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:hunting/5_02_the_city_s_final_watch",
+        "one_time": true,
+        "objective_order": "strict"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

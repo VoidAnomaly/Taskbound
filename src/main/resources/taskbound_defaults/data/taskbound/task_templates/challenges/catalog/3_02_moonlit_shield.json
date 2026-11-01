@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:challenges/catalog/3_02_moonlit_shield",
+  "category_id": "taskbound:challenges/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 21,
+  "display_text": "task.taskbound.challenges.catalog.3_02_moonlit_shield.description",
+  "title": "Moonlit Shield",
+  "description": "Block 8 skeleton arrows with a shield at night.",
+  "required_capabilities": [
+    "minecraft:challenge_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/3_02_moonlit_shield/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "challenge_action",
+          "parameters": {
+            "required_time": "night",
+            "required_count": 8,
+            "action": "shield_block_skeleton_arrows"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:challenge_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:challenges/3_02_moonlit_shield"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

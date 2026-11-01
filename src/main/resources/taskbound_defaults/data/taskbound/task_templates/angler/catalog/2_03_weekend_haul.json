@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:angler/catalog/2_03_weekend_haul",
+  "category_id": "taskbound:angler/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 24,
+  "display_text": "task.taskbound.angler.catalog.2_03_weekend_haul.description",
+  "title": "Weekend Haul",
+  "description": "Catch any 18 fish.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/2_03_weekend_haul/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_count": 18,
+            "fish_item_tag": "taskbound:vanilla_fish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:fishing/2_03_weekend_haul"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 30000
+}

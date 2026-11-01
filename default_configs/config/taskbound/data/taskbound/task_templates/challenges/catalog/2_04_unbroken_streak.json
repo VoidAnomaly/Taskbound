@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:challenges/catalog/2_04_unbroken_streak",
+  "category_id": "taskbound:challenges/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 16,
+  "display_text": "task.taskbound.challenges.catalog.2_04_unbroken_streak.description",
+  "title": "Unbroken Streak",
+  "description": "Defeat 6 hostile mobs without dying. Progress resets on death until you claim the task.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/2_04_unbroken_streak/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_count": 6,
+            "hostile_only": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "reset_on_death": true,
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:challenges/2_04_unbroken_streak"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

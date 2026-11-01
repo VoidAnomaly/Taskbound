@@ -1,0 +1,23 @@
+{
+  "id": "taskbound:crafting/catalog/level_2",
+  "giver_id": "taskbound:crafting",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:crafting/catalog/2_01_faster_smelting",
+    "taskbound:crafting/catalog/2_02_the_funnel_maker",
+    "taskbound:crafting/catalog/2_03_push_and_pull",
+    "taskbound:crafting/catalog/2_04_the_observer",
+    "taskbound:crafting/catalog/2_05_desert_comparator",
+    "taskbound:crafting/catalog/2_06_sun_dial",
+    "taskbound:crafting/catalog/2_07_village_illumination",
+    "taskbound:crafting/catalog/2_08_night_shift_mechanic"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

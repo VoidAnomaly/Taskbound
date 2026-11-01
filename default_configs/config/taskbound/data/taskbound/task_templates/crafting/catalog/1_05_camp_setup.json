@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:crafting/catalog/1_05_camp_setup",
+  "category_id": "taskbound:crafting/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 7,
+  "display_text": "task.taskbound.crafting.catalog.1_05_camp_setup.description",
+  "title": "Camp Setup",
+  "description": "Craft 1 campfire.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/1_05_camp_setup/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:campfire"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:crafting/1_05_camp_setup"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

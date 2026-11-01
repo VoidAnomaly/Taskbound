@@ -1,0 +1,125 @@
+{
+  "id": "taskbound:wizard/catalog/5_02_arcane_armory",
+  "category_id": "taskbound:wizard/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 150,
+  "display_text": "task.taskbound.wizard.catalog.5_02_arcane_armory.description",
+  "title": "Arcane Armory",
+  "description": "• Apply Sharpness IV+, Looting II+, and Unbreaking III to the same 1 diamond sword during this task.\n• Then brew 1 Potion of Strength II.\n• Brew 1 Potion of Fire Resistance.\n• Hand in that 1 diamond sword at a Task Board.\n• Hand in 1 Potion of Strength II brewed for this task.\n• Hand in 1 Potion of Fire Resistance brewed for this task.\n\nFinish enchanting the sword before brewing. Brew the two potions in either order, placing their final ingredients yourself. Submit the sword and both potions together at a Task Board; they are consumed only when the claim succeeds.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:brew_potion",
+    "minecraft:hand_in_item",
+    "minecraft:tracked_enchant"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/5_02_arcane_armory/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_enchant",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:diamond_sword",
+            "required_enchantments": {
+              "minecraft:sharpness": 4,
+              "minecraft:looting": 2,
+              "minecraft:unbreaking": 3
+            },
+            "provenance_stage": "armory_sword"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_enchant"
+          ]
+        },
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:potion",
+            "potion": "minecraft:strong_strength",
+            "provenance_stage": "armory_strength"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        },
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:potion",
+            "potion": "minecraft:fire_resistance",
+            "provenance_stage": "armory_fire"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:diamond_sword",
+            "required_enchantments": {
+              "minecraft:sharpness": 4,
+              "minecraft:looting": 2,
+              "minecraft:unbreaking": 3
+            },
+            "provenance_stage": "armory_sword"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:potion",
+            "potion": "minecraft:strong_strength",
+            "provenance_stage": "armory_strength"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:potion",
+            "potion": "minecraft:fire_resistance",
+            "provenance_stage": "armory_fire"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:wizardry/5_02_arcane_armory",
+        "one_time": true,
+        "objective_stages": [
+          0,
+          1,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

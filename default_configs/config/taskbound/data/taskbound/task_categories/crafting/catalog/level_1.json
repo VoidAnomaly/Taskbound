@@ -1,0 +1,25 @@
+{
+  "id": "taskbound:crafting/catalog/level_1",
+  "giver_id": "taskbound:crafting",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:crafting/catalog/1_01_the_cooper",
+    "taskbound:crafting/catalog/1_02_a_reader_s_corner",
+    "taskbound:crafting/catalog/1_03_in_the_frame",
+    "taskbound:crafting/catalog/1_04_into_the_dark",
+    "taskbound:crafting/catalog/1_05_camp_setup",
+    "taskbound:crafting/catalog/1_06_first_forge",
+    "taskbound:crafting/catalog/1_07_wayfinder",
+    "taskbound:crafting/catalog/1_08_cartographer_s_sheet",
+    "taskbound:crafting/catalog/1_09_night_lanterns",
+    "taskbound:crafting/catalog/1_10_daytime_armory"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

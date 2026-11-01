@@ -1,0 +1,18 @@
+{
+  "id": "taskbound:catalog/netherite_scrap",
+  "type": "ITEM",
+  "pool_id": "taskbound:catalog",
+  "weight": 1500.0,
+  "cost": 30,
+  "minimum_difficulty": 60,
+  "maximum_difficulty": 109,
+  "minimum_reputation_level": null,
+  "maximum_count": 3,
+  "giver_restrictions": [],
+  "rarity_group": "rare",
+  "tangible": true,
+  "payload": {
+    "item": "minecraft:netherite_scrap",
+    "count": 1
+  }
+}

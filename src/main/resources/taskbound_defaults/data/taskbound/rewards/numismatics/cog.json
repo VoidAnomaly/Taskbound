@@ -1,0 +1,18 @@
+{
+  "id": "taskbound:numismatics/cog",
+  "type": "ITEM",
+  "pool_id": "taskbound:numismatics",
+  "weight": 3.0,
+  "cost": 20,
+  "minimum_difficulty": 30,
+  "maximum_difficulty": null,
+  "minimum_reputation_level": null,
+  "maximum_count": 1,
+  "giver_restrictions": [],
+  "rarity_group": "uncommon",
+  "tangible": true,
+  "payload": {
+    "item": "numismatics:cog",
+    "count": 1
+  }
+}

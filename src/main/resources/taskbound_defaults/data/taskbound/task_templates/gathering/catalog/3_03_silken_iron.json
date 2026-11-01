@@ -1,0 +1,47 @@
+{
+  "id": "taskbound:gathering/catalog/3_03_silken_iron",
+  "category_id": "taskbound:gathering/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 30,
+  "display_text": "task.taskbound.gathering.catalog.3_03_silken_iron.description",
+  "title": "Silken Iron",
+  "description": "Mine 8 deepslate iron ore blocks with a Silk Touch pickaxe.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/3_03_silken_iron/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "tool_enchantment": "minecraft:silk_touch",
+            "minimum_tool_enchantment_level": 1,
+            "required_count": 8,
+            "block": "minecraft:deepslate_iron_ore",
+            "required_tool_tag": "minecraft:pickaxes"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:gathering/3_03_silken_iron"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

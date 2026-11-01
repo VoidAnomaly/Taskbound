@@ -1,0 +1,31 @@
+[rewards]
+	#Automatically replace emerald rewards in newly generated tasks with Create: Numismatics spurs.
+	#Other rewards are retained. Uses emeralds when Numismatics is not installed.
+	#Existing accepted tasks keep their saved rewards; set false to disable conversion.
+	use_numismatics_rewards = true
+	#Number of spurs per emerald reward. Default: 1 emerald = 1 spur.
+	# Default: 1
+	# Range: 1 ~ 1024
+	numismatics_spurs_per_emerald = 1
+	#Use custom_currency_item instead of automatic emerald/spur payments for new tasks.
+	#Custom currency takes priority over Numismatics, at one item per emerald.
+	#Existing generated/accepted tasks and other item rewards retain their saved payouts.
+	use_custom_currency_rewards = false
+	#Registered item ID for custom currency, for example minecraft:diamond.
+	#Only used when use_custom_currency_rewards is true.
+	#Invalid, missing or air items fall back to automatic emerald/spur rewards with a log warning.
+	custom_currency_item = "minecraft:emerald"
+
+[tasks]
+	#Maximum unclaimed active/completed tasks per player.
+	# Default: 3
+	# Range: 1 ~ 64
+	maximum_active_tasks = 3
+	#Default same-template cooldown after reward claim, in server ticks.
+	# Default: 24000
+	# Range: > 0
+	repeat_cooldown_ticks = 24000
+	#Automatic offer rotation interval per player, board and guild. Default: five minutes. Accepted tasks are retained. Automatic rotation has a minimum of 20 ticks.
+	# Default: 6000
+	# Range: > 0
+	offer_refresh_ticks = 6000

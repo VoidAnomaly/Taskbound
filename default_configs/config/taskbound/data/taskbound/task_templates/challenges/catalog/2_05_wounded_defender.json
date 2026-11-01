@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:challenges/catalog/2_05_wounded_defender",
+  "category_id": "taskbound:challenges/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 18,
+  "display_text": "task.taskbound.challenges.catalog.2_05_wounded_defender.description",
+  "title": "Wounded Defender",
+  "description": "Land 5 critical melee hits while at 10 health points or less.",
+  "required_capabilities": [
+    "minecraft:combat_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/2_05_wounded_defender/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "combat_action",
+          "parameters": {
+            "required_count": 5,
+            "action": "critical_hit",
+            "max_health": 10
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:combat_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:challenges/2_05_wounded_defender"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:challenges/catalog/4_03_village_last_stand",
+  "category_id": "taskbound:challenges/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 70,
+  "display_text": "task.taskbound.challenges.catalog.4_03_village_last_stand.description",
+  "title": "Village Last Stand",
+  "description": "Defeat 5 pillagers during a village raid with an iron sword while at 10 health points or less.",
+  "required_capabilities": [
+    "minecraft:combat_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/4_03_village_last_stand/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "combat_action",
+          "parameters": {
+            "required_count": 5,
+            "action": "raid_pillager_kill",
+            "required_weapon": "minecraft:iron_sword",
+            "required_structure_tag": "taskbound:villages",
+            "max_health": 10
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:combat_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:challenges/4_03_village_last_stand"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

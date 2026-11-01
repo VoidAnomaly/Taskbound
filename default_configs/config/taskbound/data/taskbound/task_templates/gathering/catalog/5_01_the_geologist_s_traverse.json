@@ -1,0 +1,74 @@
+{
+  "id": "taskbound:gathering/catalog/5_01_the_geologist_s_traverse",
+  "category_id": "taskbound:gathering/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 110,
+  "display_text": "task.taskbound.gathering.catalog.5_01_the_geologist_s_traverse.description",
+  "title": "The Geologist's Traverse",
+  "description": "• Personally mine 16 naturally generated calcite blocks with a pickaxe.\n• Then mine 6 naturally generated deepslate diamond ore blocks below Y=-40 with a Silk Touch pickaxe.\n• Then mine 1 naturally generated ancient debris block in the Nether with a pickaxe.\n\nComplete these objectives in order without dying, and stay alive until claiming at a Task Board. Previously placed and rebroken blocks do not count.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:tracked_gather"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/5_01_the_geologist_s_traverse/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_gather",
+          "parameters": {
+            "block": "minecraft:calcite",
+            "required_count": 16,
+            "natural": true,
+            "required_tool_tag": "minecraft:pickaxes"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_gather"
+          ]
+        },
+        {
+          "type": "tracked_gather",
+          "parameters": {
+            "block": "minecraft:deepslate_diamond_ore",
+            "required_count": 6,
+            "natural": true,
+            "max_y": -41,
+            "tool_enchantment": "minecraft:silk_touch",
+            "minimum_tool_enchantment_level": 1,
+            "required_tool_tag": "minecraft:pickaxes"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_gather"
+          ]
+        },
+        {
+          "type": "tracked_gather",
+          "parameters": {
+            "block": "minecraft:ancient_debris",
+            "required_count": 1,
+            "natural": true,
+            "required_dimension": "minecraft:the_nether",
+            "required_tool_tag": "minecraft:pickaxes"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_gather"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:gathering/5_01_the_geologist_s_traverse",
+        "objective_order": "strict",
+        "no_death": true,
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

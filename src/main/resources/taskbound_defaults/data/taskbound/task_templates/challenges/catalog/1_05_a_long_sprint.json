@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:challenges/catalog/1_05_a_long_sprint",
+  "category_id": "taskbound:challenges/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 7,
+  "display_text": "task.taskbound.challenges.catalog.1_05_a_long_sprint.description",
+  "title": "A Long Sprint",
+  "description": "Sprint 300 blocks.",
+  "required_capabilities": [
+    "minecraft:travel_distance"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/1_05_a_long_sprint/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "travel_distance",
+          "parameters": {
+            "required_count": 300,
+            "mode": "sprint"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:travel_distance"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:challenges/1_05_a_long_sprint"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 9600
+}

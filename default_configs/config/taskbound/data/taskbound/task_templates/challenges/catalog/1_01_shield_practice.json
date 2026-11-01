@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:challenges/catalog/1_01_shield_practice",
+  "category_id": "taskbound:challenges/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 7,
+  "display_text": "task.taskbound.challenges.catalog.1_01_shield_practice.description",
+  "title": "Shield Practice",
+  "description": "Successfully block 5 incoming attacks with a shield.",
+  "required_capabilities": [
+    "minecraft:challenge_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/1_01_shield_practice/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "challenge_action",
+          "parameters": {
+            "required_count": 5,
+            "action": "shield_block"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:challenge_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:challenges/1_01_shield_practice"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 18000
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "taskbound:block/task_board"
+    },
+    "facing=east": {
+      "model": "taskbound:block/task_board", "y": 90
+    },
+    "facing=south": {
+      "model": "taskbound:block/task_board", "y": 180
+    },
+    "facing=west": {
+      "model": "taskbound:block/task_board", "y": 270
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:wizard/catalog/4_02_snowbound_weaving",
+  "category_id": "taskbound:wizard/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 52,
+  "display_text": "task.taskbound.wizard.catalog.4_02_snowbound_weaving.description",
+  "title": "Snowbound Weaving",
+  "description": "Brew 3 Splash Potions of Weaving in snowy plains while snow is falling. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/4_02_snowbound_weaving/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 3,
+            "required_biome": "minecraft:snowy_plains",
+            "required_weather": "snow",
+            "item": "minecraft:splash_potion",
+            "potion": "minecraft:weaving"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:wizardry/4_02_snowbound_weaving"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

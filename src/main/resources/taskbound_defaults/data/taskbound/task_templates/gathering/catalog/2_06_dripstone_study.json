@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:gathering/catalog/2_06_dripstone_study",
+  "category_id": "taskbound:gathering/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 16,
+  "display_text": "task.taskbound.gathering.catalog.2_06_dripstone_study.description",
+  "title": "Dripstone Study",
+  "description": "Mine 8 pointed dripstone blocks below Y=0.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/2_06_dripstone_study/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "max_y": -1,
+            "required_count": 8,
+            "block": "minecraft:pointed_dripstone"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:gathering/2_06_dripstone_study"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

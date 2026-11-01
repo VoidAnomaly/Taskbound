@@ -1,0 +1,49 @@
+{
+  "id": "taskbound:hunter/catalog/5_01_the_ashen_exorcist",
+  "category_id": "taskbound:hunter/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 96,
+  "display_text": "task.taskbound.hunter.catalog.5_01_the_ashen_exorcist.description",
+  "title": "The Ashen Exorcist",
+  "description": "Defeat 8 wither skeletons inside a Nether Fortress with a Smite IV-or-better iron sword while under Strength II. Then return to a Task Board without dying after the first qualifying kill. Use the same physical sword throughout; the no-death window runs from the first qualifying kill until claim.",
+  "required_capabilities": [
+    "minecraft:tracked_kill"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/5_01_the_ashen_exorcist/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_kill",
+          "parameters": {
+            "required_count": 8,
+            "entity": "minecraft:wither_skeleton",
+            "method": "melee",
+            "required_structure": "minecraft:fortress",
+            "required_weapon": "minecraft:iron_sword",
+            "tool_enchantment": "minecraft:smite",
+            "minimum_tool_enchantment_level": 4,
+            "required_effect": "minecraft:strength",
+            "minimum_effect_amplifier": 1,
+            "same_weapon": true,
+            "no_death_after_start": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_kill"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:hunting/5_01_the_ashen_exorcist",
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

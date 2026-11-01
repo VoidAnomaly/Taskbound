@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:crafting/catalog/2_06_sun_dial",
+  "category_id": "taskbound:crafting/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.crafting.catalog.2_06_sun_dial.description",
+  "title": "Sun Dial",
+  "description": "Craft 1 daylight detector during daytime.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/2_06_sun_dial/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_time": "day",
+            "required_count": 1,
+            "item": "minecraft:daylight_detector"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:crafting/2_06_sun_dial"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

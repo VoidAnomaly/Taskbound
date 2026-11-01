@@ -1,0 +1,39 @@
+{
+  "id": "taskbound:crafting/catalog/1_08_cartographer_s_sheet",
+  "category_id": "taskbound:crafting/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 12,
+  "display_text": "task.taskbound.crafting.catalog.1_08_cartographer_s_sheet.description",
+  "title": "Cartographer's Sheet",
+  "description": "Craft 1 empty map.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/1_08_cartographer_s_sheet/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:map"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:crafting/1_08_cartographer_s_sheet"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

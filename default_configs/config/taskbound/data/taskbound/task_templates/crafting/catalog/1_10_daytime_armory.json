@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:crafting/catalog/1_10_daytime_armory",
+  "category_id": "taskbound:crafting/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 7,
+  "display_text": "task.taskbound.crafting.catalog.1_10_daytime_armory.description",
+  "title": "Daytime Armory",
+  "description": "Craft 1 armor stand during the day.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/1_10_daytime_armory/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_time": "day",
+            "required_count": 1,
+            "item": "minecraft:armor_stand"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:crafting/1_10_daytime_armory"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

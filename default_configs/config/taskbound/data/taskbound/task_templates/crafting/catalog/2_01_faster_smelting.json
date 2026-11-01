@@ -1,0 +1,40 @@
+{
+  "id": "taskbound:crafting/catalog/2_01_faster_smelting",
+  "category_id": "taskbound:crafting/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 17,
+  "display_text": "task.taskbound.crafting.catalog.2_01_faster_smelting.description",
+  "title": "Faster Smelting",
+  "description": "Craft 1 blast furnace.",
+  "required_capabilities": [
+    "minecraft:craft_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/2_01_faster_smelting/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "craft_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "minecraft:blast_furnace"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:craft_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:crafting/2_01_faster_smelting"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 18000
+}

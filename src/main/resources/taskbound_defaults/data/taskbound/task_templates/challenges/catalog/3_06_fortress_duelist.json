@@ -1,0 +1,44 @@
+{
+  "id": "taskbound:challenges/catalog/3_06_fortress_duelist",
+  "category_id": "taskbound:challenges/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 46,
+  "display_text": "task.taskbound.challenges.catalog.3_06_fortress_duelist.description",
+  "title": "Fortress Duelist",
+  "description": "Land 4 critical sword hits on wither skeletons inside a Nether Fortress while under Strength II.",
+  "required_capabilities": [
+    "minecraft:combat_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/3_06_fortress_duelist/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "combat_action",
+          "parameters": {
+            "required_count": 4,
+            "action": "critical_hit",
+            "entity": "minecraft:wither_skeleton",
+            "required_weapon_tag": "taskbound:swords",
+            "required_structure": "minecraft:fortress",
+            "required_effect": "minecraft:strength",
+            "minimum_effect_amplifier": 1
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:combat_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:challenges/3_06_fortress_duelist"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

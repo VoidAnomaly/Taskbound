@@ -1,0 +1,43 @@
+{
+  "id": "taskbound:wizard/catalog/3_06_rainy_swamp_alchemy",
+  "category_id": "taskbound:wizard/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 38,
+  "display_text": "task.taskbound.wizard.catalog.3_06_rainy_swamp_alchemy.description",
+  "title": "Rainy Swamp Alchemy",
+  "description": "Brew 2 Splash Potions of Poison in a swamp at night during rain. Place the final brewing ingredient into the stand yourself; each completed bottle counts.",
+  "required_capabilities": [
+    "minecraft:brew_potion"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:wizard/catalog/3_06_rainy_swamp_alchemy/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "brew_potion",
+          "parameters": {
+            "required_count": 2,
+            "required_biome": "minecraft:swamp",
+            "required_time": "night",
+            "required_weather": "rain",
+            "item": "minecraft:splash_potion",
+            "potion": "minecraft:poison"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:brew_potion"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:wizardry/3_06_rainy_swamp_alchemy"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

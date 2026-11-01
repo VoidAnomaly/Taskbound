@@ -1,0 +1,48 @@
+{
+  "id": "taskbound:hunter/catalog/4_03_stone_and_steel_test",
+  "category_id": "taskbound:hunter/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 58,
+  "display_text": "task.taskbound.hunter.catalog.4_03_stone_and_steel_test.description",
+  "title": "Stone-and-Steel Test",
+  "description": "Defeat 5 wither skeletons in a Nether Fortress with a stone sword while under Fire Resistance.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/4_03_stone_and_steel_test/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_structure": "minecraft:fortress",
+            "required_weapon": "minecraft:stone_sword",
+            "required_effect": "minecraft:fire_resistance",
+            "minimum_effect_amplifier": 0,
+            "required_count": 5,
+            "entity": "minecraft:wither_skeleton"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:hunting/4_03_stone_and_steel_test"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 6
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

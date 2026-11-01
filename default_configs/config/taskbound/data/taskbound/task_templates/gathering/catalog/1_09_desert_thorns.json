@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:gathering/catalog/1_09_desert_thorns",
+  "category_id": "taskbound:gathering/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 14,
+  "display_text": "task.taskbound.gathering.catalog.1_09_desert_thorns.description",
+  "title": "Desert Thorns",
+  "description": "Harvest 6 cactus blocks in a desert.",
+  "required_capabilities": [
+    "minecraft:gather_block"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/1_09_desert_thorns/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "gather_block",
+          "parameters": {
+            "required_biome": "minecraft:desert",
+            "required_count": 6,
+            "block": "minecraft:cactus"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:gather_block"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:gathering/1_09_desert_thorns"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

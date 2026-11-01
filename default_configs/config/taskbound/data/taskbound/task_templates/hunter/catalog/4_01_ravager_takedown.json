@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:hunter/catalog/4_01_ravager_takedown",
+  "category_id": "taskbound:hunter/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 58,
+  "display_text": "task.taskbound.hunter.catalog.4_01_ravager_takedown.description",
+  "title": "Ravager Takedown",
+  "description": "Defeat 1 ravager with a crossbow.",
+  "required_capabilities": [
+    "minecraft:kill_entity"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:hunter/catalog/4_01_ravager_takedown/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "kill_entity",
+          "parameters": {
+            "required_weapon": "minecraft:crossbow",
+            "required_count": 1,
+            "entity": "minecraft:ravager"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:kill_entity"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:hunting/4_01_ravager_takedown"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "taskbound:gathering/catalog/5_02_the_silent_sample",
+  "category_id": "taskbound:gathering/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 110,
+  "display_text": "task.taskbound.gathering.catalog.5_02_the_silent_sample.description",
+  "title": "The Silent Sample",
+  "description": "• Mine 6 naturally generated sculk catalysts in 1 Ancient City using Silk Touch while under Night Vision.\n• Then leave that same 1 Ancient City.\n\nComplete these objectives in order without awakening a Warden during this task.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:structure_exit",
+    "minecraft:tracked_gather"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/5_02_the_silent_sample/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_gather",
+          "parameters": {
+            "block": "minecraft:sculk_catalyst",
+            "required_count": 6,
+            "natural": true,
+            "tool_enchantment": "minecraft:silk_touch",
+            "minimum_tool_enchantment_level": 1,
+            "required_effect": "minecraft:night_vision",
+            "required_structure": "minecraft:ancient_city",
+            "same_structure": true,
+            "guard_warden": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_gather"
+          ]
+        },
+        {
+          "type": "structure_exit",
+          "parameters": {
+            "required_structure": "minecraft:ancient_city",
+            "required_count": 1
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:structure_exit"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:gathering/5_02_the_silent_sample",
+        "objective_order": "strict",
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

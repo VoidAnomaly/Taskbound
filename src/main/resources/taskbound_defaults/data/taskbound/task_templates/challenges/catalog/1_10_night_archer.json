@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:challenges/catalog/1_10_night_archer",
+  "category_id": "taskbound:challenges/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 6,
+  "display_text": "task.taskbound.challenges.catalog.1_10_night_archer.description",
+  "title": "Night Archer",
+  "description": "Land 3 bow shots on hostile mobs at night.",
+  "required_capabilities": [
+    "minecraft:challenge_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:challenges/catalog/1_10_night_archer/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "challenge_action",
+          "parameters": {
+            "required_time": "night",
+            "required_count": 3,
+            "action": "bow_hit_on_hostile"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:challenge_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:challenges/1_10_night_archer"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 2
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

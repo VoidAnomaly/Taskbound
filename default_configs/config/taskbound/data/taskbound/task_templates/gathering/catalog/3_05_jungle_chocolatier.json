@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:gathering/catalog/3_05_jungle_chocolatier",
+  "category_id": "taskbound:gathering/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 26,
+  "display_text": "task.taskbound.gathering.catalog.3_05_jungle_chocolatier.description",
+  "title": "Jungle Chocolatier",
+  "description": "Harvest 12 ripe cocoa pods in a jungle during daylight.",
+  "required_capabilities": [
+    "minecraft:harvest_crop"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:gathering/catalog/3_05_jungle_chocolatier/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "harvest_crop",
+          "parameters": {
+            "required_biome": "minecraft:jungle",
+            "required_time": "day",
+            "required_count": 12,
+            "block": "minecraft:cocoa"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:harvest_crop"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:gathering/3_05_jungle_chocolatier"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

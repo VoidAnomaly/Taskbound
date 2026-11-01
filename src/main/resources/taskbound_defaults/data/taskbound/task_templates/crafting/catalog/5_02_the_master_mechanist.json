@@ -1,0 +1,130 @@
+{
+  "id": "taskbound:crafting/catalog/5_02_the_master_mechanist",
+  "category_id": "taskbound:crafting/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 88,
+  "display_text": "task.taskbound.crafting.catalog.5_02_the_master_mechanist.description",
+  "title": "The Master Mechanist",
+  "description": "• Personally craft 1 crafter.\n• Personally craft 2 observers.\n• Personally craft 2 comparators.\n• Personally craft 2 repeaters.\n• Personally craft 4 copper bulbs.\n• Then place the 1 crafter you crafted.\n• Activate that crafter by redstone to produce 1 item while under Night Vision.\n\nComplete the five crafting objectives in any order below Y=-32 in the Overworld. Finish all five before placing the crafter, then activate it.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:activate_crafter",
+    "minecraft:place_crafted",
+    "minecraft:tracked_craft"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:crafting/catalog/5_02_the_master_mechanist/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "tracked_craft",
+          "parameters": {
+            "item": "minecraft:crafter",
+            "required_count": 1,
+            "max_y": -33,
+            "required_dimension": "minecraft:overworld"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_craft"
+          ]
+        },
+        {
+          "type": "tracked_craft",
+          "parameters": {
+            "item": "minecraft:observer",
+            "required_count": 2,
+            "max_y": -33,
+            "required_dimension": "minecraft:overworld"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_craft"
+          ]
+        },
+        {
+          "type": "tracked_craft",
+          "parameters": {
+            "item": "minecraft:comparator",
+            "required_count": 2,
+            "max_y": -33,
+            "required_dimension": "minecraft:overworld"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_craft"
+          ]
+        },
+        {
+          "type": "tracked_craft",
+          "parameters": {
+            "item": "minecraft:repeater",
+            "required_count": 2,
+            "max_y": -33,
+            "required_dimension": "minecraft:overworld"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_craft"
+          ]
+        },
+        {
+          "type": "tracked_craft",
+          "parameters": {
+            "item": "minecraft:copper_bulb",
+            "required_count": 4,
+            "max_y": -33,
+            "required_dimension": "minecraft:overworld"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:tracked_craft"
+          ]
+        },
+        {
+          "type": "place_crafted",
+          "parameters": {
+            "item": "minecraft:crafter",
+            "required_count": 1,
+            "provenance_stage": "objective_0"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:place_crafted"
+          ]
+        },
+        {
+          "type": "activate_crafter",
+          "parameters": {
+            "item": "minecraft:crafter",
+            "required_count": 1,
+            "provenance_stage": "objective_0",
+            "required_effect": "minecraft:night_vision"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:activate_crafter"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:crafting/5_02_the_master_mechanist",
+        "objective_stages": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

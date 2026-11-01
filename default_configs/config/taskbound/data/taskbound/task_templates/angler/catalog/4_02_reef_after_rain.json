@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:angler/catalog/4_02_reef_after_rain",
+  "category_id": "taskbound:angler/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 74,
+  "display_text": "task.taskbound.angler.catalog.4_02_reef_after_rain.description",
+  "title": "Reef After Rain",
+  "description": "Catch 2 tropical fish in a warm ocean while raining.",
+  "required_capabilities": [
+    "minecraft:catch_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/catalog/4_02_reef_after_rain/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "catch_item",
+          "parameters": {
+            "required_biome": "minecraft:warm_ocean",
+            "required_weather": "rain",
+            "required_count": 2,
+            "fish_item": "minecraft:tropical_fish"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:catch_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:fishing/4_02_reef_after_rain"
+      },
+      "difficulty_components": [
+        {
+          "description": "difficulty.taskbound.catalog_conditions",
+          "points": 4
+        }
+      ],
+      "required_capabilities": []
+    }
+  ]
+}

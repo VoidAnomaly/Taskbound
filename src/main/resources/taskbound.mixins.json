@@ -1,0 +1,30 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.taskbound.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EndDragonFightEvidenceMixin",
+    "EnderDragonFinisherMixin",
+    "LivingEntityEquipmentMixin",
+    "ProductionAnvilMenuMixin",
+    "ProductionBrewingStandMixin",
+    "ProductionFishingLootMixin",
+    "ProductionFishingRodMixin",
+    "ProjectileReflectionMixin",
+    "ServerPlayerMovementMixin",
+    "TaskBerryHarvestMixin",
+    "TaskBlockPlacementMixin",
+    "TaskCraftTransferMixin",
+    "TaskCrafterOutputMixin",
+    "TaskMenuClickMixin",
+    "TaskResultSlotMixin",
+    "TaskShriekerMixin",
+    "TrialSpawnerDataAccessor",
+    "TrialSpawnerEvidenceMixin",
+    "VillagePavilionLimitMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
