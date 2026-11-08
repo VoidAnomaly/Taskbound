@@ -1,0 +1,24 @@
+{
+  "id": "taskbound:farmer/catalog/level_3",
+  "giver_id": "taskbound:gathering",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:farmer/catalog/3_f19_bake_sale",
+    "taskbound:farmer/catalog/3_f20_food_store",
+    "taskbound:farmer/catalog/3_f21_harvest_basket",
+    "taskbound:farmer/catalog/3_f22_wool_order",
+    "taskbound:farmer/catalog/3_f23_healthy_herd",
+    "taskbound:farmer/catalog/3_f24_apiary_supplies",
+    "taskbound:farmer/farmersdelight/3_f19_baker_s_counter",
+    "taskbound:farmer/farmersdelight/3_f20_lunch_rush",
+    "taskbound:farmer/farmersdelight/3_f21_mixed_farm"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

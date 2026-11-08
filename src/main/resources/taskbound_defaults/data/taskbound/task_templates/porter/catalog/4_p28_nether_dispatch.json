@@ -1,0 +1,48 @@
+{
+  "id": "taskbound:porter/catalog/4_p28_nether_dispatch",
+  "category_id": "taskbound:porter/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 60,
+  "display_text": "task.taskbound.porter.catalog.4_p28_nether_dispatch.description",
+  "title": "Nether Dispatch",
+  "description": "Deliver from an assigned Overworld board to an assigned Nether board using ordinary portals. Both boards must already be registered.\nAssigned destinations: 1. Follow the complete route shown below, including any return stop.",
+  "required_capabilities": [
+    "minecraft:porter_route"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:porter/catalog/4_p28_nether_dispatch/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "porter_route",
+          "parameters": {
+            "required_count": 1,
+            "route_kind": "nether",
+            "stops": 1,
+            "minimum_leg_distance": 256,
+            "maximum_leg_distance": 768,
+            "teleportation_allowed": false,
+            "dimensional_travel_allowed": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:porter_route"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:porter/catalog/4_p28_nether_dispatch",
+        "catalog_profile": "porter",
+        "currency_reward": 16,
+        "cooldown_ticks": 24000,
+        "currency_per_1024_blocks": 2
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

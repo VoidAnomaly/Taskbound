@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:angler/starcatcher/3_a20_ripples_in_the_rain",
+  "category_id": "taskbound:angler/starcatcher/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 40,
+  "display_text": "task.taskbound.angler.starcatcher.3_a20_ripples_in_the_rain.description",
+  "title": "Ripples in the Rain",
+  "description": "Catch 1 Ripple Catfish during rain.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/3_a20_ripples_in_the_rain/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "species": [
+              "starcatcher:ripple_catfish"
+            ],
+            "required_weather": "rain"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:angler/starcatcher/3_a20_ripples_in_the_rain",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 16,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "taskbound:angler/starcatcher/4_a25_storm_caller",
+  "category_id": "taskbound:angler/starcatcher/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 60,
+  "display_text": "task.taskbound.angler.starcatcher.4_a25_storm_caller.description",
+  "title": "Storm Caller",
+  "description": "Catch 1 Thunder Bass or Lightning Bass during a thunderstorm.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/4_a25_storm_caller/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "species": [
+              "starcatcher:thunder_bass",
+              "starcatcher:lightning_bass"
+            ],
+            "required_weather": "thunder"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:angler/starcatcher/4_a25_storm_caller",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 30,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

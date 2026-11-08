@@ -1,0 +1,30 @@
+{
+  "id": "taskbound:farmer/catalog/level_1",
+  "giver_id": "taskbound:gathering",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:farmer/catalog/1_f01_harvest_day",
+    "taskbound:farmer/catalog/1_f02_carrot_patch",
+    "taskbound:farmer/catalog/1_f03_potato_patch",
+    "taskbound:farmer/catalog/1_f04_beetroot_patch",
+    "taskbound:farmer/catalog/1_f05_fresh_bread",
+    "taskbound:farmer/catalog/1_f06_morning_milk",
+    "taskbound:farmer/catalog/1_f07_first_fleece",
+    "taskbound:farmer/catalog/1_f08_new_arrival",
+    "taskbound:farmer/catalog/1_f09_egg_basket",
+    "taskbound:farmer/catalog/1_f10_pantry_basics",
+    "taskbound:farmer/farmersdelight/1_f01_cabbage_patch",
+    "taskbound:farmer/farmersdelight/1_f02_tomato_picking",
+    "taskbound:farmer/farmersdelight/1_f03_onion_patch",
+    "taskbound:farmer/farmersdelight/1_f04_rice_harvest",
+    "taskbound:farmer/farmersdelight/1_f05_knife_work"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

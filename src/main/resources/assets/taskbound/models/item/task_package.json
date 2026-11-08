@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraft:item/paper"
+    "layer0": "taskbound:item/task_package",
+    "layer1": "taskbound:item/task_package_stamp"
   }
 }

@@ -16,7 +16,8 @@ public final class VanillaEventRules {
             "required_weapon", "required_weapon_tag", "required_tool", "required_tool_tag",
             "tool_enchantment", "minimum_tool_enchantment_level");
     private static final Map<String, Set<String>> PARAMETERS = Map.of(
-            "kill_entity", Set.of("entity", "entity_tag", "hostile_only", "method"),
+            "kill_entity", Set.of("entity", "entity_tag", "hostile_only", "method",
+                    "required_damage_type", "required_damage_type_tag"),
             "catch_item", Set.of("fish_item", "fish_item_tag"),
             "craft_item", Set.of("item"),
             "gather_block", Set.of("block"),
@@ -38,11 +39,17 @@ public final class VanillaEventRules {
         result.addAll(ProductionObjectiveRules.supportedCapabilities());
         result.addAll(WorldObjectiveRules.supportedCapabilities());
         result.addAll(EncounterObjectiveRules.supportedCapabilities());
+        result.addAll(StarcatcherObjectiveRules.supportedCapabilities());
+        result.addAll(FarmerObjectiveRules.supportedCapabilities());
+        result.addAll(dev.taskbound.porter.PorterObjectiveRules.supportedCapabilities());
         return Set.copyOf(result);
     }
 
     /** Call for catalog definitions on reload. Unknown requirements must never become free passes. */
     public static void validate(String type, Map<String, ?> parameters) {
+        if (FarmerObjectiveRules.supports(type)) { FarmerObjectiveRules.validate(type, parameters); return; }
+        if (dev.taskbound.porter.PorterObjectiveRules.supports(type)) { dev.taskbound.porter.PorterObjectiveRules.validate(type, parameters); return; }
+        if (StarcatcherObjectiveRules.supports(type)) { StarcatcherObjectiveRules.validate(type, parameters); return; }
         if (ProductionObjectiveRules.supports(type)) { ProductionObjectiveRules.validate(type, parameters); return; }
         if (WorldObjectiveRules.supports(type)) { WorldObjectiveRules.validate(type, parameters); return; }
         if (EncounterObjectiveRules.supports(type)) { EncounterObjectiveRules.validate(type, parameters); return; }

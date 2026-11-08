@@ -1,0 +1,136 @@
+{
+  "id": "taskbound:farmer/farmersdelight/5_f29_grand_feast",
+  "category_id": "taskbound:farmer/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 85,
+  "display_text": "task.taskbound.farmer.farmersdelight.5_f29_grand_feast.description",
+  "title": "Grand Feast",
+  "description": "• Harvest 16 mature cabbage plants yourself.\n• Harvest 16 mature tomato plants yourself.\n• Harvest 16 mature onion plants yourself.\n• Harvest 16 mature rice plants yourself.\n• Hand in 1 roast chicken.\n• Hand in 1 stuffed pumpkin.\n• Hand in 1 shepherds pie.\n• Hand in 1 apple pie.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:farm_action",
+    "minecraft:hand_in_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:farmer/farmersdelight/5_f29_grand_feast/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 16,
+            "action": "harvest",
+            "item": "farmersdelight:cabbage"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 16,
+            "action": "harvest",
+            "item": "farmersdelight:tomato"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 16,
+            "action": "harvest",
+            "item": "farmersdelight:onion"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 16,
+            "action": "harvest",
+            "item": "farmersdelight:rice"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "farmersdelight:roast_chicken_block"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "farmersdelight:stuffed_pumpkin_block"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "farmersdelight:shepherds_pie_block"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 1,
+            "item": "farmersdelight:apple_pie"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:farmer/farmersdelight/5_f29_grand_feast",
+        "catalog_profile": "farmersdelight",
+        "currency_reward": 40,
+        "cooldown_ticks": 24000,
+        "one_time": true,
+        "completion_group": "taskbound:farmer/slot_29",
+        "objective_stages": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

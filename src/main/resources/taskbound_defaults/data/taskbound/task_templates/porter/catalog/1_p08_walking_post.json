@@ -1,0 +1,49 @@
+{
+  "id": "taskbound:porter/catalog/1_p08_walking_post",
+  "category_id": "taskbound:porter/catalog/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 10,
+  "display_text": "task.taskbound.porter.catalog.1_p08_walking_post.description",
+  "title": "Walking Post",
+  "description": "Deliver 1 parcel on a local route without riding, flying or teleporting. Walking, sprinting and swimming are allowed.\nAssigned destinations: 1. Follow the complete route shown below, including any return stop.",
+  "required_capabilities": [
+    "minecraft:porter_route"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:porter/catalog/1_p08_walking_post/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "porter_route",
+          "parameters": {
+            "required_count": 1,
+            "on_foot": true,
+            "route_kind": "delivery",
+            "stops": 1,
+            "minimum_leg_distance": 256,
+            "maximum_leg_distance": 768,
+            "teleportation_allowed": false,
+            "dimensional_travel_allowed": false
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:porter_route"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:porter/catalog/1_p08_walking_post",
+        "catalog_profile": "porter",
+        "currency_reward": 4,
+        "cooldown_ticks": 24000,
+        "currency_per_1024_blocks": 2
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

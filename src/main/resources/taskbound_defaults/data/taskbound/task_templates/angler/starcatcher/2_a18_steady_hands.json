@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:angler/starcatcher/2_a18_steady_hands",
+  "category_id": "taskbound:angler/starcatcher/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.angler.starcatcher.2_a18_steady_hands.description",
+  "title": "Steady Hands",
+  "description": "Make 1 perfect catch.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/2_a18_steady_hands/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "perfect": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:angler/starcatcher/2_a18_steady_hands",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 8,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

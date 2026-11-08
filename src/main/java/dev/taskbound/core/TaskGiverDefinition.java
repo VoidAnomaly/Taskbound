@@ -80,7 +80,7 @@ public record TaskGiverDefinition(
             case "taskbound:angler" -> "minecraft:fishing_rod";
             case "taskbound:wizard" -> "minecraft:brewing_stand";
             case "taskbound:porter" -> "minecraft:chest";
-            case "taskbound:gathering" -> "minecraft:iron_pickaxe";
+            case "taskbound:gathering" -> "minecraft:iron_hoe";
             case "taskbound:crafting" -> "minecraft:crafting_table";
             case "taskbound:exploration" -> "minecraft:compass";
             case "taskbound:challenges" -> "minecraft:shield";

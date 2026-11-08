@@ -1,0 +1,23 @@
+{
+  "id": "taskbound:porter/catalog/level_2",
+  "giver_id": "taskbound:porter",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:porter/catalog/2_p11_regional_post",
+    "taskbound:porter/catalog/2_p12_supply_chain",
+    "taskbound:porter/catalog/2_p13_courier_circuit",
+    "taskbound:porter/catalog/2_p14_night_courier",
+    "taskbound:porter/catalog/2_p15_fragile_goods",
+    "taskbound:porter/catalog/2_p16_priority_mail",
+    "taskbound:porter/catalog/2_p17_collection_run",
+    "taskbound:porter/catalog/2_p18_regional_exchange"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

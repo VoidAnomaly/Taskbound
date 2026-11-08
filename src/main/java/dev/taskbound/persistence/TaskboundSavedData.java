@@ -11,14 +11,20 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.UUID;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.saveddata.SavedData;
 
 /** Overworld-scoped state for every player's reputation, history, offers, tasks, and progress. */
@@ -31,6 +37,9 @@ public final class TaskboundSavedData extends SavedData {
 
     private final Map<UUID, PlayerCoreState> players = new LinkedHashMap<>();
     private final Map<UUID, BoardRecord> boards = new LinkedHashMap<>();
+    private final Map<UUID, Set<UUID>> visitedBoards = new LinkedHashMap<>();
+    private final Map<UUID, Set<String>> portalDimensions = new LinkedHashMap<>();
+    private final Map<UUID, String> boardBiomes = new LinkedHashMap<>();
     private final Map<UUID, PendingCure> pendingCures = new LinkedHashMap<>();
 
     public static TaskboundSavedData get(MinecraftServer server) {
@@ -69,14 +78,56 @@ public final class TaskboundSavedData extends SavedData {
         }
     }
 
+    /** Called for an already loaded board; discovery never loads chunks to search for destinations. */
+    public void registerBoard(UUID boardId, ServerLevel level, BlockPos position) {
+        registerBoard(boardId, level.dimension().location().toString(), position);
+        var holder = level.getBiome(position);
+        String biome = holder.unwrapKey().map(key -> key.location().toString()).orElse("");
+        for (String family : List.of("is_ocean", "is_river", "is_jungle", "is_taiga", "is_forest",
+                "is_badlands", "is_savanna", "is_mountain", "is_beach")) {
+            if (holder.is(TagKey.create(Registries.BIOME, ResourceLocation.withDefaultNamespace(family)))) {
+                biome = "#minecraft:" + family;
+                break;
+            }
+        }
+        if (!biome.equals(boardBiomes.put(boardId, biome))) setDirty();
+    }
+
     public void unregisterBoard(UUID boardId) {
         if (boards.remove(boardId) != null) {
+            boardBiomes.remove(boardId);
+            visitedBoards.values().forEach(visited -> visited.remove(boardId));
             setDirty();
         }
     }
 
     public Optional<BoardRecord> board(UUID boardId) {
         return Optional.ofNullable(boards.get(boardId));
+    }
+
+    public List<BoardRecord> boards() { return List.copyOf(boards.values()); }
+
+    /** Retains visit history for saved data; Porter destination discovery uses the shared board registry. */
+    public void visitBoard(UUID playerId, UUID boardId, String biome) {
+        if (!boards.containsKey(boardId)) return;
+        player(playerId);
+        if (visitedBoards.computeIfAbsent(playerId, ignored -> new LinkedHashSet<>()).add(boardId)) setDirty();
+        if (!biome.equals(boardBiomes.put(boardId, biome))) setDirty();
+    }
+
+    public Set<UUID> visitedBoards(UUID playerId) {
+        return Set.copyOf(visitedBoards.getOrDefault(playerId, Set.of()));
+    }
+
+    public String boardBiome(UUID boardId) { return boardBiomes.getOrDefault(boardId, ""); }
+
+    public void visitPortalDimension(UUID playerId, String dimension) {
+        player(playerId);
+        if (portalDimensions.computeIfAbsent(playerId, ignored -> new LinkedHashSet<>()).add(dimension)) setDirty();
+    }
+
+    public Set<String> portalDimensions(UUID playerId) {
+        return Set.copyOf(portalDimensions.getOrDefault(playerId, Set.of()));
     }
 
     public Optional<BoardRecord> destinationFor(UUID originBoardId, String dimension, BlockPos origin) {
@@ -124,6 +175,12 @@ public final class TaskboundSavedData extends SavedData {
             }
             CompoundTag playerTag = new CompoundTag();
             playerTag.putUUID("player_id", entry.getKey());
+            ListTag visits = new ListTag();
+            visitedBoards(entry.getKey()).stream().sorted().forEach(id -> visits.add(StringTag.valueOf(id.toString())));
+            playerTag.put("porter_visited_boards", visits);
+            ListTag dimensions = new ListTag();
+            portalDimensions(entry.getKey()).stream().sorted().forEach(id -> dimensions.add(StringTag.valueOf(id)));
+            playerTag.put("porter_portal_dimensions", dimensions);
             Map<String, Object> stateMap = entry.getValue().toMap();
             playerTag.putString("reputation", GSON.toJson(stateMap.get("reputation")));
             putJsonRecords(playerTag, "selection_histories", stateMap.get("selection_histories"));
@@ -151,6 +208,7 @@ public final class TaskboundSavedData extends SavedData {
             boardTag.putInt("x", board.position().getX());
             boardTag.putInt("y", board.position().getY());
             boardTag.putInt("z", board.position().getZ());
+            boardTag.putString("porter_biome", boardBiome(board.boardId()));
             boardList.add(boardTag);
         });
         tag.put("boards", boardList);
@@ -183,6 +241,15 @@ public final class TaskboundSavedData extends SavedData {
                     throw new IllegalArgumentException("Stored UUID does not match serialized player state");
                 }
                 result.players.put(playerId, state);
+                Set<UUID> visits = new LinkedHashSet<>();
+                for (Tag visit : playerTag.getList("porter_visited_boards", Tag.TAG_STRING)) {
+                    try { visits.add(UUID.fromString(visit.getAsString())); }
+                    catch (IllegalArgumentException invalid) { TaskboundMod.LOGGER.warn("Skipping invalid visited board identifier"); }
+                }
+                result.visitedBoards.put(playerId, visits);
+                Set<String> dimensions = new LinkedHashSet<>();
+                for (Tag dimension : playerTag.getList("porter_portal_dimensions", Tag.TAG_STRING)) dimensions.add(dimension.getAsString());
+                result.portalDimensions.put(playerId, dimensions);
             } catch (RuntimeException exception) {
                 TaskboundMod.LOGGER.error("Skipping corrupt Taskbound player state", exception);
             }
@@ -191,6 +258,7 @@ public final class TaskboundSavedData extends SavedData {
             CompoundTag boardTag = (CompoundTag) value;
             if (boardTag.hasUUID("board_id")) {
                 UUID boardId = boardTag.getUUID("board_id");
+                result.boardBiomes.put(boardId, boardTag.getString("porter_biome"));
                 result.boards.put(boardId, new BoardRecord(
                         boardId,
                         boardTag.getString("dimension"),

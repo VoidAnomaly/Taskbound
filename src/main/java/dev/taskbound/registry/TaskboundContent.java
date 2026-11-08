@@ -11,6 +11,7 @@ import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.UUIDUtil;
+import net.minecraft.core.GlobalPos;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
@@ -55,6 +56,9 @@ public final class TaskboundContent {
             ITEMS.registerItem("task_package", TaskPackageItem::new, new Item.Properties().stacksTo(1));
     public static final DeferredItem<TaskJournalItem> TASK_JOURNAL =
             ITEMS.registerItem("task_journal", TaskJournalItem::new, new Item.Properties().stacksTo(1));
+    public static final DeferredItem<net.minecraft.world.item.CompassItem> DELIVERY_COMPASS =
+            ITEMS.registerItem("delivery_compass", net.minecraft.world.item.CompassItem::new, new Item.Properties().stacksTo(1)
+                    .component(net.minecraft.core.component.DataComponents.ENCHANTMENT_GLINT_OVERRIDE, false));
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<java.util.UUID>> PACKAGE_UUID =
             DATA_COMPONENTS.registerComponentType("package_uuid", builder ->
                     builder.persistent(UUIDUtil.CODEC).networkSynchronized(UUIDUtil.STREAM_CODEC));
@@ -64,6 +68,9 @@ public final class TaskboundContent {
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<java.util.UUID>> PACKAGE_ORIGIN_BOARD_UUID =
             DATA_COMPONENTS.registerComponentType("package_origin_board_uuid", builder ->
                     builder.persistent(UUIDUtil.CODEC).networkSynchronized(UUIDUtil.STREAM_CODEC));
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<GlobalPos>> PACKAGE_DESTINATION =
+            DATA_COMPONENTS.registerComponentType("package_destination", builder ->
+                    builder.persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TaskBoardBlockEntity>> TASK_BOARD_ENTITY =
             BLOCK_ENTITIES.register("task_board", () ->
                     BlockEntityType.Builder.of(TaskBoardBlockEntity::new, TASK_BOARD.get()).build(null));

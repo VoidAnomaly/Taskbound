@@ -1,0 +1,27 @@
+{
+  "id": "taskbound:farmer/catalog/level_2",
+  "giver_id": "taskbound:gathering",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:farmer/catalog/2_f11_cocoa_harvest",
+    "taskbound:farmer/catalog/2_f12_root_cellar",
+    "taskbound:farmer/catalog/2_f13_oven_ready",
+    "taskbound:farmer/catalog/2_f14_soup_kitchen",
+    "taskbound:farmer/catalog/2_f15_dairy_round",
+    "taskbound:farmer/catalog/2_f16_breeding_season",
+    "taskbound:farmer/catalog/2_f17_fresh_fleece",
+    "taskbound:farmer/catalog/2_f18_first_honey",
+    "taskbound:farmer/farmersdelight/2_f11_dough_day",
+    "taskbound:farmer/farmersdelight/2_f12_vegetable_crate",
+    "taskbound:farmer/farmersdelight/2_f13_rice_for_the_table",
+    "taskbound:farmer/farmersdelight/2_f14_warm_lunch"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

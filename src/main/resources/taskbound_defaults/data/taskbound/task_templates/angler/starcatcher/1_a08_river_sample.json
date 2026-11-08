@@ -1,0 +1,45 @@
+{
+  "id": "taskbound:angler/starcatcher/1_a08_river_sample",
+  "category_id": "taskbound:angler/starcatcher/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 10,
+  "display_text": "task.taskbound.angler.starcatcher.1_a08_river_sample.description",
+  "title": "River Sample",
+  "description": "Catch 1 Common fish from a river habitat.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/1_a08_river_sample/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "rarity": "common",
+            "habitats": [
+              "river"
+            ]
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:angler/starcatcher/1_a08_river_sample",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 4,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

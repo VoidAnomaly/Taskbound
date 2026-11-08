@@ -214,6 +214,16 @@ public final class TaskHandInMenu extends AbstractContainerMenu {
         for (GeneratedObjective objective : task.objectives()) {
             if (!objective.type().equals("hand_in_item")) continue;
             int remaining = ((Number) objective.parameters().getOrDefault("required_count", 1)).intValue();
+            if (!objective.parameters().containsKey("item") && objective.parameters().get("item_tag") instanceof String tagId) {
+                var tag = net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.parse(tagId));
+                var members = BuiltInRegistries.ITEM.getTag(tag).map(set -> set.stream().toList()).orElse(List.of());
+                int maximum = members.stream().mapToInt(holder -> holder.value().getDefaultMaxStackSize()).min().orElse(64);
+                int slots = Math.max((remaining + maximum - 1) / maximum, Math.min(remaining, members.size()));
+                if (result.size() + slots > MAX_OFFERED_SLOTS) throw new IllegalArgumentException("This task requires more than 36 hand-in stacks; reduce its hand-in requirements.");
+                // Extra choices let differently colored/tagged stacks contribute to one total. Surplus is returned.
+                for (int index = 0; index < slots; index++) result.add(new DepositRequirement(objective, Math.min(maximum, remaining)));
+                continue;
+            }
             ResourceLocation id = ResourceLocation.parse(objective.parameters().get("item").toString());
             int maximum = Math.max(1, BuiltInRegistries.ITEM.get(id).getDefaultMaxStackSize());
             while (remaining > 0) {

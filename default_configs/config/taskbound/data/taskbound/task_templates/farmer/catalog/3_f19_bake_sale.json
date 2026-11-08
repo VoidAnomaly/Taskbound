@@ -1,0 +1,56 @@
+{
+  "id": "taskbound:farmer/catalog/3_f19_bake_sale",
+  "category_id": "taskbound:farmer/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 40,
+  "display_text": "task.taskbound.farmer.catalog.3_f19_bake_sale.description",
+  "title": "Bake Sale",
+  "description": "• Craft 16 bread yourself.\n• Craft 8 pumpkin pie yourself.",
+  "required_capabilities": [
+    "minecraft:farm_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:farmer/catalog/3_f19_bake_sale/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 16,
+            "action": "craft",
+            "item": "minecraft:bread"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 8,
+            "action": "craft",
+            "item": "minecraft:pumpkin_pie"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:farmer/catalog/3_f19_bake_sale",
+        "catalog_profile": "farmer_base",
+        "currency_reward": 9,
+        "cooldown_ticks": 24000,
+        "completion_group": "taskbound:farmer/slot_19"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "type": "taskbound:end_pavilion",
+  "biomes": "#taskbound:has_structure/end_pavilion",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "none"
+}

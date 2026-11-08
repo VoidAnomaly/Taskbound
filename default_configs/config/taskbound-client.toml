@@ -1,3 +1,7 @@
 [ui]
 	#Use compact board task rows. False keeps the relaxed layout.
 	compact_task_list = false
+	#Show temporary delivery waypoints when Xaero's Minimap is installed.
+	#Also appears in Xaero's World Map when both mods are installed. World Map alone uses the delivery compass.
+	#Turn off to keep only the compass. Your personal waypoints are never changed.
+	porter_xaero_waypoints = true

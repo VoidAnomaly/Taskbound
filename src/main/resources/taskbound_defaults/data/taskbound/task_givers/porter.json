@@ -1,7 +1,7 @@
 {
   "id": "taskbound:porter",
   "display_name": "task_giver.taskbound.porter",
-  "enabled": false,
+  "enabled": true,
   "icon_item": "minecraft:chest",
   "reputation": {
     "thresholds": {
@@ -34,7 +34,13 @@
     "15": "rank.taskbound.porter.catalog_4",
     "20": "rank.taskbound.porter.catalog_5"
   },
-  "category_ids": [],
+  "category_ids": [
+    "taskbound:porter/catalog/level_1",
+    "taskbound:porter/catalog/level_2",
+    "taskbound:porter/catalog/level_3",
+    "taskbound:porter/catalog/level_4",
+    "taskbound:porter/catalog/level_5"
+  ],
   "reward_pool_ids": [
     "taskbound:catalog"
   ],

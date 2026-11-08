@@ -88,12 +88,13 @@ public final class TaskboundGameplayEvents {
             CURE_ATTEMPTS.remove(zombie.getUUID());
             TaskboundSavedData.get(zombieLevel.getServer()).takePendingCure(zombie.getUUID());
         }
-        if (!(event.getEntity().level() instanceof ServerLevel level)
-                || !(event.getSource().getEntity() instanceof ServerPlayer player)) {
+        if (!(event.getEntity().level() instanceof ServerLevel level)) {
             return;
         }
+        ServerPlayer player = KillDamageConditions.player(event.getSource());
+        if (player == null) return;
         Entity victim = event.getEntity();
-        ItemStack weapon = event.getSource().getWeaponItem();
+        ItemStack weapon = KillDamageConditions.weapon(event.getSource());
         TaskboundRuntime.get().advanceMatching(player, objective ->
                 qualifiesKill(objective, player, victim, level, weapon, event.getSource()), 1);
     }
@@ -438,7 +439,7 @@ public final class TaskboundGameplayEvents {
             ItemStack weapon,
             DamageSource source
     ) {
-        if (!objective.type().equals("kill_entity")) {
+        if (!objective.type().equals("kill_entity") || !KillDamageConditions.matches(objective, source)) {
             return false;
         }
         if (Boolean.TRUE.equals(objective.parameters().get("hostile_only")) && !(victim instanceof Enemy)) {
@@ -446,12 +447,6 @@ public final class TaskboundGameplayEvents {
         }
         if ("melee".equals(TaskboundRuntime.stringParameter(objective, "method"))
                 && (!source.is(DamageTypes.PLAYER_ATTACK) || source.getDirectEntity() != player)) {
-            return false;
-        }
-        // A held sword must not turn thorns or an indirect environmental death into a sword kill.
-        if ((objective.parameters().containsKey("required_weapon")
-                || objective.parameters().containsKey("required_weapon_tag"))
-                && !source.is(DamageTypes.PLAYER_ATTACK) && !(source.getDirectEntity() instanceof AbstractArrow)) {
             return false;
         }
         String entity = TaskboundRuntime.stringParameter(objective, "entity");

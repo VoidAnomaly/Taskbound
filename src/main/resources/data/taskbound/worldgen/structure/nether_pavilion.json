@@ -1,0 +1,7 @@
+{
+  "type": "taskbound:nether_pavilion",
+  "biomes": "#taskbound:has_structure/nether_pavilion",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "none"
+}

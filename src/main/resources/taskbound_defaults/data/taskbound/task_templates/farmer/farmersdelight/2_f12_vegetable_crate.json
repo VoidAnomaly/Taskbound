@@ -1,0 +1,66 @@
+{
+  "id": "taskbound:farmer/farmersdelight/2_f12_vegetable_crate",
+  "category_id": "taskbound:farmer/catalog/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.farmer.farmersdelight.2_f12_vegetable_crate.description",
+  "title": "Vegetable Crate",
+  "description": "• Hand in 16 cabbage.\n• Hand in 16 tomato.\n• Hand in 16 onion.",
+  "required_capabilities": [
+    "minecraft:hand_in_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:farmer/farmersdelight/2_f12_vegetable_crate/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 16,
+            "item": "farmersdelight:cabbage"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 16,
+            "item": "farmersdelight:tomato"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 16,
+            "item": "farmersdelight:onion"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:farmer/farmersdelight/2_f12_vegetable_crate",
+        "catalog_profile": "farmersdelight",
+        "currency_reward": 5,
+        "cooldown_ticks": 24000,
+        "completion_group": "taskbound:farmer/slot_12"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 30000
+}

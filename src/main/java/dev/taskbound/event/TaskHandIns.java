@@ -65,7 +65,8 @@ public final class TaskHandIns {
     }
 
     public static boolean matches(Player player, ItemStack stack, Map<String, Object> parameters) {
-        if (stack.isEmpty() || !VanillaObjectiveConditions.itemMatches(stack, VanillaObjectiveConditions.text(parameters, "item"), null)) return false;
+        if (stack.isEmpty() || !VanillaObjectiveConditions.itemMatches(stack, VanillaObjectiveConditions.text(parameters, "item"),
+                VanillaObjectiveConditions.text(parameters, "item_tag"))) return false;
         String potion = VanillaObjectiveConditions.text(parameters, "potion");
         if (potion != null && !stack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY).potion()
                 .flatMap(holder -> holder.unwrapKey()).map(key -> key.location().toString().equals(potion)).orElse(false)) return false;

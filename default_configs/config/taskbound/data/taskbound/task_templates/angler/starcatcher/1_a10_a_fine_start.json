@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:angler/starcatcher/1_a10_a_fine_start",
+  "category_id": "taskbound:angler/starcatcher/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 10,
+  "display_text": "task.taskbound.angler.starcatcher.1_a10_a_fine_start.description",
+  "title": "A Fine Start",
+  "description": "Catch 1 fish whose weight is at least its species' average.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/1_a10_a_fine_start/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "minimum_weight_percentile": 50
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:angler/starcatcher/1_a10_a_fine_start",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 5,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

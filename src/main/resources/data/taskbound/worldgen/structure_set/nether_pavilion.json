@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "taskbound:nether_pavilion",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 176842301,
+    "spacing": 23,
+    "separation": 5
+  }
+}

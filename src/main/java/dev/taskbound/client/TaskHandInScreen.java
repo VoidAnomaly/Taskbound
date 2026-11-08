@@ -137,7 +137,7 @@ public final class TaskHandInScreen extends AbstractContainerScreen<TaskHandInMe
             graphics.renderFakeItem(expected, leftPos + slot.x, topPos + slot.y);
             graphics.fill(RenderType.guiGhostRecipeOverlay(), leftPos + slot.x, topPos + slot.y,
                     leftPos + slot.x + 16, topPos + slot.y + 16, 0x88000000 | skin.color("light") & 0x00FFFFFF);
-            graphics.renderItemDecorations(font, expected, leftPos + slot.x, topPos + slot.y,
+            if (!tagChoice(menu.requirementForSlot(slot.index))) graphics.renderItemDecorations(font, expected, leftPos + slot.x, topPos + slot.y,
                     String.valueOf(menu.requiredCountForSlot(slot.index)));
         }
     }
@@ -175,8 +175,8 @@ public final class TaskHandInScreen extends AbstractContainerScreen<TaskHandInMe
     private List<Component> requirementTooltip(int index) {
         GeneratedObjective objective = menu.requirementForSlot(index);
         var lines = new ArrayList<Component>();
-        lines.add(TaskboundSkin.text(Component.translatable("taskbound.hand_in.required",
-                menu.requiredCountForSlot(index), expectedItem(objective).getHoverName())));
+        lines.add(TaskboundSkin.text(Component.translatable(tagChoice(objective) ? "taskbound.hand_in.tag_total" : "taskbound.hand_in.required",
+                tagChoice(objective) ? ((Number)objective.parameters().get("required_count")).intValue() : menu.requiredCountForSlot(index), expectedName(objective))));
         TaskBoardText.objectiveConditions(objective).forEach(line -> lines.add(TaskboundSkin.text(line)));
         lines.add(TaskboundSkin.text(Component.translatable("taskbound.hand_in.choose_hint")));
         return lines;
@@ -188,7 +188,7 @@ public final class TaskHandInScreen extends AbstractContainerScreen<TaskHandInMe
             if (!objective.type().equals("hand_in_item")) continue;
             int count = ((Number) objective.parameters().get("required_count")).intValue();
             result.add(TaskboundSkin.text(Component.literal("\u2022 ").append(
-                    Component.translatable("taskbound.hand_in.required", count, expectedItem(objective).getHoverName()))));
+                    Component.translatable(tagChoice(objective) ? "taskbound.hand_in.tag_total" : "taskbound.hand_in.required", count, expectedName(objective)))));
         }
         return List.copyOf(result);
     }
@@ -202,12 +202,26 @@ public final class TaskHandInScreen extends AbstractContainerScreen<TaskHandInMe
     }
 
     private ItemStack expectedItem(GeneratedObjective objective) {
-        ItemStack stack = TaskBoardText.item(objective.parameters().get("item").toString());
+        ItemStack stack;
+        if (tagChoice(objective)) {
+            var tag = net.minecraft.tags.TagKey.create(Registries.ITEM, ResourceLocation.parse(objective.parameters().get("item_tag").toString()));
+            stack = net.minecraft.core.registries.BuiltInRegistries.ITEM.getTag(tag)
+                    .flatMap(set -> set.stream().findFirst()).map(holder -> new ItemStack(holder.value()))
+                    .orElseGet(() -> TaskBoardText.item("minecraft:paper"));
+        } else stack = TaskBoardText.item(objective.parameters().get("item").toString());
         if (minecraft.level != null && objective.parameters().get("potion") instanceof String potion) {
             minecraft.level.registryAccess().registryOrThrow(Registries.POTION).getHolder(ResourceLocation.parse(potion))
                     .ifPresent(holder -> stack.set(DataComponents.POTION_CONTENTS, new PotionContents(holder)));
         }
         return stack;
+    }
+
+    private static boolean tagChoice(GeneratedObjective objective) {
+        return !objective.parameters().containsKey("item") && objective.parameters().containsKey("item_tag");
+    }
+
+    private Component expectedName(GeneratedObjective objective) {
+        return tagChoice(objective) ? TaskBoardText.namedResource(objective.parameters().get("item_tag").toString()) : expectedItem(objective).getHoverName();
     }
 
     @Override

@@ -1,0 +1,44 @@
+{
+  "id": "taskbound:angler/starcatcher/2_a11_silver_scales",
+  "category_id": "taskbound:angler/starcatcher/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.angler.starcatcher.2_a11_silver_scales.description",
+  "title": "Silver Scales",
+  "description": "Catch 1 Silverveil Perch.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/2_a11_silver_scales/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "species": [
+              "starcatcher:silverveil_perch"
+            ]
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:angler/starcatcher/2_a11_silver_scales",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 8,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

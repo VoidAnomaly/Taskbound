@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "taskbound:end_pavilion",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 176842302,
+    "spacing": 85,
+    "separation": 20
+  }
+}

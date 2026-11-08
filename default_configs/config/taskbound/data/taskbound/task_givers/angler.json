@@ -39,7 +39,12 @@
     "taskbound:angler/catalog/level_2",
     "taskbound:angler/catalog/level_3",
     "taskbound:angler/catalog/level_4",
-    "taskbound:angler/catalog/level_5"
+    "taskbound:angler/catalog/level_5",
+    "taskbound:angler/starcatcher/level_1",
+    "taskbound:angler/starcatcher/level_2",
+    "taskbound:angler/starcatcher/level_3",
+    "taskbound:angler/starcatcher/level_4",
+    "taskbound:angler/starcatcher/level_5"
   ],
   "reward_pool_ids": [
     "taskbound:catalog"

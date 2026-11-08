@@ -93,6 +93,7 @@ public final class TaskGenerator {
         DifficultyResult difficulty = difficultyCalculator.calculate(draft);
         RewardBundle rewards = rewardGenerator.generate(
                 difficulty, giver, context.reputationLevel(), catalog.rewards(), random);
+        rewards = CatalogRewards.apply(draft, giver, rewards);
         GeneratedTask task = new GeneratedTask(
                 draft.taskId(),
                 draft.playerId(),

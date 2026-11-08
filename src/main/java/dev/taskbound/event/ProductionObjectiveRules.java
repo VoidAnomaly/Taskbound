@@ -13,7 +13,7 @@ public final class ProductionObjectiveRules {
             "tracked_fish", Set.of("fish_item", "fish_item_tag", "treasure", "same_rod", "rod_enchantment_extra", "minimum_rod_enchantment_extra_level"),
             "brew_potion", Set.of("potion", "provenance_stage"),
             "tracked_enchant", Set.of("required_enchantments", "provenance_stage"),
-            "hand_in_item", Set.of("potion", "required_enchantments", "provenance_stage"));
+            "hand_in_item", Set.of("potion", "required_enchantments", "provenance_stage", "item_tag"));
 
     private ProductionObjectiveRules() { }
     public static boolean supports(String type) { return TYPES.contains(type); }
@@ -27,6 +27,10 @@ public final class ProductionObjectiveRules {
         parameters.forEach(common::put);
         for (String key : EXTRA.get(type)) common.remove(key);
         if (type.equals("tracked_fish")) common.put("item", "minecraft:cod");
+        if (type.equals("hand_in_item") && parameters.containsKey("item_tag")) {
+            optionalId(parameters, "item_tag");
+            common.putIfAbsent("item", "minecraft:white_wool");
+        }
         VanillaEventRules.validate("craft_item", common);
         if (type.equals("tracked_fish")) {
             if (parameters.containsKey("item")) throw new IllegalArgumentException("Tracked fishing uses fish_item, not item");

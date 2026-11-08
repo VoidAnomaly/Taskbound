@@ -1,0 +1,43 @@
+{
+  "id": "taskbound:angler/starcatcher/4_a27_rare_collection",
+  "category_id": "taskbound:angler/starcatcher/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 60,
+  "display_text": "task.taskbound.angler.starcatcher.4_a27_rare_collection.description",
+  "title": "Rare Collection",
+  "description": "Catch 2 different species rated Rare or higher.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/4_a27_rare_collection/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 2,
+            "count_mode": "species",
+            "minimum_rarity": "rare"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:angler/starcatcher/4_a27_rare_collection",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 28,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

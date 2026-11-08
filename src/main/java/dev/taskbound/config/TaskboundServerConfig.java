@@ -12,6 +12,7 @@ public final class TaskboundServerConfig {
     public static final ModConfigSpec.IntValue MAX_ACTIVE_TASKS;
     public static final ModConfigSpec.IntValue REPEAT_COOLDOWN_TICKS;
     public static final ModConfigSpec.IntValue OFFER_REFRESH_TICKS;
+    public static final ModConfigSpec.BooleanValue PORTER_ALLOW_TELEPORTATION;
 
     static {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
@@ -38,6 +39,9 @@ public final class TaskboundServerConfig {
                 .define("custom_currency_item", "minecraft:emerald");
         builder.pop();
         builder.push("tasks");
+        PORTER_ALLOW_TELEPORTATION = builder.comment("Allow instant teleportation on Porter routes. Ordinary portals remain available only on dimension routes.",
+                        "Default false keeps distance-based payments tied to actual travel.")
+                .define("porter_allow_teleportation", false);
         MAX_ACTIVE_TASKS = builder.comment("Maximum unclaimed active/completed tasks per player.")
                 .defineInRange("maximum_active_tasks", 3, 1, 64);
         REPEAT_COOLDOWN_TICKS = builder.comment("Default same-template cooldown after reward claim, in server ticks.")

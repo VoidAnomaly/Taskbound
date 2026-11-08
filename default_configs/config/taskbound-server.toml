@@ -17,6 +17,8 @@
 	custom_currency_item = "minecraft:emerald"
 
 [tasks]
+	#Allow instant teleportation on newly generated Porter routes. Ordinary portals remain limited to dimension routes.
+	porter_allow_teleportation = false
 	#Maximum unclaimed active/completed tasks per player.
 	# Default: 3
 	# Range: 1 ~ 64

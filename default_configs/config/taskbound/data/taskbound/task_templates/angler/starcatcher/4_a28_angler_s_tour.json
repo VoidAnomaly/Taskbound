@@ -1,0 +1,64 @@
+{
+  "id": "taskbound:angler/starcatcher/4_a28_angler_s_tour",
+  "category_id": "taskbound:angler/starcatcher/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 60,
+  "display_text": "task.taskbound.angler.starcatcher.4_a28_angler_s_tour.description",
+  "title": "Angler's Tour",
+  "description": "• Catch 4 different species.\n• Catch 3 different fish habitats.\n• Catch 1 fish of rare rarity or higher.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/4_a28_angler_s_tour/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 4,
+            "count_mode": "species"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        },
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 3,
+            "count_mode": "habitats"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        },
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "minimum_rarity": "rare"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:angler/starcatcher/4_a28_angler_s_tour",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 32,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

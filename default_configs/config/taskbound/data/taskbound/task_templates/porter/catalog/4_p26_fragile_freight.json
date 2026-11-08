@@ -1,0 +1,51 @@
+{
+  "id": "taskbound:porter/catalog/4_p26_fragile_freight",
+  "category_id": "taskbound:porter/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 60,
+  "display_text": "task.taskbound.porter.catalog.4_p26_fragile_freight.description",
+  "title": "Fragile Freight",
+  "description": "Complete a long delivery while losing no more than 3 hearts cumulatively and without dying.\nAssigned destinations: 1. Follow the complete route shown below, including any return stop.",
+  "required_capabilities": [
+    "minecraft:porter_route"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:porter/catalog/4_p26_fragile_freight/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "porter_route",
+          "parameters": {
+            "required_count": 1,
+            "maximum_damage": 6,
+            "no_death": true,
+            "route_kind": "delivery",
+            "stops": 1,
+            "minimum_leg_distance": 1536,
+            "maximum_leg_distance": 3072,
+            "teleportation_allowed": false,
+            "dimensional_travel_allowed": false
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:porter_route"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:porter/catalog/4_p26_fragile_freight",
+        "catalog_profile": "porter",
+        "currency_reward": 12,
+        "cooldown_ticks": 24000,
+        "currency_per_1024_blocks": 2,
+        "no_death": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

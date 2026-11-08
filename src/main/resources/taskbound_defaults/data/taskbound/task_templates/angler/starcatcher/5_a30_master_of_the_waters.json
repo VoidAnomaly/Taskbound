@@ -1,0 +1,87 @@
+{
+  "id": "taskbound:angler/starcatcher/5_a30_master_of_the_waters",
+  "category_id": "taskbound:angler/starcatcher/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 85,
+  "display_text": "task.taskbound.angler.starcatcher.5_a30_master_of_the_waters.description",
+  "title": "Master of the Waters",
+  "description": "• Catch 5 different species.\n• Catch 3 different fish habitats.\n• Catch 1 fish of rare rarity or higher.\n• Catch 1 fish at or above the 75th weight percentile for their species.\n• Catch 1 fish with perfect minigame results.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/5_a30_master_of_the_waters/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 5,
+            "count_mode": "species"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        },
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 3,
+            "count_mode": "habitats"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        },
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "minimum_rarity": "rare"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        },
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "minimum_weight_percentile": 75
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        },
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "perfect": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:angler/starcatcher/5_a30_master_of_the_waters",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 64,
+        "cooldown_ticks": 24000,
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

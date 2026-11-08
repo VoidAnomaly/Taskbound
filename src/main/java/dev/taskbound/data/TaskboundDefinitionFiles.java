@@ -27,7 +27,11 @@ public final class TaskboundDefinitionFiles {
 
     /** Seed once; a completed installation keeps both edits and deliberate deletions on later starts. */
     public static synchronized void initialize(Path root) throws IOException {
-        if (Files.exists(root.resolve(MARKER))) return;
+        if (Files.exists(root.resolve(MARKER))) {
+            upgradeReleasedDefaults(root);
+            upgradeFarmerIcon(root);
+            return;
+        }
         Files.createDirectories(root);
         try (var reader = new BufferedReader(new InputStreamReader(resource("index.txt"), StandardCharsets.UTF_8))) {
             for (String entry : reader.lines().filter(line -> !line.isBlank()).toList()) {
@@ -53,6 +57,104 @@ public final class TaskboundDefinitionFiles {
         }
         Files.writeString(root.resolve(MARKER), "Taskbound defaults initialized. Keep this file to preserve deletions.\n",
                 StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW);
+        upgradeReleasedDefaults(root);
+        upgradeFarmerIcon(root);
+    }
+
+    /** Preserve customized givers while adopting the author's icon correction in the earlier stock preview. */
+    private static void upgradeFarmerIcon(Path root) throws IOException {
+        String entry = "data/taskbound/task_givers/gathering.json";
+        Path target = updateTarget(root, entry);
+        if (!Files.isRegularFile(target) || !sha256(Files.readAllBytes(target)).equals(
+                "21d6b77a7fe1f5c6639c1176454d00a9d55721259f89fa78e8d69692c2ae7b03")) return;
+        Path backup = root.resolve(".updates/farmer-icon").resolve(entry);
+        Files.createDirectories(backup.getParent());
+        if (!Files.exists(backup)) Files.copy(target, backup);
+        Path temporary = Files.createTempFile(target.getParent(), ".taskbound-update-", ".tmp");
+        try (InputStream input = resource(entry)) {
+            Files.copy(input, temporary, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            Files.move(temporary, target, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        } finally {
+            Files.deleteIfExists(temporary);
+        }
+    }
+
+    /** Released upgrades add new definitions once and replace only byte-identical original defaults. */
+    private static void upgradeReleasedDefaults(Path root) throws IOException {
+        Path marker = root.resolve(".defaults-1.1");
+        if (Files.exists(marker)) return;
+        // Adopt the preview's completion marker without replaying its defaults update.
+        Path previewMarker = root.resolve(".defaults-1.2");
+        if (Files.exists(previewMarker)) {
+            Files.move(previewMarker, marker);
+            return;
+        }
+        com.google.gson.JsonObject update;
+        try (var reader = new InputStreamReader(resource("updates/1.1.json"), StandardCharsets.UTF_8)) {
+            update = JsonParser.parseReader(reader).getAsJsonObject();
+        }
+        for (JsonElement addition : update.getAsJsonArray("additions")) {
+            String entry = addition.getAsString();
+            Path target = updateTarget(root, entry);
+            if (!Files.exists(target)) publishSeed(target, entry);
+        }
+        for (var replacement : update.getAsJsonObject("replacements").entrySet()) {
+            String entry = replacement.getKey();
+            Path target = updateTarget(root, entry);
+            // A missing file is an intentional deletion; an edited file remains owned by the user.
+            if (!Files.isRegularFile(target) || !sha256(Files.readAllBytes(target)).equals(replacement.getValue().getAsString())) continue;
+            // Changing a stock giver's category list would also hide customized old tasks. Keep that catalog owner-controlled.
+            var guards = update.getAsJsonObject("preserve_if_changed");
+            if (guards != null && guards.has(entry)) {
+                boolean customized = false;
+                for (var dependency : guards.getAsJsonObject(entry).entrySet()) {
+                    Path original = updateTarget(root, dependency.getKey());
+                    if (!Files.isRegularFile(original) || !sha256(Files.readAllBytes(original)).equals(dependency.getValue().getAsString())) {
+                        customized = true;
+                        break;
+                    }
+                }
+                if (customized) continue;
+            }
+            Path backup = root.resolve(".updates/1.1").resolve(entry);
+            Files.createDirectories(backup.getParent());
+            if (!Files.exists(backup)) Files.copy(target, backup);
+            Path temporary = Files.createTempFile(target.getParent(), ".taskbound-update-", ".tmp");
+            try (InputStream input = resource(entry)) {
+                Files.copy(input, temporary, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                Files.move(temporary, target, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            } finally {
+                Files.deleteIfExists(temporary);
+            }
+        }
+        Files.writeString(marker, "Taskbound 1.1 defaults applied once. Keep to preserve edits/deletions.\n",
+                StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW);
+    }
+
+    private static Path updateTarget(Path root, String entry) throws IOException {
+        Path target = root.resolve(entry).normalize();
+        if (!entry.startsWith("data/taskbound/") || !target.startsWith(root.normalize()))
+            throw new IOException("Invalid default update path: " + entry);
+        return target;
+    }
+
+    private static void publishSeed(Path target, String entry) throws IOException {
+        Files.createDirectories(target.getParent());
+        Path temporary = Files.createTempFile(target.getParent(), ".taskbound-update-", ".tmp");
+        try (InputStream input = resource(entry)) {
+            Files.copy(input, temporary, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            try { Files.move(temporary, target); } catch (FileAlreadyExistsException ignored) { }
+        } finally {
+            Files.deleteIfExists(temporary);
+        }
+    }
+
+    private static String sha256(byte[] bytes) {
+        try {
+            return java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(bytes));
+        } catch (java.security.NoSuchAlgorithmException impossible) {
+            throw new IllegalStateException(impossible);
+        }
     }
 
     /** IDs follow normal datapack paths: data/{namespace}/{directory}/{path}.json. */

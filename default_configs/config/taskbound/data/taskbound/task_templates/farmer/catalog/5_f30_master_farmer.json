@@ -1,0 +1,141 @@
+{
+  "id": "taskbound:farmer/catalog/5_f30_master_farmer",
+  "category_id": "taskbound:farmer/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 85,
+  "display_text": "task.taskbound.farmer.catalog.5_f30_master_farmer.description",
+  "title": "Master Farmer",
+  "description": "• Harvest 96 mature plants: 24 of each of 4 qualifying crop types.\n• Milk 6 different cows.\n• Shear 8 different sheep covering at least 4 wool colors.\n• Breed 2 baby cow.\n• Breed 2 baby pig.\n• Breed 2 baby sheep.\n• Breed 2 baby chicken.\n• Collect honey bottles from 4 full, smoked hives or nests.\n• Shear honeycomb from 3 full, smoked hives or nests.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:farm_action"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:farmer/catalog/5_f30_master_farmer/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 96,
+            "action": "harvest",
+            "minimum_crop_types": 4,
+            "per_crop_count": 24
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 6,
+            "action": "milk",
+            "distinct": true
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 8,
+            "action": "shear",
+            "distinct": true,
+            "minimum_colors": 4
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 2,
+            "action": "breed",
+            "entity": "minecraft:cow"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 2,
+            "action": "breed",
+            "entity": "minecraft:pig"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 2,
+            "action": "breed",
+            "entity": "minecraft:sheep"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 2,
+            "action": "breed",
+            "entity": "minecraft:chicken"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 4,
+            "action": "honey"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 3,
+            "action": "honeycomb"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:farmer/catalog/5_f30_master_farmer",
+        "catalog_profile": "farmer",
+        "currency_reward": 48,
+        "cooldown_ticks": 24000,
+        "one_time": true,
+        "completion_group": "taskbound:farmer/slot_30"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

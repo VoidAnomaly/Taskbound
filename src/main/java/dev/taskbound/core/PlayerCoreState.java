@@ -128,8 +128,11 @@ public final class PlayerCoreState {
     }
 
     public boolean canOffer(String templateId, Map<String, ?> conditions, long now, int defaultCooldown) {
-        if (activeTasks.values().stream().anyMatch(active -> active.task().templateId().equals(templateId))) return false;
-        Long completed = completedTemplates.get(templateId);
+        String completionKey = CatalogProfiles.completionKey(templateId, conditions);
+        if (activeTasks.values().stream().anyMatch(active -> CatalogProfiles.completionKey(
+                active.task().templateId(), active.task().conditions()).equals(completionKey))) return false;
+        Long completed = completedTemplates.get(completionKey);
+        if (completed == null) completed = completedTemplates.get(templateId);
         if (completed == null) return true;
         if (Boolean.TRUE.equals(conditions.get("one_time"))) return false;
         long cooldown = conditions.get("cooldown_ticks") instanceof Number number ? number.longValue() : defaultCooldown;
@@ -139,6 +142,11 @@ public final class PlayerCoreState {
     public void recordTemplateCompletion(String templateId, long now) {
         if (now < 0) throw new IllegalArgumentException("Completion time cannot be negative");
         completedTemplates.put(templateId, now);
+    }
+
+    public void recordTemplateCompletion(String templateId, Map<String, ?> conditions, long now) {
+        recordTemplateCompletion(templateId, now);
+        recordTemplateCompletion(CatalogProfiles.completionKey(templateId, conditions), now);
     }
 
     public boolean levelRewardClaimed(String giverId, int level) {

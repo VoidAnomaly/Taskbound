@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:angler/starcatcher/1_a06_a_change_of_catch",
+  "category_id": "taskbound:angler/starcatcher/level_1",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 10,
+  "display_text": "task.taskbound.angler.starcatcher.1_a06_a_change_of_catch.description",
+  "title": "A Change of Catch",
+  "description": "Catch 2 different fish species.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/1_a06_a_change_of_catch/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 2,
+            "count_mode": "species"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 1,
+        "source_catalog_id": "taskbound:angler/starcatcher/1_a06_a_change_of_catch",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 6,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

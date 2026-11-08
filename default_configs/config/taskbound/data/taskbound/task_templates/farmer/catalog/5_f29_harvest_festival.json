@@ -1,0 +1,136 @@
+{
+  "id": "taskbound:farmer/catalog/5_f29_harvest_festival",
+  "category_id": "taskbound:farmer/catalog/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 85,
+  "display_text": "task.taskbound.farmer.catalog.5_f29_harvest_festival.description",
+  "title": "Harvest Festival",
+  "description": "• Harvest 16 mature wheat plants yourself.\n• Harvest 16 mature carrot plants yourself.\n• Harvest 16 mature potato plants yourself.\n• Harvest 16 mature beetroot plants yourself.\n• Hand in 16 bread.\n• Hand in 16 baked potato.\n• Hand in 2 cake.\n• Hand in 4 pumpkin pie.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "minecraft:farm_action",
+    "minecraft:hand_in_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:farmer/catalog/5_f29_harvest_festival/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 16,
+            "action": "harvest",
+            "item": "minecraft:wheat"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 16,
+            "action": "harvest",
+            "item": "minecraft:carrot"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 16,
+            "action": "harvest",
+            "item": "minecraft:potato"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "farm_action",
+          "parameters": {
+            "required_count": 16,
+            "action": "harvest",
+            "item": "minecraft:beetroot"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:farm_action"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 16,
+            "item": "minecraft:bread"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 16,
+            "item": "minecraft:baked_potato"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 2,
+            "item": "minecraft:cake"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 4,
+            "item": "minecraft:pumpkin_pie"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:farmer/catalog/5_f29_harvest_festival",
+        "catalog_profile": "farmer_base",
+        "currency_reward": 36,
+        "cooldown_ticks": 24000,
+        "one_time": true,
+        "completion_group": "taskbound:farmer/slot_29",
+        "objective_stages": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

@@ -13,6 +13,16 @@ public final class TaskboundMenuScreens {
     private TaskboundMenuScreens() { }
 
     @SubscribeEvent
+    public static void setup(net.neoforged.fml.event.lifecycle.FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            var angle = net.minecraft.resources.ResourceLocation.withDefaultNamespace("angle");
+            net.minecraft.client.renderer.item.ItemProperties.register(TaskboundContent.DELIVERY_COMPASS.get(), angle,
+                    net.minecraft.client.renderer.item.ItemProperties.getProperty(
+                            new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.COMPASS), angle));
+        });
+    }
+
+    @SubscribeEvent
     public static void register(RegisterMenuScreensEvent event) {
         event.register(TaskboundContent.TASK_HAND_IN_MENU.get(), TaskHandInScreen::new);
     }

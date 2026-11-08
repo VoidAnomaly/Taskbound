@@ -18,7 +18,8 @@ public final class EncounterObjectiveRules {
             "survive_fall", Set.of("minimum_fall_distance"),
             "trial_encounter", Set.of("ominous", "distinct_spawners", "armor_set", "weapons", "no_healing", "no_potions", "no_totem", "no_death", "guard_from_acceptance"),
             "dragon_encounter", Set.of("action"),
-            "tracked_kill", Set.of("entity", "method", "same_weapon", "no_death_after_start", "bind_structure", "prevent_departure"));
+            "tracked_kill", Set.of("entity", "method", "same_weapon", "no_death_after_start", "bind_structure", "prevent_departure",
+                    "required_damage_type", "required_damage_type_tag"));
     private static final Set<String> FLAGS = Set.of("hostile_only", "ominous", "distinct_spawners", "no_healing", "no_potions", "no_totem", "no_death", "guard_from_acceptance", "same_weapon", "no_death_after_start", "bind_structure", "prevent_departure");
 
     private EncounterObjectiveRules() { }
@@ -59,6 +60,12 @@ public final class EncounterObjectiveRules {
             case "dragon_encounter" -> choice(parameters, "action", Set.of("bow_crystal", "sword_finish"), true);
             case "tracked_kill" -> {
                 if (!(parameters.get("entity") instanceof String id) || !id.matches("[a-z0-9_.-]+:[a-z0-9/._-]+")) throw new IllegalArgumentException("tracked_kill needs an entity ID");
+                for (String key : Set.of("required_damage_type", "required_damage_type_tag")) {
+                    if (parameters.containsKey(key) && (!(parameters.get(key) instanceof String damageId)
+                            || !damageId.matches("[a-z0-9_.-]+:[a-z0-9/._-]+"))) {
+                        throw new IllegalArgumentException(key + " must be a resource ID");
+                    }
+                }
                 choice(parameters, "method", Set.of("melee", "projectile"), false);
                 if ((Boolean.TRUE.equals(parameters.get("bind_structure")) || Boolean.TRUE.equals(parameters.get("prevent_departure")))
                         && !parameters.containsKey("required_structure")) throw new IllegalArgumentException("Structure binding needs required_structure");

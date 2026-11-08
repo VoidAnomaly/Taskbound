@@ -38,6 +38,7 @@ public final class TaskboundMod {
         modContainer.registerConfig(ModConfig.Type.SERVER, TaskboundServerConfig.SPEC);
         modContainer.registerConfig(ModConfig.Type.CLIENT, TaskboundClientConfig.SPEC);
         TaskboundContent.register(modBus);
+        dev.taskbound.worldgen.TaskboundPavilions.register(modBus);
         modBus.addListener(TaskboundNetworking::registerPayloads);
         TaskboundProviders.registerFishing(new VanillaFishingProvider());
         ArsNouveauMagicProvider.createIfAvailable().ifPresent(TaskboundProviders::registerMagic);
@@ -55,6 +56,9 @@ public final class TaskboundMod {
         NeoForge.EVENT_BUS.register(new dev.taskbound.event.TaskboundWorldEvents());
         NeoForge.EVENT_BUS.register(new dev.taskbound.event.EncounterGameplayEvents());
         NeoForge.EVENT_BUS.register(new dev.taskbound.event.TaskboundJournalEvents());
+        NeoForge.EVENT_BUS.register(new dev.taskbound.event.StarcatcherCatchEvents());
+        NeoForge.EVENT_BUS.register(new dev.taskbound.event.FarmerGameplayEvents());
+        NeoForge.EVENT_BUS.register(new dev.taskbound.porter.PorterEvents());
     }
 
     private void addReloadListeners(AddReloadListenerEvent event) {

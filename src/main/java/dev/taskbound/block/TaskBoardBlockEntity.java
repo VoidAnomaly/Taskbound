@@ -54,7 +54,7 @@ public final class TaskBoardBlockEntity extends BlockEntity {
         super.onLoad();
         if (level instanceof net.minecraft.server.level.ServerLevel serverLevel) {
             TaskboundSavedData.get(serverLevel.getServer()).registerBoard(
-                    boardId, serverLevel.dimension().location().toString(), worldPosition);
+                    boardId, serverLevel, worldPosition);
         }
     }
 

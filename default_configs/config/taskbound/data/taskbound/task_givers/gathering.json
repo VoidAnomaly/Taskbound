@@ -2,7 +2,7 @@
   "id": "taskbound:gathering",
   "display_name": "task_giver.taskbound.gathering",
   "enabled": true,
-  "icon_item": "minecraft:iron_pickaxe",
+  "icon_item": "minecraft:iron_hoe",
   "reputation": {
     "thresholds": {
       "1": 0,
@@ -35,11 +35,11 @@
     "20": "rank.taskbound.gathering.catalog_5"
   },
   "category_ids": [
-    "taskbound:gathering/catalog/level_1",
-    "taskbound:gathering/catalog/level_2",
-    "taskbound:gathering/catalog/level_3",
-    "taskbound:gathering/catalog/level_4",
-    "taskbound:gathering/catalog/level_5"
+    "taskbound:farmer/catalog/level_1",
+    "taskbound:farmer/catalog/level_2",
+    "taskbound:farmer/catalog/level_3",
+    "taskbound:farmer/catalog/level_4",
+    "taskbound:farmer/catalog/level_5"
   ],
   "reward_pool_ids": [
     "taskbound:catalog"

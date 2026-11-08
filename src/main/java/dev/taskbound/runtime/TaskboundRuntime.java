@@ -50,6 +50,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import java.util.function.Predicate;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -113,7 +114,9 @@ public final class TaskboundRuntime {
                 (category, template, variant) -> state.canOffer(template.id(), variant.conditions(), now,
                             TaskboundServerConfig.REPEAT_COOLDOWN_TICKS.get())
                         && generated.stream().noneMatch(offer -> offer.templateId().equals(template.id()))
+                        && catalogProfileEligible(template.id(), variant.conditions())
                         && catalogWorldEligible(player, variant)
+                        && porterEligible(player, originBoard, variant)
                         && variantRuntimeEligible(savedData, originBoard, variant),
                 draft -> customizeDraft(player, savedData, originBoard, level, capabilityValues, draft));
         SelectionHistory history = state.historyFor(giverId);
@@ -140,10 +143,13 @@ public final class TaskboundRuntime {
         var template = definitions.templates().get(templateId);
         if (template == null) throw new IllegalArgumentException("Unknown task template: " + templateId);
         var giver = definitions.giver(giverId);
-        if (!giver.categoryIds().contains(template.categoryId())) {
-            throw new IllegalArgumentException("That template is not enabled for " + giverId);
+        if (!definitions.categories().get(template.categoryId()).giverId().equals(giverId)) {
+            throw new IllegalArgumentException("That template does not belong to " + giverId);
         }
         var category = definitions.categories().get(template.categoryId());
+        var debugGiver = new dev.taskbound.core.TaskGiverDefinition(giver.id(), giver.displayName(),
+                giver.reputationThresholds(), giver.rankNames(), List.of(category.id()), giver.rewardPoolIds(),
+                giver.rewardMultiplier(), giver.enabled(), giver.iconItem());
         int level = Math.max(category.minimumReputationLevel(), template.minimumReputationLevel());
         if (template.maximumReputationLevel() != null && level > template.maximumReputationLevel()) {
             throw new IllegalArgumentException("The template has no usable reputation range");
@@ -156,7 +162,8 @@ public final class TaskboundRuntime {
         var generator = new TaskGenerator(definitions.catalog(),
                 (candidateCategory, candidateTemplate, variant) -> candidateTemplate.id().equals(templateId)
                         && variant.objectives().stream().noneMatch(objective -> objective.type().equals("deliver_package"))
-                        && catalogWorldEligible(player, variant) && variantRuntimeEligible(savedData, origin, variant),
+                        && catalogWorldEligible(player, variant) && porterEligible(player, origin, variant)
+                        && variantRuntimeEligible(savedData, origin, variant),
                 draft -> customizeDraft(player, savedData, origin, level, capabilities, draft));
         long now = player.serverLevel().getGameTime();
         var context = new TaskGenerationContext(player.getStringUUID(), board.boardId().toString(), giverId,
@@ -164,13 +171,17 @@ public final class TaskboundRuntime {
         var history = state.historyFor(giverId);
         GeneratedTask offer;
         try {
-            offer = RewardCurrency.convertRewards(generator.generate(context, giver, history,
+            offer = RewardCurrency.convertRewards(generator.generate(context, debugGiver, history,
                     offerSeed(player, board.boardId(), giverId, history.generationCount(), 0)));
         } catch (NoEligibleTaskException exception) {
             throw new IllegalStateException("That template has no supported variant in the target player's world");
         }
         GeneratedTask active = offer.withStatus(TaskStatus.ACTIVE);
-        state.putActiveTask(new ActiveTask(active, new TaskProgress()));
+        var accepted = new ActiveTask(active, new TaskProgress());
+        dev.taskbound.porter.PorterTasks.validateAcceptance(player, active);
+        state.putActiveTask(accepted);
+        dev.taskbound.event.FarmerGameplayEvents.accepted(player, accepted);
+        dev.taskbound.porter.PorterTasks.accepted(player, accepted);
         savedData.changed();
         TaskboundNetworking.syncPlayer(player);
         return active;
@@ -236,9 +247,14 @@ public final class TaskboundRuntime {
 
     /** Uses vanilla world configuration/advancements; never scans chunks or tracks player routes. */
     private boolean catalogWorldEligible(ServerPlayer player, TaskVariantDefinition variant) {
-        if (!variant.conditions().containsKey("source_catalog_id")) return true;
+        boolean catalog = variant.conditions().containsKey("source_catalog_id");
         for (var objective : variant.objectives()) {
             var parameters = objective.parameters();
+            if (objective.type().equals("starcatcher_catch")
+                    && !dev.taskbound.compat.StarcatcherFishingProvider.eligible(player, parameters)) return false;
+            if (objective.type().equals("farm_action")
+                    && !dev.taskbound.event.FarmerGameplayEvents.eligible(player, parameters)) return false;
+            if (!catalog) continue;
             if ("minecraft:haste".equals(parameters.get("required_effect"))
                     && !player.hasEffect(net.minecraft.world.effect.MobEffects.DIG_SPEED)) {
                 var beacon = player.server.getAdvancements().get(ResourceLocation.withDefaultNamespace("nether/create_beacon"));
@@ -294,16 +310,29 @@ public final class TaskboundRuntime {
     public BoardSnapshot openBoard(ServerPlayer player, TaskBoardBlockEntity board, String giverId) {
         requireEnabledGiver(giverId);
         registerBoard(player.serverLevel(), board);
+        dev.taskbound.porter.PorterTasks.visitBoard(player, board);
         var offers = currentBoardOffers(player, board, giverId);
+        return boardSnapshot(player, board, giverId, offers, offerNotice(player, giverId, offers));
+    }
+
+    private String offerNotice(ServerPlayer player, String giverId, List<GeneratedTask> offers) {
         String notice = "";
-        if (offers.isEmpty()) notice = "No eligible offers. Complete active tasks, gain reputation, or wait for cooldowns.";
-        return boardSnapshot(player, board, giverId, offers, notice);
+        if (offers.isEmpty()) notice = Component.translatable(giverId.equals("taskbound:porter")
+                ? "taskbound.porter.no_offers" : "taskbound.task.no_offers").getString();
+        if (offers.isEmpty() && giverId.equals("taskbound:angler")
+                && net.neoforged.fml.ModList.get().isLoaded("starcatcher")
+                && !dev.taskbound.compat.StarcatcherFishingProvider.ready(player)) {
+            notice = Component.translatable("taskbound.starcatcher.unavailable").getString();
+        }
+        return notice;
     }
 
     public BoardSnapshot viewBoard(ServerPlayer player, TaskBoardBlockEntity board, String giverId) {
+        dev.taskbound.porter.PorterTasks.visitBoard(player, board);
         var giver = definitions().givers().get(giverId);
         if (giver == null || !giver.enabled()) return openBoard(player, board);
-        return boardSnapshot(player, board, giverId, currentBoardOffers(player, board, giverId), "");
+        var offers = currentBoardOffers(player, board, giverId);
+        return boardSnapshot(player, board, giverId, offers, offerNotice(player, giverId, offers));
     }
 
     private List<GeneratedTask> currentBoardOffers(ServerPlayer player, TaskBoardBlockEntity board, String giverId) {
@@ -327,7 +356,7 @@ public final class TaskboundRuntime {
     public BoardSnapshot refreshBoardOffers(ServerPlayer player, TaskBoardBlockEntity board, String giverId) {
         registerBoard(player.serverLevel(), board);
         var offers = generateOffers(player, giverId, board.boardId());
-        return boardSnapshot(player, board, giverId, offers, offers.isEmpty() ? "No eligible offers right now." : "Offers refreshed.");
+        return boardSnapshot(player, board, giverId, offers, offers.isEmpty() ? offerNotice(player, giverId, offers) : "Offers refreshed.");
     }
 
     public BoardSnapshot cycleBoardGiverAndOpen(ServerPlayer player, TaskBoardBlockEntity board) {
@@ -344,6 +373,7 @@ public final class TaskboundRuntime {
         GuildView guild = guildView(player, definitions().giver(giverId));
         var locked = definitions().catalog().categoriesForGiver(giverId).stream()
                 .filter(category -> definitions().giver(giverId).categoryIds().contains(category.id()))
+                .filter(this::categoryProfileEligible)
                 .filter(category -> category.minimumReputationLevel() > guild.reputationLevel())
                 .sorted(Comparator.comparingInt(TaskCategoryDefinition::minimumReputationLevel).thenComparing(TaskCategoryDefinition::id))
                 .map(category -> new LockedCategoryView(category.id(), translationKey("task_category", category.id()), category.minimumReputationLevel())).toList();
@@ -380,6 +410,7 @@ public final class TaskboundRuntime {
                 .max(Map.Entry.comparingByKey()).map(Map.Entry::getValue).orElse(giver.displayName());
         var ranks = List.of(1, 5, 10, 15, 20).stream().filter(thresholds::containsKey).map(rankLevel -> {
             var unlocks = giver.categoryIds().stream().map(definitions().categories()::get)
+                    .filter(this::categoryProfileEligible)
                     .filter(category -> category.minimumReputationLevel() == rankLevel)
                     .map(category -> translationKey("task_category", category.id())).toList();
             return new RankView(rankLevel, thresholds.get(rankLevel), giver.rankNames().getOrDefault(rankLevel, "Level " + rankLevel), unlocks);
@@ -546,7 +577,8 @@ public final class TaskboundRuntime {
         var currentTemplate = definitions.templates().get(offer.templateId());
         var currentVariant = currentTemplate.variants().stream().filter(variant -> variant.id().equals(offer.variantId())).findFirst()
                 .orElseThrow(() -> new IllegalStateException("This offer changed after a data reload"));
-        if (!currentVariant.supportedBy(new CapabilitySet(capabilitiesFor(player, offer.giverId(), UUID.fromString(offer.boardId()), level)))
+        if (!catalogProfileEligible(currentTemplate.id(), currentVariant.conditions())
+                || !currentVariant.supportedBy(new CapabilitySet(capabilitiesFor(player, offer.giverId(), UUID.fromString(offer.boardId()), level)))
                 || !catalogWorldEligible(player, currentVariant)) {
             throw new IllegalStateException("This task is no longer achievable with the available capabilities");
         }
@@ -573,6 +605,7 @@ public final class TaskboundRuntime {
             progress.putAdditionalData("destination_z", destination.position().getZ());
         }
 
+        dev.taskbound.porter.PorterTasks.validateAcceptance(player, offer);
         state.removeGeneratedOffer(offer.taskId());
         long acceptedAt = player.serverLevel().getGameTime();
         Long activeExpiry = offer.expiresAt() == null
@@ -582,6 +615,8 @@ public final class TaskboundRuntime {
         ActiveTask accepted = dev.taskbound.core.TaskTimer.resume(new ActiveTask(activeTask, progress), acceptedAt);
         activeTask = accepted.task();
         state.putActiveTask(accepted);
+        dev.taskbound.event.FarmerGameplayEvents.accepted(player, accepted);
+        dev.taskbound.porter.PorterTasks.accepted(player, accepted);
         savedData.changed();
 
         if (delivery.isPresent()) {
@@ -589,6 +624,10 @@ public final class TaskboundRuntime {
             UUID originBoard = UUID.fromString(activeTask.boardId());
             ItemStack sealed = TaskPackageItem.seal(
                     TaskboundContent.TASK_PACKAGE.get(), packageId(taskId), taskId, originBoard);
+            var destination = progress.additionalData();
+            TaskPackageItem.stamp(sealed, ResourceLocation.parse((String) destination.get("destination_dimension")),
+                    new BlockPos(((Number) destination.get("destination_x")).intValue(),
+                            ((Number) destination.get("destination_y")).intValue(), ((Number) destination.get("destination_z")).intValue()));
             if (!player.getInventory().add(sealed)) {
                 player.drop(sealed, false);
             }
@@ -913,6 +952,7 @@ public final class TaskboundRuntime {
             throw new IllegalStateException("This task belongs to another player");
         }
         if (TaskHandIns.hasHandIns(active)) throw new IllegalStateException("Use Hand in to select and confirm the items to submit");
+        dev.taskbound.porter.PorterTasks.validateClaim(player, active, board);
         return claimTask(player, active, null);
     }
 
@@ -1005,7 +1045,7 @@ public final class TaskboundRuntime {
         if (submission != null) submission.consume();
         state.removeActiveTask(task.taskId());
         long claimedAt = player.serverLevel().getGameTime();
-        state.recordTemplateCompletion(task.templateId(), claimedAt);
+        state.recordTemplateCompletion(task.templateId(), task.conditions(), claimedAt);
         for (var entry : rewardPlan.reputationPoints().entrySet()) {
             var thresholds = reputationThresholds(definitions, entry.getKey());
             var reputation = state.reputation().forGiver(entry.getKey());
@@ -1020,6 +1060,7 @@ public final class TaskboundRuntime {
         if (reputation.level(thresholds) != previousLevel) state.clearGeneratedOffers(task.giverId());
         TaskboundSavedData.get(player.server).changed();
         grantRewards(player, rewardPlan);
+        dev.taskbound.porter.PorterTasks.claimed(player, task);
         TaskboundNetworking.syncPlayer(player);
         player.sendSystemMessage(Component.literal("Rewards claimed. " + task.reputationReward()
                 + " " + shortId(task.giverId()) + " reputation gained."));
@@ -1084,7 +1125,7 @@ public final class TaskboundRuntime {
 
     public void registerBoard(ServerLevel level, TaskBoardBlockEntity board) {
         TaskboundSavedData.get(level.getServer()).registerBoard(
-                board.boardId(), level.dimension().location().toString(), board.getBlockPos());
+                board.boardId(), level, board.getBlockPos());
     }
 
     private Set<String> capabilitiesFor(ServerPlayer player, String giverId, UUID boardId, int reputationLevel) {
@@ -1142,6 +1183,19 @@ public final class TaskboundRuntime {
         return Set.copyOf(result);
     }
 
+    private static boolean catalogProfileEligible(String templateId, Map<String, ?> conditions) {
+        var mods = new java.util.HashSet<String>();
+        for (String id : List.of("starcatcher", "farmersdelight")) {
+            if (net.neoforged.fml.ModList.get().isLoaded(id)) mods.add(id);
+        }
+        return dev.taskbound.core.CatalogProfiles.eligible(templateId, conditions, mods);
+    }
+
+    private boolean categoryProfileEligible(TaskCategoryDefinition category) {
+        return category.templateIds().stream().map(definitions().templates()::get).filter(java.util.Objects::nonNull)
+                .anyMatch(template -> template.variants().stream().anyMatch(variant -> catalogProfileEligible(template.id(), variant.conditions())));
+    }
+
     private boolean hasBoardDeliveryDestination(
             TaskboundSavedData savedData,
             TaskboundSavedData.BoardRecord origin,
@@ -1163,6 +1217,11 @@ public final class TaskboundRuntime {
                                 && "taskbound:task_board".equals(
                                         objective.parameters().get("destination_type"))))
                 .anyMatch(variant -> variantRuntimeEligible(savedData, origin, variant));
+    }
+
+    private boolean porterEligible(ServerPlayer player, TaskboundSavedData.BoardRecord origin, TaskVariantDefinition variant) {
+        return variant.objectives().stream().allMatch(objective -> !objective.type().equals("porter_route")
+                || dev.taskbound.porter.PorterTasks.eligible(player, origin, objective.parameters()));
     }
 
     private boolean variantRuntimeEligible(
@@ -1283,7 +1342,7 @@ public final class TaskboundRuntime {
             }
             objectives.add(new GeneratedObjective(objective.key(), objective.type(), parameters));
         }
-        return new GeneratedTaskDraft(
+        return dev.taskbound.porter.PorterTasks.customize(player, originBoard, new GeneratedTaskDraft(
                 draft.taskId(),
                 draft.playerId(),
                 draft.boardId(),
@@ -1301,7 +1360,7 @@ public final class TaskboundRuntime {
                 difficulty,
                 draft.acceptedAt(),
                 expiresAt
-        );
+        ));
     }
 
     private static List<dev.taskbound.api.magic.MagicActionCandidate> safeMagicCandidates(

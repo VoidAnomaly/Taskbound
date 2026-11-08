@@ -1,0 +1,42 @@
+{
+  "id": "taskbound:angler/starcatcher/2_a16_small_collection",
+  "category_id": "taskbound:angler/starcatcher/level_2",
+  "minimum_reputation_level": 5,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 20,
+  "display_text": "task.taskbound.angler.starcatcher.2_a16_small_collection.description",
+  "title": "Small Collection",
+  "description": "Catch 3 different fish species.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/2_a16_small_collection/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 3,
+            "count_mode": "species"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 2,
+        "source_catalog_id": "taskbound:angler/starcatcher/2_a16_small_collection",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 10,
+        "cooldown_ticks": 24000
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

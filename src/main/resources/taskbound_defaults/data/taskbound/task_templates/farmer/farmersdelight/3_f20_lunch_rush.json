@@ -1,0 +1,66 @@
+{
+  "id": "taskbound:farmer/farmersdelight/3_f20_lunch_rush",
+  "category_id": "taskbound:farmer/catalog/level_3",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 40,
+  "display_text": "task.taskbound.farmer.farmersdelight.3_f20_lunch_rush.description",
+  "title": "Lunch Rush",
+  "description": "• Hand in 4 chicken soup.\n• Hand in 4 fried rice.\n• Hand in 4 cabbage rolls.",
+  "required_capabilities": [
+    "minecraft:hand_in_item"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:farmer/farmersdelight/3_f20_lunch_rush/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 4,
+            "item": "farmersdelight:chicken_soup"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 4,
+            "item": "farmersdelight:fried_rice"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        },
+        {
+          "type": "hand_in_item",
+          "parameters": {
+            "required_count": 4,
+            "item": "farmersdelight:cabbage_rolls"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:hand_in_item"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 3,
+        "source_catalog_id": "taskbound:farmer/farmersdelight/3_f20_lunch_rush",
+        "catalog_profile": "farmersdelight",
+        "currency_reward": 15,
+        "cooldown_ticks": 24000,
+        "completion_group": "taskbound:farmer/slot_20"
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ],
+  "time_limit_ticks": 42000
+}

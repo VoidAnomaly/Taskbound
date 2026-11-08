@@ -1,0 +1,50 @@
+{
+  "id": "taskbound:porter/catalog/4_p25_great_circuit",
+  "category_id": "taskbound:porter/catalog/level_4",
+  "minimum_reputation_level": 15,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 60,
+  "display_text": "task.taskbound.porter.catalog.4_p25_great_circuit.description",
+  "title": "Great Circuit",
+  "description": "Deliver to 4 assigned boards in order; total route 3,072-6,144 blocks.\nAssigned destinations: 4. Follow the complete route shown below, including any return stop.",
+  "required_capabilities": [
+    "minecraft:porter_route"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:porter/catalog/4_p25_great_circuit/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "porter_route",
+          "parameters": {
+            "required_count": 4,
+            "route_kind": "deliveries",
+            "stops": 4,
+            "minimum_leg_distance": 256,
+            "maximum_leg_distance": 3072,
+            "teleportation_allowed": false,
+            "dimensional_travel_allowed": false,
+            "minimum_route_distance": 3072,
+            "maximum_route_distance": 6144
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "minecraft:porter_route"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 4,
+        "source_catalog_id": "taskbound:porter/catalog/4_p25_great_circuit",
+        "catalog_profile": "porter",
+        "currency_reward": 12,
+        "cooldown_ticks": 24000,
+        "currency_per_1024_blocks": 2
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}

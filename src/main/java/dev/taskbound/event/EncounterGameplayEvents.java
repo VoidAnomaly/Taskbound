@@ -93,7 +93,8 @@ public final class EncounterGameplayEvents {
             if (landing != null && landing.tick == fallen.serverLevel().getGameTime())
                 LANDINGS.put(fallen.getUUID(), new Landing(landing.distance, landing.tick, true));
         }
-        if (!(event.getSource().getEntity() instanceof ServerPlayer player)) return;
+        ServerPlayer player = KillDamageConditions.player(event.getSource());
+        if (player == null) return;
         checkAttackRestrictions(player, event.getSource());
         if (event.getEntity() instanceof Pillager pillager) {
             RAID_HITS.remove(pillager.getUUID());
@@ -123,7 +124,8 @@ public final class EncounterGameplayEvents {
             }
             return;
         }
-        if (!(event.getSource().getEntity() instanceof ServerPlayer player)) return;
+        ServerPlayer player = KillDamageConditions.player(event.getSource());
+        if (player == null) return;
         Entity victim = event.getEntity();
         // Raider.die removes raid membership before LivingDeathEvent; retain the damaging hit's membership.
         RaidHit raid = RAID_HITS.remove(victim.getUUID());
@@ -137,9 +139,10 @@ public final class EncounterGameplayEvents {
                 && fireball.getPersistentData().getUUID("taskbound.deflector").equals(player.getUUID())) {
             advanceCombat(player, "returned_ghast_fireball_kill", victim, ItemStack.EMPTY, 1);
         }
-        ItemStack weapon = weapon(event.getSource());
+        ItemStack weapon = KillDamageConditions.weapon(event.getSource());
         TaskboundRuntime.get().advanceMatching(player, (active, objective) -> {
             if (!objective.type().equals("tracked_kill") || !targetMatches(objective, victim)
+                    || !KillDamageConditions.matches(objective, event.getSource())
                     || !event.getSource().is(DamageTypes.PLAYER_ATTACK) && "melee".equals(text(objective, "method"))
                     || !(event.getSource().getDirectEntity() instanceof AbstractArrow) && "projectile".equals(text(objective, "method"))
                     || !VanillaObjectiveConditions.matches(objective, player, player.serverLevel(), victim.blockPosition(), weapon, false)) return false;

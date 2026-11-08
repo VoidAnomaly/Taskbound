@@ -65,6 +65,9 @@ final class TaskBoardText {
             lines.add(marker.append(objectiveDescription(objective)).append(count));
             index++;
             lines.addAll(objectiveConditions(objective));
+            if (objective.type().equals("porter_route")) {
+                routeDetails(lines, objective, progress);
+            }
         }
         if (Boolean.TRUE.equals(task.conditions().get("strict_sequence"))
                 || "strict".equals(task.conditions().get("objective_order"))) {
@@ -114,7 +117,10 @@ final class TaskBoardText {
             case "craft_item", "tracked_craft" -> Component.literal("Craft ").append(namedItem(string(p, "item", string(p, "target", "items"))));
             case "gather_block", "tracked_gather", "break_block", "mine_block" -> Component.literal("Mine ").append(namedResource(string(p, "block", string(p, "target", "blocks"))));
             case "harvest_crop", "harvest_block" -> Component.literal("Harvest ").append(namedResource(string(p, "block", string(p, "target", "crops"))));
-            case "hand_in_item", "handin_item", "submit_item" -> Component.literal("Hand in ").append(namedItem(string(p, "item", string(p, "target", "items"))));
+            case "hand_in_item", "handin_item", "submit_item" -> Component.literal("Hand in ").append(namedItem(string(p, "item", string(p, "item_tag", string(p, "target", "items")))));
+            case "farm_action" -> farmObjective(p);
+            case "starcatcher_catch" -> starcatcherObjective(p);
+            case "porter_route" -> Component.translatable("taskbound.objective.porter_route");
             case "visit_biome" -> Component.literal("Visit ").append(namedResource(string(p, "biome", "a biome")));
             case "visit_structure" -> Component.literal("Explore ").append(namedResource(string(p, "structure", "a structure")));
             case "visit_dimension" -> Component.literal("Enter ").append(namedResource(string(p, "dimension", "a dimension")));
@@ -152,6 +158,48 @@ final class TaskBoardText {
         return stack.getHoverName();
     }
 
+    private static Component farmObjective(Map<String, Object> p) {
+        String action = string(p, "action", "harvest");
+        Component target = action.equals("breed") ? namedEntity(string(p, "entity", "animals"))
+                : namedItem(string(p, "item", "crops"));
+        return Component.translatable("taskbound.objective.farm." + action, target);
+    }
+
+    private static Component starcatcherObjective(Map<String, Object> p) {
+        if (p.get("species") instanceof List<?> species && !species.isEmpty()) {
+            var names = Component.empty();
+            for (Object id : species) {
+                if (!names.getString().isEmpty()) names.append(Component.translatable("taskbound.list.or"));
+                String value = id.toString();
+                names.append(Component.translatableWithFallback("fish." + value.replace(':', '.'), humanize(value)));
+            }
+            return Component.translatable("taskbound.objective.catch", names);
+        }
+        return Component.translatable("taskbound.objective.starcatcher." + string(p, "count_mode", "catches"));
+    }
+
+    private static void routeDetails(List<Component> lines, GeneratedObjective objective, @Nullable TaskProgress progress) {
+        if (!(objective.parameters().get("route") instanceof List<?> stops)) return;
+        int completed = progress == null ? 0 : progress.progressFor(objective.key());
+        for (int i = 0; i < stops.size(); i++) {
+            if (!(stops.get(i) instanceof Map<?, ?> stop)) continue;
+            String marker = i < completed ? "\u2713 " : "\u2022 ";
+            lines.add(Component.literal(marker).append(Component.translatable("taskbound.porter.route_stop", i + 1,
+                    namedResource(String.valueOf(stop.get("dimension"))), integer(stop.get("x"), 0),
+                    integer(stop.get("y"), 0), integer(stop.get("z"), 0))));
+            for (String action : List.of("deliver", "collect", "carry")) {
+                if (stop.get(action) instanceof List<?> cargo && !cargo.isEmpty())
+                    lines.add(Component.translatable("taskbound.porter.route_" + action, cargo.size()));
+            }
+        }
+        if (progress != null && objective.parameters().get("maximum_damage") instanceof Number limit) {
+            Object taken = progress.additionalData().get("porter_damage");
+            double remaining = Math.max(0, limit.doubleValue() - (taken instanceof Number n ? n.doubleValue() : 0));
+            lines.add(Component.translatable("taskbound.porter.damage_remaining", String.format(Locale.ROOT, "%.1f", remaining / 2)));
+        }
+        lines.add(Component.translatable("taskbound.porter.final_payout"));
+    }
+
     private static Component magicObjective(Map<String, Object> p) {
         return switch (string(p, "action", "magic")) {
             case "brew_potion" -> Component.literal("Brew ").append(namedResource(string(p, "potion", "a potion")));
@@ -174,6 +222,11 @@ final class TaskBoardText {
         add(lines, p, "required_structure_tag", "Structure");
         add(lines, p, "required_weapon", "Weapon");
         add(lines, p, "required_weapon_tag", "Weapon");
+        for (String key : List.of("required_damage_type", "required_damage_type_tag")) {
+            if (p.get(key) instanceof String value) {
+                lines.add(Component.translatable("taskbound.condition." + key, namedResource(value)));
+            }
+        }
         add(lines, p, "required_tool", "Tool");
         add(lines, p, "required_tool_tag", "Tool");
         add(lines, p, "required_weather", "Weather");
@@ -201,6 +254,25 @@ final class TaskBoardText {
                 lines.add(Component.literal("  ").append(namedResource(key.toString())).append(" " + ((Number)value).intValue() + "+")));
         if (p.containsKey("armor_set")) lines.add(Component.translatable("taskbound.condition.iron_armor"));
         if (p.containsKey("weapons")) lines.add(Component.translatable("taskbound.condition.iron_weapons"));
+        for (String flag : List.of("distinct", "perfect", "on_foot", "different_biomes")) {
+            if (Boolean.TRUE.equals(p.get(flag))) lines.add(Component.translatable("taskbound.condition." + flag));
+        }
+        for (String value : List.of("rarity", "minimum_rarity", "station", "arrival_time")) {
+            if (p.get(value) instanceof String text) lines.add(Component.translatable("taskbound.condition." + value, namedResource(text)));
+        }
+        for (String value : List.of("minimum_colors", "minimum_weight_percentile")) {
+            if (p.get(value) instanceof Number n) lines.add(Component.translatable("taskbound.condition." + value, n.intValue()));
+        }
+        if (p.get("minimum_crop_types") instanceof Number types && p.get("per_crop_count") instanceof Number count)
+            lines.add(Component.translatable("taskbound.condition.crop_variety", types.intValue(), count.intValue()));
+        if (p.get("habitats") instanceof List<?> habitats) for (Object habitat : habitats)
+            lines.add(Component.translatable("taskbound.condition.habitat", namedResource(habitat.toString())));
+        if (p.get("maximum_damage") instanceof Number limit)
+            lines.add(Component.translatable("taskbound.condition.maximum_damage", limit.doubleValue() / 2));
+        if (objective.type().equals("porter_route")) {
+            if (!Boolean.TRUE.equals(p.get("teleportation_allowed"))) lines.add(Component.translatable("taskbound.condition.no_teleport"));
+            if (!Boolean.TRUE.equals(p.get("dimensional_travel_allowed"))) lines.add(Component.translatable("taskbound.condition.no_portals"));
+        }
         return List.copyOf(lines);
     }
 
@@ -297,7 +369,14 @@ final class TaskBoardText {
         }
         return item(switch (first.type()) {
             case "kill_entity", "tracked_kill", "combat_action", "dragon_encounter" -> "minecraft:iron_sword";
-            case "catch_fish", "catch_item", "tracked_fish" -> "minecraft:fishing_rod";
+            case "catch_fish", "catch_item", "tracked_fish", "starcatcher_catch" -> "minecraft:fishing_rod";
+            case "farm_action" -> switch (string(p, "action", "harvest")) {
+                case "milk" -> "minecraft:milk_bucket";
+                case "shear" -> "minecraft:shears";
+                case "honey", "honeycomb" -> "minecraft:honeycomb";
+                default -> "minecraft:wheat";
+            };
+            case "porter_route" -> "taskbound:task_package";
             case "perform_magic_action", "enchant_item" -> "minecraft:enchanted_book";
             case "craft_item" -> "minecraft:crafting_table";
             case "gather_block", "break_block", "mine_block" -> "minecraft:iron_pickaxe";

@@ -63,10 +63,24 @@ public final class TaskboundDefinitions {
     }
 
     private static void validateCatalogConditions(Map<String, Object> conditions) {
-        var known = java.util.Set.of("source_catalog_id", "catalog_difficulty", "objective_order", "objective_stages", "no_death", "reset_on_death", "one_time", "cooldown_ticks", "title");
+        var known = java.util.Set.of("source_catalog_id", "catalog_difficulty", "objective_order", "objective_stages", "no_death", "reset_on_death", "one_time", "cooldown_ticks", "title",
+                "catalog_profile", "completion_group", "currency_reward", "currency_per_1024_blocks");
         for (var entry : conditions.entrySet()) {
             if (!known.contains(entry.getKey())) throw new IllegalArgumentException("Unsupported catalog condition: " + entry.getKey());
             switch (entry.getKey()) {
+                case "catalog_profile" -> {
+                    if (!dev.taskbound.core.CatalogProfiles.PROFILES.contains(entry.getValue()))
+                        throw new IllegalArgumentException("Unknown catalog_profile: " + entry.getValue());
+                }
+                case "completion_group" -> {
+                    if (!(entry.getValue() instanceof String text) || !text.matches("[a-z0-9_.-]+:[a-z0-9/._-]+"))
+                        throw new IllegalArgumentException("completion_group must be a resource ID");
+                }
+                case "currency_reward", "currency_per_1024_blocks" -> {
+                    if (!(entry.getValue() instanceof Number n) || n.doubleValue() != n.intValue()
+                            || n.intValue() < 1 || n.intValue() > 4096)
+                        throw new IllegalArgumentException(entry.getKey() + " must be an integer from 1 to 4096");
+                }
                 case "objective_stages" -> { /* Validated against objective count by TaskVariantDefinition. */ }
                 case "no_death", "reset_on_death", "one_time" -> {
                     if (!(entry.getValue() instanceof Boolean)) throw new IllegalArgumentException(entry.getKey() + " must be boolean");

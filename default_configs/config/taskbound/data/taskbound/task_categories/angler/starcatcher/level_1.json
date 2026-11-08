@@ -1,0 +1,25 @@
+{
+  "id": "taskbound:angler/starcatcher/level_1",
+  "giver_id": "taskbound:angler",
+  "minimum_reputation_level": 1,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:angler/starcatcher/1_a01_first_cast",
+    "taskbound:angler/starcatcher/1_a02_quiet_afternoon",
+    "taskbound:angler/starcatcher/1_a03_driftfin_dabble",
+    "taskbound:angler/starcatcher/1_a04_lake_regular",
+    "taskbound:angler/starcatcher/1_a05_day_on_the_river",
+    "taskbound:angler/starcatcher/1_a06_a_change_of_catch",
+    "taskbound:angler/starcatcher/1_a07_lake_sample",
+    "taskbound:angler/starcatcher/1_a08_river_sample",
+    "taskbound:angler/starcatcher/1_a09_coastal_sample",
+    "taskbound:angler/starcatcher/1_a10_a_fine_start"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

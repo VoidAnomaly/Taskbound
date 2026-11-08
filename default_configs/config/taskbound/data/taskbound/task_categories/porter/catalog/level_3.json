@@ -1,0 +1,21 @@
+{
+  "id": "taskbound:porter/catalog/level_3",
+  "giver_id": "taskbound:porter",
+  "minimum_reputation_level": 10,
+  "maximum_reputation_level": null,
+  "base_weight": 5.0,
+  "soft_boost_after": 3,
+  "recency_boost_per_miss": 0.2,
+  "guarantee_after": 8,
+  "template_ids": [
+    "taskbound:porter/catalog/3_p19_long_haul",
+    "taskbound:porter/catalog/3_p20_three_village_run",
+    "taskbound:porter/catalog/3_p21_glass_delivery",
+    "taskbound:porter/catalog/3_p22_priority_circuit",
+    "taskbound:porter/catalog/3_p23_biome_exchange",
+    "taskbound:porter/catalog/3_p24_supply_and_return"
+  ],
+  "required_capabilities": [],
+  "new_unlock_weight_multiplier": 2.0,
+  "new_unlock_boost_draws": 3
+}

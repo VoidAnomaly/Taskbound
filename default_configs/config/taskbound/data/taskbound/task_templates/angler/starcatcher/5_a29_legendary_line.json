@@ -1,0 +1,43 @@
+{
+  "id": "taskbound:angler/starcatcher/5_a29_legendary_line",
+  "category_id": "taskbound:angler/starcatcher/level_5",
+  "minimum_reputation_level": 20,
+  "maximum_reputation_level": null,
+  "base_weight": 10.0,
+  "base_difficulty": 85,
+  "display_text": "task.taskbound.angler.starcatcher.5_a29_legendary_line.description",
+  "title": "Legendary Line",
+  "description": "Catch 1 Legendary fish from the eligible, repeatably obtainable species shown by the task.\nThis task can only be completed once.",
+  "required_capabilities": [
+    "starcatcher:catch"
+  ],
+  "variants": [
+    {
+      "id": "taskbound:angler/starcatcher/5_a29_legendary_line/standard",
+      "weight": 1.0,
+      "objectives": [
+        {
+          "type": "starcatcher_catch",
+          "parameters": {
+            "required_count": 1,
+            "rarity": "legendary"
+          },
+          "difficulty_components": [],
+          "required_capabilities": [
+            "starcatcher:catch"
+          ]
+        }
+      ],
+      "conditions": {
+        "catalog_difficulty": 5,
+        "source_catalog_id": "taskbound:angler/starcatcher/5_a29_legendary_line",
+        "catalog_profile": "starcatcher",
+        "currency_reward": 64,
+        "cooldown_ticks": 24000,
+        "one_time": true
+      },
+      "difficulty_components": [],
+      "required_capabilities": []
+    }
+  ]
+}
